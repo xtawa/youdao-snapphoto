@@ -45,6 +45,7 @@
         </div>
         <div v-if="panel==='gallery'" class="page" :class="orientation==='portrait'?'page-portrait':''">
           <div class="page-head"><text class="page-title">我的影像 · {{media.length}}</text><text class="nav-link" @click="refreshGallery">刷新</text><text class="nav-link" @click="panel='camera'">返回取景</text></div>
+          <text class="gallery-location">优先读取 /userdisk/Pictures · 原厂索引状态需真机确认</text>
           <div class="filter-bar" :class="orientation==='portrait'?'filter-bar-portrait':''"><text class="filter" :class="mediaTypeFilter==='all'?'chosen':''" @click="setTypeFilter('all')">全部</text><text class="filter" :class="mediaTypeFilter==='photo'?'chosen':''" @click="setTypeFilter('photo')">照片</text><text class="filter" :class="mediaTypeFilter==='video'?'chosen':''" @click="setTypeFilter('video')">视频</text><text class="nav-link" @click="selectAllVisible">全选</text><text class="nav-link" @click="clearSelection">取消选择</text></div>
           <scroller class="list" scroll-direction="vertical" :show-scrollbar="true">
             <div v-if="!visibleMedia.length" class="empty"><text>当前没有可显示的影像</text></div>

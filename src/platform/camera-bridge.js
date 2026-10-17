@@ -1,3 +1,4 @@
+import {GALLERY_DIRECTORY,galleryResult,validateGalleryPublication} from './gallery-policy.js'
 /**
  * SnapPhoto native adapter contract.
  *
@@ -72,22 +73,20 @@ export class CameraBridge {
   async capturePhoto(options) {
     this.requireCapability('photo')
     if (this.recording) throw new Error('录像期间不能拍照')
-    const result = await this.native.capturePhoto(options || {})
-    if (!result || !result.path) throw new Error('设备未返回照片路径')
-    return result
+    const result = await this.native.capturePhoto({...options, saveDirectory: GALLERY_DIRECTORY})
+    return this.saveToGallery(result, 'photo')
   }
   async startRecording(options) {
     this.requireCapability('video')
     if (this.recording) throw new Error('正在录像')
-    await this.native.startRecording(options || {})
+    await this.native.startRecording({...options, saveDirectory: GALLERY_DIRECTORY})
     this.recording = true
   }
   async stopRecording() {
     if (!this.recording) throw new Error('当前没有录像')
     const result = await this.native.stopRecording()
     this.recording = false
-    if (!result || !result.path) throw new Error('设备未返回录像路径')
-    return result
+    return this.saveToGallery(result, 'video')
   }
   async setZoom(value) {
     this.requireCapability('zoom')
@@ -110,9 +109,27 @@ export class CameraBridge {
     }
     return id
   }
+  async saveToGallery(result, mediaType) {
+    const saved = galleryResult(result)
+    if (saved.album === 'pictures') return saved
+    if (!this.native || typeof this.native.publishToGallery !== 'function') return saved
+    try {
+      const published = await this.native.publishToGallery({
+        sourcePath: saved.path,
+        targetDirectory: GALLERY_DIRECTORY,
+        mediaType
+      })
+      return validateGalleryPublication(published)
+    } catch (error) {
+      return {
+        ...saved,
+        galleryWarning: '文件保留在 ' + saved.path + '；导入 /userdisk/Pictures 失败：' + (error && error.message || error)
+      }
+    }
+  }
   async listMedia() {
     this.requireCapability('gallery')
-    const files = await this.native.listMedia()
+    const files = await this.native.listMedia({directory: GALLERY_DIRECTORY, includeFallback: true})
     return Array.isArray(files) ? files : []
   }
   async startShare(paths) {

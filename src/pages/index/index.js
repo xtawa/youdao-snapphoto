@@ -14,7 +14,7 @@ export default {
     timerChoices:TIMER_CHOICES,burstChoices:BURST_CHOICES,
     captureSession:new CaptureSession(),countdown:0,shotsCompleted:0,
     timerDelay:0,burstCount:1,showGrid:false,layoutMode:'auto',detectedOrientation:'landscape',
-    mediaTypeFilter:'all',connecting:false,sessionId:0
+    mediaTypeFilter:'all',connecting:false,sessionId:0,lastGalleryWarning:''
   }},
   computed:{
     elapsed(){return duration(this.seconds)},
@@ -106,23 +106,25 @@ export default {
       try{
         if(this.mode==='photo'){
           this.shotsCompleted=0
+          this.lastGalleryWarning=''
           const result=await this.captureSession.run({
             delay:this.timerDelay,count:this.burstCount,
             onTick:n=>{this.countdown=n},
             capture:()=>this.bridge.capturePhoto({filter:this.filter,zoom:this.zoom}),
             onShot:(result,now,total)=>{
               this.shotsCompleted=now
-              this.status='已拍摄 '+now+'/'+total+' · '+this.fileName(result.path)
+              if(result.galleryWarning)this.lastGalleryWarning=result.galleryWarning
+              this.status=(result.album==='pictures'?'已保存到相册':'文件已保存，未导入相册')+' '+now+'/'+total+' · '+this.fileName(result.path)
             }
           })
-          if(result.completed>0){await this.refreshGallery();this.message('已保存 '+result.completed+' 张照片')}
+          if(result.completed>0){await this.refreshGallery();this.message(this.lastGalleryWarning || ('已保存到 /userdisk/Pictures，共 '+result.completed+' 张'))}
           else if(!result.cancelled)this.message('未拍摄照片')
         }else if(this.recording){
           const result=await this.bridge.stopRecording()
           if(this.recorderTimer)clearInterval(this.recorderTimer)
           this.recorderTimer=null;this.recording=false
-          this.status='保存成功：'+this.fileName(result.path)
-          await this.refreshGallery();this.message('录像已保存')
+          this.status=(result.album==='pictures'?'已保存到相册：':'录像已保存到其他目录：')+this.fileName(result.path)
+          await this.refreshGallery();this.message(result.galleryWarning || '录像已保存到 /userdisk/Pictures')
         }else{
           if(!this.caps.video)return this.message('设备未开放录像接口')
           await this.bridge.startRecording({filter:this.filter,zoom:this.zoom})

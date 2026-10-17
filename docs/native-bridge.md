@@ -1,39 +1,23 @@
 # SnapPhoto / X7 Pro 原生相机接口契约
 
-此文档定义未来原生模块与前端之间的接口；不表示固件已经提供这些方法。
+**原生模块尚未实现。下列方法是 SnapPhoto 期望的接口，不表示原厂固件已经提供。**
 
-## JS 侧检测入口
+摄像头 JS 桥接查找 globalThis.SnapPhotoNative 或 $falcon.jsapi.snapphoto。
 
-- 优先 globalThis.SnapPhotoNative
-- 其次 $falcon.jsapi.snapphoto
-- 必须有异步 getCapabilities() 方法，否则明确显示离线状态，不会伪造拍照结果。
+- getCapabilities(): Promise<{camera,photo,video,preview,zoom,focus,filters,gallery,share,minZoom,maxZoom}>
+- openPreview(), getPreviewFrame(), closePreview()
+- capturePhoto({filter,zoom,saveDirectory:'/userdisk/Pictures'}): Promise<{path,indexed?:boolean}>
+- startRecording({filter,zoom,saveDirectory:'/userdisk/Pictures'}), stopRecording(): Promise<{path,indexed?:boolean}>
+- 可选 publishToGallery({sourcePath,targetDirectory:'/userdisk/Pictures',mediaType:'photo'|'video'}): Promise<{path,written:true,indexed?:boolean}>
+- listMedia({directory:'/userdisk/Pictures',includeFallback:true}): Promise<Array<{path,name,type,size}>>
+- setZoom(zoom), focusAt(x,y), setFilter(id)
+- startShare(paths), stopShare()
+- 可选 getDisplaySize()
 
-## Native API
+原生实现应确保任何成功返回的文件都真实存在、持久化，且位于声明的实际路径；不得仅返回字符串模拟保存。需要验证索引时，应独立确认相册数据库/索引状态，仅在确实完成时返回 indexed:true。
 
-- getCapabilities(): Promise<{camera:boolean,photo:boolean,video:boolean,preview:boolean,zoom:boolean,focus:boolean,filters:string[],gallery:boolean,share:boolean,minZoom:number,maxZoom:number}>
-- openPreview(), getPreviewFrame(): Promise<{image:string}>, closePreview()，取景返回真实 JPEG/PNG data URI；可限帧率和分辨率
-- capturePhoto({filter,zoom}): Promise<{path:string}>，完成磁盘写入后再返回
-- startRecording({filter,zoom}), stopRecording(): Promise<{path:string}>
-- setZoom(zoom:number), focusAt(x:number,y:number)，焦点坐标为 0..1
-- setFilter(id:string)，只声明确实支持的滤镜。前端“滤镜”按钮不代表 X7 Pro 已具备实时滤镜能力
-- listMedia(): Promise<Array<{path:string,name:string,type:"photo"|"video",size:number}>>
-- startShare(paths:string[]): Promise<{url:string}>, stopShare()
-- 可选 getDisplaySize(): Promise<{width:number,height:number}>，有助识别真实屏幕方向。前端也能手动调整布局。
+具体相册写入与读取策略见 docs/gallery-storage.md。
 
-## 文件和网络传输
+局域网分享必须只允许用户明确选择的合法媒体路径，防止路径遍历和软链接越界，不应公开整个 /userdisk/Pictures 目录。使用私网监听、短期凭据，并在切换后台时停止分享服务。
 
-- 推荐在用户可访问的数据分区保留照片，例如 /userdisk/SnapPhoto/；路径必须由硬件实测确认
-- 分享时必须把路径限制到自有相册目录，拒绝目录穿越、软链接越界和不属于本应用的文件
-- 在私有局域网 IP 上监听，使用强随机 token、短有效期（建议 5 分钟）与允许下载的文件白名单
-- 不应在 QuickJS 里模拟一个不存在的 HTTP 服务。真正的二维码扫码下载需要设备端原生 HTTP 服务
-- 退出和后台必须停止分享服务；不得无提示常驻监听
-
-## 未完成的真机集成
-
-- X7 Pro 摄像头驱动、图像格式、录像编码器、取景性能
-- 自动对焦、变焦实际可支持范围
-- 真机原生 JSAPI 模块编译和加载
-- 平台是否暴露真实旋转事件及尺寸变化
-
-计时、连拍、相册筛选、九宫格和横竖屏 UI 现为 MiniApp 前端功能；
-实际照片仍取决于原生 capturePhoto。
+不要在未验证固件相机驱动、编解码器、对焦/变焦权限前将此接口标记为生产可用。
