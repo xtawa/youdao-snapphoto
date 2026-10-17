@@ -1,0 +1,6 @@
+node_modules/
+.falcon_/
+dist/
+*.amr
+*.log
+coverage/
