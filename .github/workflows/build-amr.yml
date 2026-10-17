@@ -36,9 +36,13 @@ jobs:
             exit 1
           fi
           find . -maxdepth 1 -type f -name '*.amr' -ls
+          sha256sum ./*.amr > SHA256SUMS.txt
+          cat SHA256SUMS.txt
       - uses: actions/upload-artifact@v4
         with:
           name: SnapPhoto-X7Pro-AMR-UNVERIFIED
-          path: '*.amr'
+          path: |
+            *.amr
+            SHA256SUMS.txt
           if-no-files-found: error
           retention-days: 30
