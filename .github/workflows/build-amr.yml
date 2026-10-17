@@ -1,0 +1,48 @@
+name: Build X7 Pro SnapPhoto AMR
+on:
+  push:
+    branches:
+      - main
+      - feat/snapphoto-camera-mvp
+  pull_request:
+  workflow_dispatch:
+jobs:
+  build:
+    name: Test and build
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      - name: Install build toolchain
+        run: npm install --no-audit --no-fund
+      - name: Run unit tests
+        run: npm test
+      - name: Compile AMR
+        run: |
+          set -o pipefail
+          npm run build:prod 2>&1 | tee build-output.log
+          if grep -E 'ERROR:' build-output.log; then
+            echo "::error::Falcon build emitted an error"
+            exit 1
+          fi
+      - name: Verify package
+        run: |
+          count=$(find . -maxdepth 1 -type f -name '*.amr' -size +0c | wc -l)
+          if [ "$count" -eq 0 ]; then
+            echo "::error::No non-empty AMR output"
+            exit 1
+          fi
+          find . -maxdepth 1 -type f -name '*.amr' -ls
+          sha256sum ./*.amr > SHA256SUMS.txt
+          cat SHA256SUMS.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: SnapPhoto-X7Pro-AMR-UNVERIFIED
+          path: |
+            *.amr
+            SHA256SUMS.txt
+          if-no-files-found: error
+          retention-days: 30
