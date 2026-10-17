@@ -1,5 +1,6 @@
 #include "hdr_fusion.hpp"
 #include <algorithm>
+#include <array>
 #include <cmath>
 #include <stdexcept>
 #include <limits>
@@ -14,6 +15,25 @@ float to_linear(float s) {
 float to_srgb(float v) {
   v = clamp(v, 0.f, 1.f);
   return v <= 0.0031308f ? v * 12.92f : 1.055f * std::pow(v, 1.f / 2.4f) - 0.055f;
+}
+const std::array<float,256>& linear_lut() {
+  static const std::array<float,256> lut=[] {
+    std::array<float,256> data{};
+    for(std::size_t i=0;i<data.size();++i)data[i]=to_linear(static_cast<float>(i)/255.f);
+    return data;
+  }();
+  return lut;
+}
+const std::array<std::uint8_t,4096>& srgb_lut() {
+  static const std::array<std::uint8_t,4096> lut=[] {
+    std::array<std::uint8_t,4096> data{};
+    for(std::size_t i=0;i<data.size();++i) {
+      const float fraction=static_cast<float>(i)/(data.size()-1);
+      data[i]=static_cast<std::uint8_t>(std::lround(255.f*to_srgb(fraction)));
+    }
+    return data;
+  }();
+  return lut;
 }
 float luminance(const float rgb[3]) {
   return 0.2126f*rgb[0]+0.7152f*rgb[1]+0.0722f*rgb[2];
@@ -42,6 +62,8 @@ Image fuse_hdr(const std::vector<ExposureFrame>& frames, int width, int height) 
   // Caller retains ownership of the aligned frames.
   const std::size_t pixels=static_cast<std::size_t>(width)*height;
   Image out{width,height,std::vector<std::uint8_t>(pixels*3)};
+  const auto& linear=linear_lut();
+  const auto& gamma=srgb_lut();
   for(std::size_t pos=0;pos<pixels;++pos){
     float radiant[5][3]={}, observed[5][3]={}, weights[5]={};
     float reference_rgb[3]={};
@@ -49,7 +71,7 @@ Image fuse_hdr(const std::vector<ExposureFrame>& frames, int width, int height) 
     for(std::size_t k=0;k<frames.size();++k){
       const float exposure=std::exp2(frames[k].ev);
       for(int ch=0;ch<3;++ch){
-        observed[k][ch]=to_linear(frames[k].rgb[base+ch] / 255.f);
+        observed[k][ch]=linear[frames[k].rgb[base+ch]];
         radiant[k][ch]=observed[k][ch] / exposure;
       }
       weights[k]=certainty(luminance(observed[k]));
@@ -77,7 +99,7 @@ Image fuse_hdr(const std::vector<ExposureFrame>& frames, int width, int height) 
     // not HDR10 / HLG or wide-gamut HDR screen content.
     for(int ch=0;ch<3;++ch){
       const float mapped=merged[ch] / (merged[ch]+0.35f);
-      out.rgb[base+ch]=static_cast<std::uint8_t>(std::lround(255.f*to_srgb(mapped)));
+      out.rgb[base+ch]=gamma[static_cast<std::size_t>(std::lround(clamp(mapped,0.f,1.f)*4095.f))];
     }
   }
   return out;
