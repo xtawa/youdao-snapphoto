@@ -121,6 +121,9 @@ export class CameraBridge {
     // Native side MUST validate paths, bind LAN only and issue an expiring token.
     const result = await this.native.startShare(paths)
     if (!result || !/^http:\/\/(?:192\.168\.|10\.|172\.(?:1[6-9]|2[0-9]|3[01])\.)/.test(result.url || '')) {
+      if (typeof this.native.stopShare === 'function') {
+        try { await this.native.stopShare() } catch (error) {}
+      }
       throw new Error('未获得有效的局域网分享地址')
     }
     this.share = result
