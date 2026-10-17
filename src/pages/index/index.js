@@ -1,34 +1,83 @@
 import {createCameraBridge} from '../../platform/camera-bridge.js'
 import {FILTERS,duration,formatBytes} from '../../utils/format.js'
 import {makeQrImage} from '../../utils/qr.js'
+import {CaptureSession,TIMER_CHOICES,BURST_CHOICES} from '../../utils/capture-session.js'
+import {detectOrientation,effectiveOrientation} from '../../utils/orientation.js'
+import {loadPreferences,savePreferences} from '../../utils/preferences.js'
+
 export default {
   name:'index',
   data(){return {
     bridge:null,caps:null,connected:false,busy:false,recording:false,seconds:0,recorderTimer:null,
-    frameTimer:null,preview:'',zoom:1,mode:'photo',filter:'none',panel:'camera',
-    media:[],selected:[],shareUrl:'',qr:'',status:'检测 X7 Pro 摄像头…',toast:'',toastTimer:null
+    frameTimer:null,orientationTimer:null,preview:'',zoom:1,mode:'photo',filter:'none',panel:'camera',
+    media:[],selected:[],shareUrl:'',qr:'',status:'检测 X7 Pro 摄像头…',toast:'',toastTimer:null,
+    timerChoices:TIMER_CHOICES,burstChoices:BURST_CHOICES,
+    captureSession:new CaptureSession(),countdown:0,shotsCompleted:0,
+    timerDelay:0,burstCount:1,showGrid:false,layoutMode:'auto',detectedOrientation:'landscape',
+    mediaTypeFilter:'all',connecting:false,sessionId:0
   }},
   computed:{
     elapsed(){return duration(this.seconds)},
-    filters(){return FILTERS.filter(f=>f.id==='none'||(this.caps&&this.caps.filters.indexOf(f.id)>=0))}
+    filters(){return FILTERS.filter(f=>f.id==='none'||(this.caps&&this.caps.filters.indexOf(f.id)>=0))},
+    orientation(){return effectiveOrientation(this.layoutMode,this.detectedOrientation)},
+    visibleMedia(){
+      if(this.mediaTypeFilter==='all')return this.media
+      return this.media.filter(f=>f.type===this.mediaTypeFilter)
+    },
+    chosenFiles(){return this.selected.length?this.selected:this.media.map(m=>m.path)},
+    layoutLabel(){return this.layoutMode==='auto'?'自动':(this.layoutMode==='portrait'?'竖屏':'横屏')}
   },
   methods:{
     message(v){
       this.toast=String(v)
-      if(this.toastTimer) clearTimeout(this.toastTimer)
+      if(this.toastTimer)clearTimeout(this.toastTimer)
       this.toastTimer=setTimeout(()=>{this.toast=''},3000)
     },
+    updateOrientation(){
+      let detected=detectOrientation()
+      const native=this.bridge&&this.bridge.native
+      if(native&&typeof native.getDisplaySize==='function'){
+        Promise.resolve(native.getDisplaySize()).then(value=>{
+          if(value&&Number(value.width)>0&&Number(value.height)>0){
+            this.detectedOrientation=Number(value.height)>Number(value.width)?'portrait':'landscape'
+          }
+        }).catch(()=>{})
+      }else this.detectedOrientation=detected
+    },
+    async restoreSettings(){
+      const p=await loadPreferences()
+      this.timerDelay=p.timerDelay;this.burstCount=p.burstCount
+      this.showGrid=p.showGrid;this.layoutMode=p.layoutMode
+      this.updateOrientation()
+    },
+    persist(){
+      savePreferences({timerDelay:this.timerDelay,burstCount:this.burstCount,
+        showGrid:this.showGrid,layoutMode:this.layoutMode}).catch(()=>{})
+    },
+    setTimer(n){if(this.busy)return;this.timerDelay=n;this.persist()},
+    setBurst(n){if(this.busy)return;this.burstCount=n;this.persist()},
+    toggleGrid(){this.showGrid=!this.showGrid;this.persist()},
+    cycleLayout(){
+      const modes=['auto','portrait','landscape']
+      this.layoutMode=modes[(modes.indexOf(this.layoutMode)+1)%modes.length]
+      this.persist()
+    },
     async connect(){
+      if(this.connecting)return
+      this.connecting=true
       await this.cleanup()
+      const id=++this.sessionId
       this.bridge=createCameraBridge()
       this.caps=null;this.preview='';this.connected=false;this.status='检查硬件接口…'
       try{
         this.caps=await this.bridge.connect()
+        if(id!==this.sessionId)return
         this.connected=true;this.zoom=this.caps.minZoom;this.status='相机已连接'
         if(this.caps.preview){await this.bridge.openPreview();this.poll()}
         else this.status='缺少取景接口'
-        if(this.caps.gallery) await this.refreshGallery()
+        if(this.caps.gallery)await this.refreshGallery()
       }catch(e){this.status=e.message;this.message(e.message)}
+      finally{this.connecting=false;this.updateOrientation()}
     },
     poll(){
       if(this.frameTimer)clearInterval(this.frameTimer)
@@ -36,38 +85,53 @@ export default {
       this.frameTimer=setInterval(async()=>{
         if(pending||!this.connected||this.panel!=='camera')return
         pending=true
-        try {const frame=await this.bridge.getPreviewFrame(); if(frame) this.preview=frame}
+        try{const frame=await this.bridge.getPreviewFrame();if(frame)this.preview=frame}
         catch(e){this.status='取景失败：'+e.message;clearInterval(this.frameTimer);this.frameTimer=null}
-        finally {pending=false}
+        finally{pending=false}
       },500)
     },
     changeMode(mode){
-      if(this.recording)return this.message('请先结束录像')
-      if(mode==='video'&&!(this.caps&&this.caps.video))return this.message('设备不支持录像')
+      if(this.busy||this.recording)return this.message('请先结束当前拍摄')
+      if(mode==='video'&&!(this.caps&&this.caps.video))return this.message('设备未开放录像接口')
       this.mode=mode;this.panel='camera'
     },
     async shutter(){
-      if(this.busy)return
+      if(this.busy){
+        if(this.mode==='photo'&&this.captureSession.running){this.captureSession.cancel();this.countdown=0;this.message('正在取消连拍或倒计时')}
+        return
+      }
       if(!this.connected)return this.message('未检测到 X7 Pro 相机接口')
+      if(this.mode==='photo'&&!this.caps.photo)return this.message('设备未开放拍照接口')
       this.busy=true
       try{
         if(this.mode==='photo'){
-          const result=await this.bridge.capturePhoto({filter:this.filter,zoom:this.zoom})
-          this.status='保存成功：'+this.fileName(result.path)
-          await this.refreshGallery();this.message('照片已保存')
+          this.shotsCompleted=0
+          const result=await this.captureSession.run({
+            delay:this.timerDelay,count:this.burstCount,
+            onTick:n=>{this.countdown=n},
+            capture:()=>this.bridge.capturePhoto({filter:this.filter,zoom:this.zoom}),
+            onShot:(result,now,total)=>{
+              this.shotsCompleted=now
+              this.status='已拍摄 '+now+'/'+total+' · '+this.fileName(result.path)
+            }
+          })
+          if(result.completed>0){await this.refreshGallery();this.message('已保存 '+result.completed+' 张照片')}
+          else if(!result.cancelled)this.message('未拍摄照片')
         }else if(this.recording){
           const result=await this.bridge.stopRecording()
-          clearInterval(this.recorderTimer);this.recorderTimer=null;this.recording=false
+          if(this.recorderTimer)clearInterval(this.recorderTimer)
+          this.recorderTimer=null;this.recording=false
           this.status='保存成功：'+this.fileName(result.path)
           await this.refreshGallery();this.message('录像已保存')
         }else{
+          if(!this.caps.video)return this.message('设备未开放录像接口')
           await this.bridge.startRecording({filter:this.filter,zoom:this.zoom})
           this.recording=true;this.seconds=0
           this.recorderTimer=setInterval(()=>{this.seconds++},1000)
           this.message('正在录像')
         }
       }catch(e){this.message(e.message)}
-      finally{this.busy=false}
+      finally{this.busy=false;this.countdown=0}
     },
     async zoomBy(n){
       if(!this.caps||!this.caps.zoom)return this.message('设备未开放变焦接口')
@@ -80,7 +144,7 @@ export default {
       catch(e){this.message(e.message)}
     },
     async chooseFilter(id){
-      if(this.recording)return this.message('录像中不可切换滤镜')
+      if(this.recording||this.busy)return this.message('拍摄中不可切换滤镜')
       if(!this.connected)return this.message('相机尚未连接')
       try{this.filter=await this.bridge.setFilter(id)}
       catch(e){this.message(e.message)}
@@ -95,14 +159,20 @@ export default {
     },
     async gallery(){this.panel='gallery';await this.refreshGallery()},
     sharePanel(){this.panel='share'},
+    settingsPanel(){this.panel='settings'},
     toggle(path){
       const i=this.selected.indexOf(path)
       if(i>=0)this.selected.splice(i,1)
       else this.selected.push(path)
     },
+    selectAllVisible(){
+      for(const f of this.visibleMedia)if(this.selected.indexOf(f.path)<0)this.selected.push(f.path)
+    },
+    clearSelection(){this.selected=[]},
+    setTypeFilter(type){this.mediaTypeFilter=type},
     async share(){
       if(!this.caps||!this.caps.share)return this.message('缺少局域网分享原生服务')
-      const files=this.selected.length?this.selected.slice():this.media.map(x=>x.path)
+      const files=this.chosenFiles.slice()
       if(!files.length)return this.message('请先拍摄并选择文件')
       try{
         const result=await this.bridge.startShare(files)
@@ -118,14 +188,23 @@ export default {
     fileName(path){return String(path||'').split('/').pop()},
     size(bytes){return formatBytes(bytes)},
     async cleanup(){
+      this.sessionId++
+      this.captureSession.cancel()
+      this.countdown=0
       if(this.recorderTimer)clearInterval(this.recorderTimer)
       if(this.frameTimer)clearInterval(this.frameTimer)
       if(this.toastTimer)clearTimeout(this.toastTimer)
-      this.recorderTimer=null;this.frameTimer=null;this.toastTimer=null
+      if(this.orientationTimer)clearInterval(this.orientationTimer)
+      this.recorderTimer=null;this.frameTimer=null;this.toastTimer=null;this.orientationTimer=null
       if(this.bridge){try{await this.bridge.close()}catch(e){console.log(e)}}
-      this.recording=false;this.connected=false;this.shareUrl='';this.qr=''
+      this.recording=false;this.connected=false;this.shareUrl='';this.qr='';this.preview=''
     },
-    onShow(){this.connect()},
+    async onShow(){
+      await this.restoreSettings()
+      this.updateOrientation()
+      this.orientationTimer=setInterval(()=>{if(this.layoutMode==='auto')this.updateOrientation()},1500)
+      await this.connect()
+    },
     onHide(){this.cleanup()},
     onUnload(){this.cleanup()},
     exit(){this.cleanup();if(this.$page)this.$page.finish()}
