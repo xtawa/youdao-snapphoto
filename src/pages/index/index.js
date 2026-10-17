@@ -202,8 +202,8 @@ export default {
     async onShow(){
       await this.restoreSettings()
       this.updateOrientation()
-      this.orientationTimer=setInterval(()=>{if(this.layoutMode==='auto')this.updateOrientation()},1500)
       await this.connect()
+      this.orientationTimer=setInterval(()=>{if(this.layoutMode==='auto')this.updateOrientation()},1500)
     },
     onHide(){this.cleanup()},
     onUnload(){this.cleanup()},
