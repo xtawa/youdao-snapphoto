@@ -20,6 +20,12 @@ jobs:
         run: npm install --no-audit --no-fund
       - name: Run unit tests
         run: npm test
+      - name: Verify native HDR algorithm (CPU reference) and RKNN safety fallback
+        run: |
+          g++ -std=c++17 -O2 -Wall -Wextra -Werror native/hdr/hdr_fusion.cpp native/hdr/hdr_fusion_test.cpp -o /tmp/snap-hdr-test
+          /tmp/snap-hdr-test
+          g++ -std=c++17 -O2 -Wall -Wextra -Werror native/rknn/rknn_enhancer.cpp native/rknn/rknn_backend_test.cpp -o /tmp/snap-rknn-stub-test
+          /tmp/snap-rknn-stub-test
       - name: Compile AMR
         run: |
           set -o pipefail

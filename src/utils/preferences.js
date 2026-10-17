@@ -1,12 +1,14 @@
 const KEY='snapphoto.preferences.v1'
-export const DEFAULTS=Object.freeze({timerDelay:0,burstCount:1,showGrid:false,layoutMode:'auto'})
+export const DEFAULTS=Object.freeze({timerDelay:0,burstCount:1,showGrid:false,layoutMode:'auto',hdrMode:'off',denoiseMode:'off'})
 export function normalizePreferences(value){
   const p=value && typeof value==='object'?value:{}
   return {
     timerDelay:[0,3,5,10].indexOf(Number(p.timerDelay))>=0?Number(p.timerDelay):0,
     burstCount:[1,3,5].indexOf(Number(p.burstCount))>=0?Number(p.burstCount):1,
     showGrid:p.showGrid===true,
-    layoutMode:['auto','portrait','landscape'].indexOf(p.layoutMode)>=0?p.layoutMode:'auto'
+    layoutMode:['auto','portrait','landscape'].indexOf(p.layoutMode)>=0?p.layoutMode:'auto',
+    hdrMode:['off','auto','on'].indexOf(p.hdrMode)>=0?p.hdrMode:'off',
+    denoiseMode:['off','auto','quality'].indexOf(p.denoiseMode)>=0?p.denoiseMode:'off'
   }
 }
 function storage(scope){

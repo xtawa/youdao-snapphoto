@@ -25,7 +25,7 @@
           <div class="view">
             <image v-if="preview" class="preview" :src="preview" resize="contain"/>
             <div v-else class="placeholder"><text class="large-icon">◉</text><text class="placeholder-heading">{{connected?'等待相机取景':'摄像头未连接'}}</text><text class="placeholder-caption">{{connected?'等待真实取景帧':'需要 X7 Pro 原生摄像头适配'}}</text></div>
-            <text class="view-badge">{{mode==='photo'?'PHOTO':'VIDEO'}} · {{zoom.toFixed(1)}}×</text>
+            <text class="view-badge">{{mode==='photo'?'PHOTO':'VIDEO'}} · {{zoom.toFixed(1)}}× · HDR {{hdrLabel}}</text>
             <div v-if="showGrid" class="grid-layer">
               <div class="grid-line-h grid-h1"></div><div class="grid-line-h grid-h2"></div>
               <div class="grid-line-v grid-v1"></div><div class="grid-line-v grid-v2"></div>
@@ -62,6 +62,9 @@
           <scroller class="settings-scroll" scroll-direction="vertical" :show-scrollbar="true">
             <div class="setting-row" :class="orientation==='portrait'?'setting-row-portrait':''"><text class="setting-label">倒计时</text><div class="setting-options" :class="orientation==='portrait'?'setting-options-portrait':''"><text v-for="t in timerChoices" :key="t" class="chip" :class="[timerDelay===t?'chip-active':'', orientation==='portrait'?'chip-portrait':'']" @click="setTimer(t)">{{t===0?'关闭':t+' 秒'}}</text></div></div>
             <div class="setting-row" :class="orientation==='portrait'?'setting-row-portrait':''"><text class="setting-label">连续拍摄</text><div class="setting-options" :class="orientation==='portrait'?'setting-options-portrait':''"><text v-for="n in burstChoices" :key="n" class="chip" :class="[burstCount===n?'chip-active':'', orientation==='portrait'?'chip-portrait':'']" @click="setBurst(n)">{{n}} 张</text></div></div>
+            <div class="setting-row" :class="orientation==='portrait'?'setting-row-portrait':''"><text class="setting-label">HDR 拍照</text><div class="setting-options" :class="orientation==='portrait'?'setting-options-portrait':''"><text v-for="h in hdrModes" :key="h" class="chip" :class="[hdrMode===h?'chip-active':'', orientation==='portrait'?'chip-portrait':'']" @click="setHDR(h)">{{h==='off'?'关闭':(h==='auto'?'自动':'开启')}}</text></div></div>
+            <div class="setting-row" :class="orientation==='portrait'?'setting-row-portrait':''"><text class="setting-label">降噪增强</text><div class="setting-options" :class="orientation==='portrait'?'setting-options-portrait':''"><text v-for="n in denoiseModes" :key="n" class="chip" :class="[denoiseMode===n?'chip-active':'', orientation==='portrait'?'chip-portrait':'']" @click="setDenoise(n)">{{n==='off'?'关闭':(n==='auto'?'自动':'画质')}}</text></div></div>
+            <text class="setting-hint">HDR：{{hdrAvailable?'有原生能力上报':'相机尚未提供真实多曝光/ISP接口'}} · NPU：{{npuReady?'已就绪（是否使用以照片回执为准）':'未就绪 / 未检测到模型'}}；不做伪 HDR。</text>
             <div class="setting-row" :class="orientation==='portrait'?'setting-row-portrait':''"><text class="setting-label">九宫格辅助线</text><text class="chip" :class="[showGrid?'chip-active':'', orientation==='portrait'?'chip-portrait':'']" @click="toggleGrid">{{showGrid?'开启':'关闭'}}</text></div>
             <div class="setting-row" :class="orientation==='portrait'?'setting-row-portrait':''"><text class="setting-label">界面布局</text><text class="chip" :class="orientation==='portrait'?'chip-portrait':''" @click="cycleLayout">{{layoutLabel}} · 点击切换</text></div>
             <text class="setting-hint">竖屏选项只改变界面排布，是否能旋转设备显示方向由 X7 Pro 固件决定。</text>
@@ -72,7 +75,7 @@
       <div v-if="panel==='camera'" class="controls" :class="orientation==='portrait'?'controls-portrait':''">
         <div class="shutter-wrap" :class="orientation==='portrait'?'shutter-wrap-portrait':''"><div class="shutter" :class="[recording?'shutter-on':'', orientation==='portrait'?'shutter-portrait':'']" @click="shutter"><div class="shutter-inner" :class="mode==='video'?'video-shutter':''"></div></div></div>
         <text class="shutter-caption" :class="orientation==='portrait'?'shutter-caption-portrait':''">{{busy&&mode==='photo'?'点击取消':(recording?'结束录像':(mode==='photo'?'拍照':'开始录像'))}}</text>
-        <div class="quick-settings" :class="orientation==='portrait'?'quick-settings-portrait':''" v-if="mode==='photo'"><text class="quick-key" @click="setTimer(timerChoices[(timerChoices.indexOf(timerDelay)+1)%timerChoices.length])">⏱ {{timerDelay===0?'关闭':timerDelay+'s'}}</text><text class="quick-key" @click="setBurst(burstChoices[(burstChoices.indexOf(burstCount)+1)%burstChoices.length])">▣ {{burstCount}} 张</text><text class="quick-key" @click="toggleGrid"># {{showGrid?'开':'关'}}</text></div>
+        <div class="quick-settings" :class="orientation==='portrait'?'quick-settings-portrait':''" v-if="mode==='photo'"><text class="quick-key" @click="cycleHDR">HDR {{hdrLabel}}</text><text class="quick-key" @click="cycleDenoise">增强 {{denoiseLabel}}</text><text class="quick-key" @click="setTimer(timerChoices[(timerChoices.indexOf(timerDelay)+1)%timerChoices.length])">⏱ {{timerDelay===0?'关闭':timerDelay+'s'}}</text><text class="quick-key" @click="setBurst(burstChoices[(burstChoices.indexOf(burstCount)+1)%burstChoices.length])">▣ {{burstCount}} 张</text><text class="quick-key" @click="toggleGrid"># {{showGrid?'开':'关'}}</text></div>
         <div class="zoom" :class="orientation==='portrait'?'zoom-portrait':''"><text class="zoom-key" @click="zoomBy(-0.5)">−</text><text class="zoom-indicator">{{zoom.toFixed(1)}}×</text><text class="zoom-key" @click="zoomBy(0.5)">+</text></div>
       </div>
     </div>
