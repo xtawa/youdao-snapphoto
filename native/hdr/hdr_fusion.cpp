@@ -64,15 +64,16 @@ Image fuse_hdr(const std::vector<ExposureFrame>& frames, int width, int height) 
   Image out{width,height,std::vector<std::uint8_t>(pixels*3)};
   const auto& linear=linear_lut();
   const auto& gamma=srgb_lut();
+  float inverse_exposure[5]={};
+  for(std::size_t k=0;k<frames.size();++k)inverse_exposure[k]=std::exp2(-frames[k].ev);
   for(std::size_t pos=0;pos<pixels;++pos){
     float radiant[5][3]={}, observed[5][3]={}, weights[5]={};
     float reference_rgb[3]={};
     const std::size_t base=pos*3;
     for(std::size_t k=0;k<frames.size();++k){
-      const float exposure=std::exp2(frames[k].ev);
       for(int ch=0;ch<3;++ch){
         observed[k][ch]=linear[frames[k].rgb[base+ch]];
-        radiant[k][ch]=observed[k][ch] / exposure;
+        radiant[k][ch]=observed[k][ch]*inverse_exposure[k];
       }
       weights[k]=certainty(luminance(observed[k]));
     }
