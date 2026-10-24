@@ -1,0 +1,36 @@
+name: Convert RK3562 built-in denoiser
+on:
+  push:
+    branches: [feat/snapphoto-builtin-denoiser]
+    paths: [tools/convert-ffdnet.py, .github/workflows/convert-denoiser.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  convert:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.8'
+      - name: Install matching RKNN conversion toolchain
+        run: |
+          python -m pip install --no-cache-dir 'pip<25' 'setuptools<71' wheel
+          python -m pip install --no-cache-dir torch==1.10.1+cpu torchvision==0.11.2+cpu --extra-index-url https://download.pytorch.org/whl/cpu
+          curl --fail --location --retry 3 'https://raw.githubusercontent.com/airockchip/rknn-toolkit2/v1.5.2/packages/rknn_toolkit2-1.5.2%2Bb642f30c-cp38-cp38-linux_x86_64.whl' -o /tmp/rknn_toolkit2-1.5.2+b642f30c-cp38-cp38-linux_x86_64.whl
+          test "$(git hash-object /tmp/rknn_toolkit2-1.5.2+b642f30c-cp38-cp38-linux_x86_64.whl)" = 7f75f10a5cc7ccca849727ee07fda000f0f7f1e4
+          python -m pip install --no-cache-dir /tmp/rknn_toolkit2-1.5.2+b642f30c-cp38-cp38-linux_x86_64.whl
+      - name: Export and convert licensed FFDNet weights
+        run: python tools/convert-ffdnet.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ffdnet-rk3562-models
+          path: |
+            build/ffdnet-rk3562/*.rknn
+            build/ffdnet-rk3562/conversion.json
+            build/ffdnet-rk3562/LICENSE-KAIR.txt
+            build/ffdnet-rk3562/fixture-*.rgb
+          if-no-files-found: error
+          retention-days: 30
