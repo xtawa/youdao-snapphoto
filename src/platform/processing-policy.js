@@ -42,6 +42,7 @@ export function chooseCaptureProcessing(prefs,caps) {
 }
 export function processingLabel(result) {
   if(!result||typeof result!=='object')return '处理方式未报告'
+  if(result.enhancementQueued===true)return '原片已保存 · 后台降噪排队'
   let label='普通拍照'
   if(result.hdrApplied===true)label='HDR '+(result.hdrBackend==='isp'?'ISP':'多帧')
   if(result.npuUsed===true)label+=' · NPU 增强'

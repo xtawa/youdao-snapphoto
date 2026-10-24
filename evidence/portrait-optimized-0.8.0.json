@@ -1,0 +1,48 @@
+{
+  "frame": {
+    "image": "/tmp/snapphoto/preview-6892977-164.jpg",
+    "sequence": 164,
+    "nightActive": true,
+    "sceneLuma": 10.424189625112739,
+    "nightStrength": 0.38,
+    "captureFps": 25.55901175225901,
+    "previewFps": 25.099867828565735,
+    "frameAgeMs": 37.07462899945676,
+    "rawSequence": 167,
+    "convertMs": 6.778041999787092,
+    "encodeMs": 0.2581249997019768,
+    "recording": true,
+    "recordError": false,
+    "recordLimit": false,
+    "recordDropped": 0,
+    "recordEncodeMs": 28.909419000148773,
+    "recordSampleMs": 29.94600300025195
+  },
+  "video": {
+    "path": "/userdisk/Pictures/SNAP_20261021_225534_628_1.avi",
+    "written": true,
+    "indexed": false,
+    "size": 5797410,
+    "audio": true,
+    "audioSamples": 80240,
+    "audioDurationMs": 5015,
+    "durationMs": 5008.2146699996665,
+    "width": 720,
+    "height": 1280,
+    "droppedFrames": 0,
+    "videoFrames": 126,
+    "audioXruns": 0,
+    "audioLastError": 0,
+    "audioZeroReads": 0
+  },
+  "fps": 25.158665972281174,
+  "thumbnailStart": {
+    "pending": true
+  },
+  "thumbnail": {
+    "path": "/tmp/snapphoto/thumb-v3-97f2005d29c78c66.jpg"
+  },
+  "thumbnailSeconds": 0.42200000000002547,
+  "thumbnailJpegCount": 1,
+  "thumbnailBytes": 2856
+}

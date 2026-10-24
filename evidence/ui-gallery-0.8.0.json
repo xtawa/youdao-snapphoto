@@ -1,0 +1,23 @@
+{
+  "version": "0.8.0",
+  "stockPhotoIndexed": true,
+  "publication": {
+    "path": "/userdisk/Pictures/SNAP_20261021_230143_926_1.JPG",
+    "indexed": true
+  },
+  "videoPlaybackFramesAdvance": true,
+  "playbackAudioRunning": true,
+  "deleteCancelPreserved": true,
+  "ownedUiPhotoDeleted": true,
+  "galleryScrolled": true,
+  "playbackFrameSamples": [
+    "/tmp/snapphoto/play-2-00000000.jpg",
+    "/tmp/snapphoto/play-2-00000001.jpg",
+    "/tmp/snapphoto/play-2-00000002.jpg"
+  ],
+  "manualOrientationAndLightTransition": {
+    "tested": false,
+    "reason": "Skipped at user request"
+  },
+  "bootIdUnchanged": "5f5c2601-c6ce-4123-bfd8-c9c56e3e7e3e"
+}

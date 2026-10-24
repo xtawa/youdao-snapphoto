@@ -1,0 +1,6 @@
+{
+  "total": 52,
+  "passed": 52,
+  "failed": 0,
+  "command": "node --test --test-reporter=tap tests/*.test.mjs"
+}

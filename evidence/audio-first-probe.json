@@ -1,0 +1,123 @@
+{
+  "start": {
+    "audio": true,
+    "audioRate": 16000
+  },
+  "frame": {
+    "image": "/tmp/snapphoto/preview-1147982-22.jpg",
+    "sequence": 22,
+    "captureFps": 3.7817824474479886,
+    "previewFps": 3.6172487029218883,
+    "frameAgeMs": 187.38943500001915,
+    "rawSequence": 23,
+    "convertMs": 181.36622600001283,
+    "encodeMs": 5.547793000005186
+  },
+  "stop": {
+    "error": "Recording incomplete; file kept",
+    "path": "/userdisk/Pictures/SNAP_20261017_191405_090_1.avi",
+    "audio": true,
+    "audioSamples": 36056,
+    "durationMs": 2253.5,
+    "videoFrames": 12,
+    "audioXruns": 4
+  },
+  "ffprobe": {
+    "streams": [
+      {
+        "index": 0,
+        "codec_name": "mjpeg",
+        "codec_long_name": "Motion JPEG",
+        "profile": "Baseline",
+        "codec_type": "video",
+        "codec_tag_string": "MJPG",
+        "codec_tag": "0x47504a4d",
+        "width": 640,
+        "height": 192,
+        "coded_width": 640,
+        "coded_height": 192,
+        "closed_captions": 0,
+        "has_b_frames": 0,
+        "sample_aspect_ratio": "1:1",
+        "display_aspect_ratio": "10:3",
+        "pix_fmt": "yuvj420p",
+        "level": -99,
+        "color_range": "pc",
+        "color_space": "bt470bg",
+        "chroma_location": "center",
+        "refs": 1,
+        "r_frame_rate": "24000/4507",
+        "avg_frame_rate": "24000/4507",
+        "time_base": "4507/24000",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "duration_ts": 12,
+        "duration": "2.253500",
+        "bit_rate": "375747",
+        "bits_per_raw_sample": "8",
+        "nb_frames": "12",
+        "disposition": {
+          "default": 0,
+          "dub": 0,
+          "original": 0,
+          "comment": 0,
+          "lyrics": 0,
+          "karaoke": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "visual_impaired": 0,
+          "clean_effects": 0,
+          "attached_pic": 0,
+          "timed_thumbnails": 0
+        }
+      },
+      {
+        "index": 1,
+        "codec_name": "pcm_s16le",
+        "codec_long_name": "PCM signed 16-bit little-endian",
+        "codec_type": "audio",
+        "codec_tag_string": "[1][0][0][0]",
+        "codec_tag": "0x0001",
+        "sample_fmt": "s16",
+        "sample_rate": "16000",
+        "channels": 1,
+        "bits_per_sample": 16,
+        "r_frame_rate": "0/0",
+        "avg_frame_rate": "0/0",
+        "time_base": "1/16000",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "bit_rate": "256000",
+        "nb_frames": "36056",
+        "disposition": {
+          "default": 0,
+          "dub": 0,
+          "original": 0,
+          "comment": 0,
+          "lyrics": 0,
+          "karaoke": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "visual_impaired": 0,
+          "clean_effects": 0,
+          "attached_pic": 0,
+          "timed_thumbnails": 0
+        }
+      }
+    ],
+    "format": {
+      "filename": "/userdisk/Pictures/SNAP_20261017_191405_090_1.avi",
+      "nb_streams": 2,
+      "nb_programs": 0,
+      "format_name": "avi",
+      "format_long_name": "AVI (Audio Video Interleaved)",
+      "start_time": "0.000000",
+      "duration": "2.253500",
+      "size": "171200",
+      "bit_rate": "607765",
+      "probe_score": 100
+    }
+  },
+  "decode": "",
+  "micReleased": "closed"
+}

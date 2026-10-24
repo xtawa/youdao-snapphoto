@@ -1,0 +1,205 @@
+{
+  "version": "0.5.0",
+  "profiles": {
+    "wide": {
+      "size": [
+        3264,
+        979
+      ],
+      "bytes": 145297,
+      "exifTime": "2026:10:17 18:40:26.251+08:00",
+      "processingMs": 2718.965356,
+      "saveMs": 1949.4756960000377,
+      "captureSeconds": 9.844
+    },
+    "cinema": {
+      "size": [
+        3264,
+        1362
+      ],
+      "bytes": 169232,
+      "exifTime": "2026:10:17 18:40:36.593+08:00",
+      "processingMs": 2460.8642469999613,
+      "saveMs": 1136.5650310000638,
+      "captureSeconds": 5.922
+    },
+    "two-one": {
+      "size": [
+        3264,
+        1632
+      ],
+      "bytes": 203328,
+      "exifTime": "2026:10:17 18:40:44.048+08:00",
+      "processingMs": 4002.661943999934,
+      "saveMs": 3566.735733000096,
+      "captureSeconds": 11.781
+    },
+    "sixteen-nine": {
+      "size": [
+        3264,
+        1836
+      ],
+      "bytes": 235500,
+      "exifTime": "2026:10:17 18:40:57.047+08:00",
+      "processingMs": 2802.1705729999812,
+      "saveMs": 1406.7332660000538,
+      "captureSeconds": 7.844
+    },
+    "four-three": {
+      "size": [
+        2448,
+        1836
+      ],
+      "bytes": 151830,
+      "exifTime": "2026:10:17 18:41:05.716+08:00",
+      "processingMs": 5444.399005000014,
+      "saveMs": 2047.4841640000232,
+      "captureSeconds": 13.406
+    },
+    "square": {
+      "size": [
+        1836,
+        1836
+      ],
+      "bytes": 97126,
+      "exifTime": "2026:10:17 18:41:20.459+08:00",
+      "processingMs": 2672.15372599999,
+      "saveMs": 1199.0222460000077,
+      "captureSeconds": 7.875
+    }
+  },
+  "filters": {
+    "none": {
+      "size": [
+        3264,
+        979
+      ],
+      "bytes": 127773,
+      "exifTime": "2026:10:17 18:41:29.825+08:00",
+      "processingMs": 2102.2352529999334,
+      "saveMs": 2547.983922000043
+    },
+    "mono": {
+      "size": [
+        3264,
+        979
+      ],
+      "bytes": 120022,
+      "exifTime": "2026:10:17 18:41:37.024+08:00",
+      "processingMs": 1048.1859379999805,
+      "saveMs": 823.359625000041
+    },
+    "sepia": {
+      "size": [
+        3264,
+        979
+      ],
+      "bytes": 116959,
+      "exifTime": "2026:10:17 18:41:42.286+08:00",
+      "processingMs": 3291.3262480000267,
+      "saveMs": 1473.3175640000263
+    },
+    "warm": {
+      "size": [
+        3264,
+        979
+      ],
+      "bytes": 173267,
+      "exifTime": "2026:10:17 18:41:49.616+08:00",
+      "processingMs": 4637.756549000042,
+      "saveMs": 2916.3595429999987
+    },
+    "cool": {
+      "size": [
+        3264,
+        979
+      ],
+      "bytes": 110086,
+      "exifTime": "2026:10:17 18:42:01.513+08:00",
+      "processingMs": 5053.516631999984,
+      "saveMs": 2812.229575000005
+    },
+    "vintage": {
+      "size": [
+        3264,
+        979
+      ],
+      "bytes": 110718,
+      "exifTime": "2026:10:17 18:42:12.030+08:00",
+      "processingMs": 5144.145642000018,
+      "saveMs": 3996.135900999885
+    },
+    "vivid": {
+      "size": [
+        3264,
+        979
+      ],
+      "bytes": 131720,
+      "exifTime": "2026:10:17 18:42:26.586+08:00",
+      "processingMs": 5399.037834000075,
+      "saveMs": 3043.484806000022
+    },
+    "negative": {
+      "size": [
+        3264,
+        979
+      ],
+      "bytes": 118175,
+      "exifTime": "2026:10:17 18:42:38.539+08:00",
+      "processingMs": 3807.20529899979,
+      "saveMs": 1851.6299780001864
+    }
+  },
+  "zoom2": {
+    "size": [
+      3264,
+      979
+    ],
+    "bytes": 96908,
+    "exifTime": "2026:10:17 18:42:46.715+08:00",
+    "processingMs": 2940.1519619999453,
+    "saveMs": 1491.076274999883
+  },
+  "portrait": {
+    "size": [
+      216,
+      720
+    ],
+    "bytes": 3948,
+    "exifTime": "2026:10:17 18:42:56.511+08:00",
+    "processingMs": 321.47911499999464,
+    "saveMs": 478.06329800002277
+  },
+  "portraitUnaffected": {
+    "size": [
+      216,
+      720
+    ],
+    "bytes": 4009,
+    "exifTime": "2026:10:17 18:43:01.327+08:00",
+    "processingMs": 297.0117789998185,
+    "saveMs": 280.43694500019774
+  },
+  "video": {
+    "programs": [],
+    "streams": [
+      {
+        "codec_name": "mjpeg",
+        "width": 640,
+        "height": 192
+      }
+    ]
+  },
+  "share": {
+    "tested": false,
+    "reason": "User requested skipping LAN testing"
+  },
+  "reopen": true,
+  "preview": {
+    "sequence": 4,
+    "captureFps": 11.865517998833806,
+    "previewFps": 7.910331644610345,
+    "convertMs": 4.79383400012739,
+    "encodeMs": 5.554501000093296
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "version": "0.2.1",
+  "tests_passed": 24,
+  "amr_crc_and_manifest": true,
+  "sensor": {
+    "driver": "gs_mir3da",
+    "xyz_device": "/dev/input/event6",
+    "orientation_device": "/dev/input/event7",
+    "orientation_sample": {
+      "ABS_RX": 2,
+      "ABS_RY": 2,
+      "ABS_RZ": 4
+    },
+    "xyz_sample_all_zero": true
+  },
+  "resume": {
+    "live_camera_reopened_after_stock_camera": true,
+    "old_frame_guard_test": true,
+    "cancel_hidden_show_test": true,
+    "new_native_image_key_test": true,
+    "scene_orientation_confirmation": "pending user - current scene has no directional features"
+  }
+}

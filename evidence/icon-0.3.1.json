@@ -1,0 +1,23 @@
+{
+  "version": "0.3.1",
+  "scope": "launcher icon",
+  "icon": {
+    "size": [
+      128,
+      128
+    ],
+    "mode": "RGBA",
+    "transparent_corners": true,
+    "antialiasing": "4x supersampling",
+    "installed_hash_matches": true,
+    "launcher_screenshot_verified": true
+  },
+  "amr_crc_and_manifest_hashes": true,
+  "installed_bytecode_matches": true,
+  "package_sha256": "31dd7b5f136d28a03fb6c9d1556d954e1a62ed3ccefcf7c4a296c0489be4eb59",
+  "prior_functional_tests": {
+    "version": "0.3.0",
+    "passed": 33,
+    "rerun_for_icon_change": false
+  }
+}

@@ -1,0 +1,644 @@
+{
+  "version": "0.9.3",
+  "relaunch": {
+    "version": "0.9.3",
+    "sameFirmwareHost": true,
+    "cycles": [
+      {
+        "number": 1,
+        "launchHook": true,
+        "appShow": true,
+        "freshPreviewFrames": true,
+        "galleryOpened": true,
+        "moduleImportErrors": false
+      },
+      {
+        "number": 2,
+        "launchHook": true,
+        "appShow": true,
+        "freshPreviewFrames": true,
+        "galleryOpened": true,
+        "moduleImportErrors": false
+      },
+      {
+        "number": 3,
+        "launchHook": true,
+        "appShow": true,
+        "freshPreviewFrames": true,
+        "galleryOpened": true,
+        "moduleImportErrors": false
+      }
+    ]
+  },
+  "inheritedPerformanceEvidenceVersion": "0.9.2",
+  "pr2MergedCommit": "4a851a909a2967a383f6c635b085e2db6c21069b",
+  "sourceTests": {
+    "version": "0.9.3",
+    "passed": 100,
+    "failed": 0,
+    "total": 100
+  },
+  "installed": {
+    "bytecodeMatches": true,
+    "nativeAllocatedSectionsMatch": [
+      ".gnu.version",
+      ".gnu.version_r",
+      ".gnu.hash",
+      ".hash",
+      ".rela.dyn",
+      ".rela.plt",
+      ".rodata",
+      ".gcc_except_table",
+      ".eh_frame_hdr",
+      ".eh_frame",
+      ".text",
+      "__lcxx_override",
+      ".plt",
+      ".tbss",
+      ".data.rel.ro",
+      ".init_array",
+      ".got",
+      ".got.plt",
+      ".relro_padding",
+      ".data",
+      ".bss"
+    ],
+    "modelHashMatches": true,
+    "workerHashMatches": true
+  },
+  "model": {
+    "model": "FFDNet color",
+    "weightsUrl": "https://github.com/cszn/KAIR/releases/download/v1.0/ffdnet_color.pth",
+    "weightsSha256": "286f04f7e3a20254c067ba95efb5d3339f4fc8a09a365a93cd469184d4cdb279",
+    "license": "MIT / Kai Zhang",
+    "tile": 256,
+    "packedInput": [
+      1,
+      13,
+      128,
+      128
+    ],
+    "output": [
+      1,
+      12,
+      128,
+      128
+    ],
+    "toolkit": "1.5.0",
+    "target": "rk3562",
+    "variant": "int8",
+    "sha256": "38d0ee052c6aabd619aa969a6c27610a499846869beb58c996d20edb3f7fc622",
+    "bytes": 956463,
+    "deviceInferenceVerified": true,
+    "verifiedFirmware": "PenOS 4.34.0",
+    "runtime": "1.5.1b18",
+    "driver": "0.9.1",
+    "source": "https://github.com/cszn/KAIR",
+    "conversionRun": "https://github.com/xtawa/youdao-snapphoto/actions/runs/40080751852",
+    "halo": 24,
+    "core": 208
+  },
+  "backgroundAndFastCapture": {
+    "version": "0.9.2",
+    "photos": [
+      {
+        "path": "/userdisk/Pictures/SNAP_20261024_173723_018_1.JPG",
+        "written": true,
+        "indexed": false,
+        "size": 178746,
+        "zeroShutterLag": true,
+        "candidateFrames": 1,
+        "selectionMs": 0.002041999716311693,
+        "sharpnessScore": 5.91720404182707,
+        "processingMs": 130.52813799958676,
+        "saveMs": 92.0514680002816,
+        "capturedAt": "2026-10-24T17:37:23.018+08:00",
+        "capturedAtEpochMs": 1792834643018.9277,
+        "timeSource": "device-frame-received",
+        "roundTripMs": 250.0
+      },
+      {
+        "path": "/userdisk/Pictures/SNAP_20261024_173723_219_2.JPG",
+        "written": true,
+        "indexed": false,
+        "size": 187416,
+        "zeroShutterLag": true,
+        "candidateFrames": 1,
+        "selectionMs": 0.00699999975040555,
+        "sharpnessScore": 8.75739644970414,
+        "processingMs": 124.9433039999567,
+        "saveMs": 91.48038400011137,
+        "capturedAt": "2026-10-24T17:37:23.219+08:00",
+        "capturedAtEpochMs": 1792834643219.3828,
+        "timeSource": "device-frame-received",
+        "roundTripMs": 218.99999999732245
+      },
+      {
+        "path": "/userdisk/Pictures/SNAP_20261024_173723_451_3.JPG",
+        "written": true,
+        "indexed": false,
+        "size": 168968,
+        "zeroShutterLag": true,
+        "candidateFrames": 1,
+        "selectionMs": 0.000583999790251255,
+        "sharpnessScore": 14.602430336281463,
+        "processingMs": 135.47918000025675,
+        "saveMs": 89.2745089996606,
+        "capturedAt": "2026-10-24T17:37:23.451+08:00",
+        "capturedAtEpochMs": 1792834643451.878,
+        "timeSource": "device-frame-received",
+        "roundTripMs": 328.0000000013388
+      },
+      {
+        "path": "/userdisk/Pictures/SNAP_20261024_173723_881_4.JPG",
+        "written": true,
+        "indexed": false,
+        "size": 149599,
+        "zeroShutterLag": true,
+        "candidateFrames": 1,
+        "selectionMs": 0.002332999836653471,
+        "sharpnessScore": 12.383314215795076,
+        "processingMs": 204.27052000025287,
+        "saveMs": 105.62359400000423,
+        "capturedAt": "2026-10-24T17:37:23.881+08:00",
+        "capturedAtEpochMs": 1792834643881.0308,
+        "timeSource": "device-frame-received",
+        "roundTripMs": 375.0,
+        "backgroundWorker": true
+      },
+      {
+        "path": "/userdisk/Pictures/SNAP_20261024_173724_220_5.JPG",
+        "written": true,
+        "indexed": false,
+        "size": 174724,
+        "zeroShutterLag": true,
+        "candidateFrames": 1,
+        "selectionMs": 0.006415999960154295,
+        "sharpnessScore": 6.681420901848355,
+        "processingMs": 158.61330700013787,
+        "saveMs": 96.0589679996483,
+        "capturedAt": "2026-10-24T17:37:24.220+08:00",
+        "capturedAtEpochMs": 1792834644220.301,
+        "timeSource": "device-frame-received",
+        "roundTripMs": 328.0000000013388,
+        "backgroundWorker": true
+      }
+    ],
+    "enqueueMs": 31.000000002677552,
+    "workerAfterUIExit": "3740 /tmp/snapphoto-background-worker --queue-worker /tmp/snapphoto-ffdnet-int8.rknn",
+    "completedAfterUIExit": {
+      "sourcePath": "/userdisk/Pictures/SNAP_NPU_BACKGROUND_VALIDATION.jpg",
+      "mode": "quality",
+      "sourceSize": 4487433,
+      "sourceMtime": 1792833536,
+      "sourceInode": 2048132,
+      "capturedAtEpochMs": 1792833536000,
+      "keepAlive": true,
+      "attempts": 1,
+      "state": "done",
+      "result": {
+        "path": "/userdisk/Pictures/SNAP_AI_3740_20261024_171856_000_1.JPG",
+        "written": true,
+        "indexed": false,
+        "size": 2470149,
+        "denoiseApplied": true,
+        "npuUsed": true,
+        "sourcePath": "/userdisk/Pictures/SNAP_NPU_BACKGROUND_VALIDATION.jpg",
+        "npuBackend": "rknn-ffdnet-int8",
+        "runtime": "1.5.1b18 (3aa716819@2023-07-03T19:18:45)",
+        "driver": "0.9.1",
+        "tiles": 192,
+        "noiseSigma": 12,
+        "sceneLuma": 114.72747260668973,
+        "width": 3264,
+        "height": 2448,
+        "npuTimeMs": 6984.094,
+        "processingMs": 11936.779490999877
+      },
+      "progress": 100,
+      "id": "job-001792834643-809963065-3723-1.json"
+    },
+    "pauseOnExit": true,
+    "resumed": {
+      "sourcePath": "/userdisk/Pictures/SNAP_NPU_BACKGROUND_VALIDATION.jpg",
+      "mode": "auto",
+      "sourceSize": 4487433,
+      "sourceMtime": 1792833536,
+      "sourceInode": 2048132,
+      "capturedAtEpochMs": 1792833536000,
+      "keepAlive": false,
+      "attempts": 1,
+      "state": "done",
+      "result": {
+        "path": "/userdisk/Pictures/SNAP_AI_4082_20261024_171856_000_1.JPG",
+        "written": true,
+        "indexed": false,
+        "size": 2720841,
+        "denoiseApplied": true,
+        "npuUsed": true,
+        "sourcePath": "/userdisk/Pictures/SNAP_NPU_BACKGROUND_VALIDATION.jpg",
+        "npuBackend": "rknn-ffdnet-int8",
+        "runtime": "1.5.1b18 (3aa716819@2023-07-03T19:18:45)",
+        "driver": "0.9.1",
+        "tiles": 192,
+        "noiseSigma": 12,
+        "sceneLuma": 114.72747260668973,
+        "width": 3264,
+        "height": 2448,
+        "npuTimeMs": 20736.06,
+        "processingMs": 31582.26075699972
+      },
+      "progress": 100,
+      "id": "job-001792834655-939366826-3766-1.json"
+    }
+  },
+  "npuSyntheticQuality": {
+    "version": "0.9.1",
+    "fixture": "synthetic gradient, text, edges and sigma-12 noise",
+    "checks": {
+      "cancelOnClose": true,
+      "originalUnchanged": true,
+      "preferencesUnchanged": true
+    },
+    "capabilities": {
+      "camera": true,
+      "preview": true,
+      "photo": true,
+      "video": true,
+      "audio": true,
+      "videoProfiles": [
+        {
+          "id": "compact",
+          "width": 640,
+          "height": 192,
+          "portraitWidth": 216,
+          "portraitHeight": 720,
+          "targetFps": 30
+        },
+        {
+          "id": "hd",
+          "width": 1280,
+          "height": 720,
+          "portraitWidth": 720,
+          "portraitHeight": 1280,
+          "targetFps": 30
+        },
+        {
+          "id": "fhd",
+          "width": 1920,
+          "height": 1080,
+          "portraitWidth": 1080,
+          "portraitHeight": 1920,
+          "targetFps": 24
+        }
+      ],
+      "gallery": true,
+      "zoom": true,
+      "focus": false,
+      "continuousFocus": true,
+      "share": true,
+      "minZoom": 1,
+      "maxZoom": 3,
+      "filters": [
+        "none",
+        "mono",
+        "sepia",
+        "warm",
+        "cool",
+        "vintage",
+        "vivid",
+        "negative"
+      ],
+      "photoProfiles": [
+        {
+          "id": "wide",
+          "width": 3264,
+          "height": 979
+        },
+        {
+          "id": "cinema",
+          "width": 3264,
+          "height": 1362
+        },
+        {
+          "id": "two-one",
+          "width": 3264,
+          "height": 1632
+        },
+        {
+          "id": "sixteen-nine",
+          "width": 3264,
+          "height": 1836
+        },
+        {
+          "id": "four-three",
+          "width": 3264,
+          "height": 2448
+        },
+        {
+          "id": "square",
+          "width": 2448,
+          "height": 2448
+        }
+      ],
+      "hdr": false,
+      "npu": true,
+      "npuReady": true,
+      "enhancement": true,
+      "npuBackend": "rknn-ffdnet-int8"
+    },
+    "quality": {
+      "receipt": {
+        "path": "/userdisk/Pictures/SNAP_AI_20261024_171352_000_1.JPG",
+        "written": true,
+        "indexed": false,
+        "size": 65790,
+        "denoiseApplied": true,
+        "npuUsed": true,
+        "sourcePath": "/userdisk/Pictures/SNAP_NPU_VALIDATION_SYNTHETIC.jpg",
+        "npuBackend": "rknn-ffdnet-int8",
+        "runtime": "1.5.1b18 (3aa716819@2023-07-03T19:18:45)",
+        "driver": "0.9.1",
+        "tiles": 6,
+        "noiseSigma": 12,
+        "sceneLuma": 116.46279264214047,
+        "width": 624,
+        "height": 416,
+        "npuTimeMs": 214.88,
+        "processingMs": 387.3817890002392
+      },
+      "progressSamples": 5,
+      "noisyPsnr": 26.43215498007961,
+      "enhancedPsnr": 36.48290241271216,
+      "verticalSeamMAE": [
+        13.452777777777778,
+        2.998148148148148,
+        13.214814814814815,
+        3.0555555555555554
+      ]
+    }
+  },
+  "fullResolution": {
+    "sourceSize": [
+      3264,
+      2448
+    ],
+    "condition": "Display awake; original governor unchanged",
+    "previewFocus": {
+      "settled": false,
+      "position": 64,
+      "score": 6.643958948198703,
+      "luminance": 0.892578125,
+      "durationMs": 1426.739267999772,
+      "cached": false,
+      "method": "Observe stock AF motor, sharpness stability and motion; no lens writes",
+      "samples": [
+        {
+          "position": 64,
+          "score": 6.562590724040645
+        },
+        {
+          "position": 64,
+          "score": 6.139054390949523
+        },
+        {
+          "position": 64,
+          "score": 5.739006254684332
+        },
+        {
+          "position": 64,
+          "score": 6.396035061920004
+        },
+        {
+          "position": 64,
+          "score": 6.235031158000562
+        },
+        {
+          "position": 64,
+          "score": 6.408957678503358
+        },
+        {
+          "position": 64,
+          "score": 6.074333396300828
+        },
+        {
+          "position": 64,
+          "score": 6.481198595819656
+        },
+        {
+          "position": 64,
+          "score": 7.3061218319179675
+        },
+        {
+          "position": 64,
+          "score": 7.421380229363396
+        },
+        {
+          "position": 64,
+          "score": 7.201224135843104
+        },
+        {
+          "position": 64,
+          "score": 7.516696413997904
+        },
+        {
+          "position": 64,
+          "score": 6.879970228313927
+        },
+        {
+          "position": 64,
+          "score": 7.03605238326186
+        },
+        {
+          "position": 64,
+          "score": 7.042251092938477
+        },
+        {
+          "position": 64,
+          "score": 7.37944296625739
+        },
+        {
+          "position": 64,
+          "score": 7.6572745569936265
+        },
+        {
+          "position": 64,
+          "score": 8.054178840189056
+        },
+        {
+          "position": 64,
+          "score": 7.18203369383776
+        },
+        {
+          "position": 64,
+          "score": 6.9966440736246875
+        },
+        {
+          "position": 64,
+          "score": 6.805824508224325
+        },
+        {
+          "position": 64,
+          "score": 7.43883074632792
+        },
+        {
+          "position": 64,
+          "score": 6.87452425162493
+        },
+        {
+          "position": 64,
+          "score": 6.99676566719066
+        },
+        {
+          "position": 64,
+          "score": 6.87351473963956
+        },
+        {
+          "position": 64,
+          "score": 7.14365149986567
+        },
+        {
+          "position": 64,
+          "score": 7.341581870355614
+        },
+        {
+          "position": 64,
+          "score": 6.88805420526626
+        },
+        {
+          "position": 64,
+          "score": 6.868470513676774
+        },
+        {
+          "position": 64,
+          "score": 7.4314330535765
+        },
+        {
+          "position": 64,
+          "score": 7.737516480068223
+        },
+        {
+          "position": 64,
+          "score": 7.239794630081642
+        },
+        {
+          "position": 64,
+          "score": 7.529952281082495
+        },
+        {
+          "position": 64,
+          "score": 7.32716196603826
+        },
+        {
+          "position": 64,
+          "score": 7.50232569505965
+        },
+        {
+          "position": 64,
+          "score": 7.7747487829681985
+        },
+        {
+          "position": 64,
+          "score": 7.710283711114355
+        },
+        {
+          "position": 64,
+          "score": 7.549258595454798
+        },
+        {
+          "position": 64,
+          "score": 7.48185267095712
+        },
+        {
+          "position": 64,
+          "score": 6.818083172856128
+        },
+        {
+          "position": 64,
+          "score": 6.790701309041492
+        },
+        {
+          "position": 64,
+          "score": 7.326085589828168
+        },
+        {
+          "position": 64,
+          "score": 6.643958948198703
+        }
+      ]
+    },
+    "receipt": {
+      "path": "/userdisk/Pictures/SNAP_AI_20261024_171856_000_1.JPG",
+      "written": true,
+      "indexed": false,
+      "size": 2470149,
+      "denoiseApplied": true,
+      "npuUsed": true,
+      "sourcePath": "/userdisk/Pictures/SNAP_NPU_FULL_VALIDATION.jpg",
+      "npuBackend": "rknn-ffdnet-int8",
+      "runtime": "1.5.1b18 (3aa716819@2023-07-03T19:18:45)",
+      "driver": "0.9.1",
+      "tiles": 192,
+      "noiseSigma": 12,
+      "sceneLuma": 114.72747260668973,
+      "width": 3264,
+      "height": 2448,
+      "npuTimeMs": 14564.552,
+      "processingMs": 20225.566656999756
+    },
+    "peakRSSKiB": 114756,
+    "progressSamples": 45,
+    "fullJpegDecode": true,
+    "previewWhileEnhancing": 29.5989034920684,
+    "freshPhoto": {
+      "error": "Focus or scene is not stable; hold still and retry"
+    },
+    "video": {
+      "path": "/userdisk/Pictures/SNAP_20261024_172403_066_2.avi",
+      "written": true,
+      "indexed": false,
+      "size": 1379690,
+      "audio": true,
+      "audioSamples": 31352,
+      "audioDurationMs": 1959.5,
+      "durationMs": 2004.8783679995686,
+      "width": 1280,
+      "height": 720,
+      "droppedFrames": 0,
+      "videoFrames": 58,
+      "audioXruns": 0,
+      "audioLastError": 0,
+      "audioZeroReads": 0
+    }
+  },
+  "realApp": {
+    "npuReady": true,
+    "queueFinished": true,
+    "stockAlbumScanCompleted": true,
+    "lastNpuMs": 9412.929,
+    "lastJobMs": 13951.288984999992
+  },
+  "preferences": {
+    "existingValuesPreserved": true,
+    "enabled": {
+      "denoiseMode": "auto",
+      "processingKeepAlive": true
+    }
+  },
+  "silentPlayback": {
+    "silentPlaybackReturn": 0,
+    "playbackStatus": "state: RUNNING\r\r\nowner_pid   : 2039\r\r\ntrigger_time: 2979.829119333\r\r\ntstamp      : 0.000000000\r\r\ndelay       : 19056\r\r\navail       : 4944\r\r\navail_max   : 6040\r\r\n-----\r\r\nhw_ptr      : 28944\r\r\nappl_ptr    : 48000",
+    "secondPlaybackReturn": 0,
+    "secondPlaybackError": "alsa is anolog mic\r\r\naplay: main:830: audio open error: Device or resource busy",
+    "silentLog": "alsa is anolog mic",
+    "after": "closed"
+  },
+  "limits": [
+    "True multi-exposure HDR remains disabled; fusion reference alone is not camera HDR",
+    "Fast capture uses a recent source frame up to 200ms old; optics and hand motion still affect sharpness",
+    "Queue and helper continue after UI exit; OS suspend may pause work and no shutdown/kill immunity is claimed",
+    "No permanent service or audio playback; the default speaker is exclusive",
+    "Real hand-held focus quality and low-light appearance need user review; synthetic PSNR is not real-scene proof",
+    "No boot, ADB persistence, PMIC, governor, system audio routing or driver changes"
+  ]
+}

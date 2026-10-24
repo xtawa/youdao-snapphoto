@@ -1,0 +1,8 @@
+{
+  "silentPlaybackReturn": 0,
+  "playbackStatus": "state: RUNNING\r\r\nowner_pid   : 2039\r\r\ntrigger_time: 2979.829119333\r\r\ntstamp      : 0.000000000\r\r\ndelay       : 19056\r\r\navail       : 4944\r\r\navail_max   : 6040\r\r\n-----\r\r\nhw_ptr      : 28944\r\r\nappl_ptr    : 48000",
+  "secondPlaybackReturn": 0,
+  "secondPlaybackError": "alsa is anolog mic\r\r\naplay: main:830: audio open error: Device or resource busy",
+  "silentLog": "alsa is anolog mic",
+  "after": "closed"
+}

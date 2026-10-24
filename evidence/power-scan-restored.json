@@ -1,0 +1,10 @@
+{
+  "pressure_diagnostic_mode": "0",
+  "head_wakeup": "enabled",
+  "power_key_pmic_wakeup": "enabled",
+  "experimental_helper_present": "no",
+  "shutdown_hook_installed": false,
+  "boot_image_modified": false,
+  "user_cancelled_power_scan_research": true,
+  "snapphoto_preserved": "0.3.2 (confirmed scan guard and rounded icon)"
+}

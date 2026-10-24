@@ -1,0 +1,32 @@
+{
+  "version": "0.3.0",
+  "tests_passed": 33,
+  "amr_crc_and_manifest": true,
+  "installed_bytecode_matches": true,
+  "package_sha256": "3b16ba5b475baf4262c8396229efdb5b3a646f1a965156a7a5570e9fe289524f",
+  "device": "Youdao X7 Pro / PenOS 4.34.0",
+  "selfie": {
+    "manual_fullscreen_buttons_hidden": true,
+    "single_tap_does_not_capture": true,
+    "double_tap_different_positions_captures": true,
+    "former_shutter_location_accepted": true,
+    "rapid_four_taps_one_photo": true,
+    "down_swipe_restores_ui": true,
+    "sensor_real_direction_changes_observed": true,
+    "automatic_enter_user_confirmed": true,
+    "automatic_exit_initial_user_report": "failed - exact two-axis baseline was too strict",
+    "automatic_exit_fix": "stable no-longer-opposite posture; read current kernel state ahead of cached event",
+    "automatic_exit_physical_retest": "pending",
+    "pure_vertical_axis_yaw_detection": "not reliable; manual entry available"
+  },
+  "regression_tests": [
+    "background preview guards",
+    "stock sensor subscription and wakeup lifecycle",
+    "JSON sensor events and invalid-event handling",
+    "fresh sensor state ahead of cached events",
+    "double tap cooldown and gesture rejection",
+    "stable flip entry and inexact return posture",
+    "page restores video mode after automatic exit and retains manual selfie mode"
+  ],
+  "prior_native_smoke": "evidence/native-smoke.json (previous version, not rerun for this JS gesture change)"
+}

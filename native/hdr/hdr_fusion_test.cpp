@@ -1,4 +1,7 @@
 #include "hdr_fusion.hpp"
+#ifdef NDEBUG
+#undef NDEBUG
+#endif
 #include <cassert>
 #include <vector>
 #include <stdexcept>

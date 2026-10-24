@@ -1,0 +1,18 @@
+[
+  {
+    "effect": "mono",
+    "fullDecodePassed": true,
+    "audioSamples": 31440,
+    "width": 1280,
+    "height": 720,
+    "actualFps": 29.36920190975955
+  },
+  {
+    "effect": "warm",
+    "fullDecodePassed": true,
+    "audioSamples": 32352,
+    "width": 1280,
+    "height": 720,
+    "actualFps": 15.465049683643755
+  }
+]

@@ -1,0 +1,24 @@
+{
+  "version": "0.3.2",
+  "tests_passed": 35,
+  "scope": "foreground head-scan routing",
+  "package_sha256": "8bc9916faf755ee7eb6e6900897143e70b4bf0aafdd206e01c34ea89c25e9423",
+  "package_crc_and_manifest": true,
+  "installed_bytecode_matches": true,
+  "stock_camera_reference": {
+    "module": "aicamera/index.js.bin",
+    "function_file_offset": "0x28c5f",
+    "registration": "addUseOcrAppId(JSON.stringify({appid}))"
+  },
+  "implementation": {
+    "registered_appid": "8001953602710246",
+    "foreground_register": true,
+    "background_unregister_only_self": true,
+    "global_scanner_disabled": false
+  },
+  "real_device": {
+    "native_registration_log_observed": true,
+    "user_confirmed_two_scans_remain_in_app": true,
+    "user_confirmed_system_translation_restored_after_exit": true
+  }
+}

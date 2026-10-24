@@ -1,0 +1,52 @@
+{
+  "version": "0.8.1",
+  "clientDate": "2026-10-23",
+  "installed": false,
+  "deviceBehaviorTested": false,
+  "sourceTests": {
+    "passed": 79,
+    "failed": 0
+  },
+  "nativeBuild": true,
+  "frontendBuild": true,
+  "nativeAlgorithms": {
+    "passed": true,
+    "syntheticQualityToSpeedVariance": {
+      "luma": 0.3784,
+      "chroma": 0.0737
+    },
+    "checks": [
+      "rotation pixels",
+      "night hysteresis",
+      "monotonic bounded tone curve",
+      "odd/small plane guards",
+      "synthetic noise",
+      "high contrast edge",
+      "complete playback snapshots",
+      "partial playback frames",
+      "decoder source deletion",
+      "unique presentation paths",
+      "32-frame retention"
+    ]
+  },
+  "skipped": [
+    "physical orientation and app switching",
+    "real large-gallery scrolling and load timing",
+    "real dark-scene image quality and frame rate",
+    "real screen/video playback flicker"
+  ],
+  "systemChanges": false,
+  "notes": [
+    "Native-module warnings in frontend build are expected: modules are supplied by the packaged native adapter and device firmware.",
+    "Device QuickJS may be used to compile the package only; no installation or hardware behavior test."
+  ],
+  "package": {
+    "manifestAndZipChecksPassed": true,
+    "nativeAndBytecodeMatchBuild": true,
+    "bytecodeCompiler": "Existing device QuickJS, compile only; no app installation",
+    "amrSha256": "fde95a7efab42918b4b86fcc7536758f232db8c18b3ade41d153e48f08b263bb",
+    "nativeSha256": "aadaee9c3467847c7e95ae58df71316134869e802841a94ec6e95aa32f24aabe",
+    "bundleSha256": "25c002f009df04ba78463fa9a8739c5ebfb3b01fb54ce692ceb96b80bf3c2a65"
+  },
+  "installedVersionObserved": "0.8.0"
+}

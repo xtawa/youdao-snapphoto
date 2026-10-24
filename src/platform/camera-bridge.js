@@ -1,4 +1,4 @@
-import {GALLERY_DIRECTORY,galleryResult,validateGalleryPublication} from './gallery-policy.js'
+import {GALLERY_DIRECTORY,galleryResult,validateGalleryPublication,safeAbsolutePath,withinDirectory} from './gallery-policy.js'
 import {chooseCaptureProcessing,normalizeProcessingCapabilities} from './processing-policy.js'
 /**
  * SnapPhoto native adapter contract.
@@ -28,12 +28,25 @@ export function resolveNative(root) {
   }
   return null
 }
+export function normalizePhotoProfiles(list) {
+  if (!Array.isArray(list)) return []
+  const out = []
+  for (let i = 0; i < list.length; i++) {
+    const p = list[i]
+    const w = Number(p && p.width), h = Number(p && p.height)
+    const id = String(p && p.id || '')
+    if (id && w > 0 && h > 0 && w >= h) out.push({ id, width: w, height: h })
+  }
+  return out
+}
 export class CameraBridge {
   constructor(native) {
     this.native = native || null
     this.caps = null
     this.recording = false
     this.previewOpen = false
+    this.frameInfo = null
+    this.lastFrameImage = null
     this.share = null
   }
   async connect() {
@@ -56,11 +69,17 @@ export class CameraBridge {
       preview: caps.preview === true,
       zoom: caps.zoom === true,
       focus: caps.focus === true,
+      continuousFocus: caps.continuousFocus === true,
+      zeroShutterLag: caps.zeroShutterLag === true,
+      backgroundEnhancement: caps.backgroundEnhancement===true && typeof this.native.queueEnhancement==='function',
+      audio: caps.audio === true,
       filters: Array.isArray(caps.filters) ? caps.filters : ['none'],
       share: caps.share === true,
       gallery: caps.gallery === true,
       minZoom: clamp(caps.minZoom || 1, 1, 100),
-      maxZoom: clamp(caps.maxZoom || 1, 1, 100)
+      maxZoom: clamp(caps.maxZoom || 1, 1, 100),
+      videoProfiles: Array.isArray(caps.videoProfiles)?caps.videoProfiles.filter(p=>p&&p.id&&p.width>0&&p.height>0&&p.portraitWidth>0&&p.portraitHeight>0).map(p=>({...p})):[],
+      photoProfiles: normalizePhotoProfiles(caps.photoProfiles)
     }
     if (this.caps.maxZoom < this.caps.minZoom) this.caps.maxZoom = this.caps.minZoom
     return this.caps
@@ -71,71 +90,83 @@ export class CameraBridge {
   async openPreview() {
     this.requireCapability('preview')
     await this.native.openPreview()
+    this.lastFrameImage = null
+    this.frameInfo = null
     this.previewOpen = true
   }
   async getPreviewFrame() {
     if (!this.previewOpen) return null
     const data = await this.native.getPreviewFrame()
-    return data && typeof data.image === 'string' ? data.image : null
+    this.frameInfo = data
+    if (!data || typeof data.image !== 'string' || data.image === this.lastFrameImage) return null
+    this.lastFrameImage = data.image
+    return data.image
   }
   async capturePhoto(options) {
     this.requireCapability('photo')
     if (this.recording) throw new Error('录像期间不能拍照')
     const settings = options || {}
     const processing = chooseCaptureProcessing(settings, this.caps)
-    let photo
-    if (processing.hdr !== 'off') {
-      photo = await this.native.captureHDR({
-        ...settings, hdrMode:processing.hdr,
-        exposuresEV:processing.exposuresEV,
-        saveDirectory:GALLERY_DIRECTORY
-      })
-    } else {
-      photo = await this.native.capturePhoto({...settings,saveDirectory:GALLERY_DIRECTORY})
+    if (!this.caps.zeroShutterLag && this.caps.continuousFocus && typeof this.native.waitForAutoFocus === 'function' && settings.settleFocus !== false) {
+      this.lastFocus = await this.native.waitForAutoFocus()
+      if (!this.previewOpen) throw new Error('相机已关闭')
+      if (!this.lastFocus || this.lastFocus.settled !== true) throw new Error('焦点尚未稳定，请保持词典笔不动后重试')
     }
-    // HDR generation and exposure alignment MUST be performed by native code.
-    // A single-frame contrast filter must never report hdrApplied:true.
-    if (!photo || !photo.path) throw new Error('原生相机未返回照片')
+    const photo = processing.hdr !== 'off'
+      ? await this.native.captureHDR({...settings,hdrMode:processing.hdr,exposuresEV:processing.exposuresEV,saveDirectory:GALLERY_DIRECTORY})
+      : await this.native.capturePhoto({...settings,saveDirectory:GALLERY_DIRECTORY})
+    if (!photo || !safeAbsolutePath(photo.path)) throw new Error('原生相机未返回合法的照片路径')
     let result = {...photo,hdrApplied:photo.hdrApplied===true,hdrBackend:photo.hdrBackend||'none'}
-    if (processing.hdr==='on' && !result.hdrApplied) {
-      result.processingWarning='设备未完成 HDR 合成；保留原片'
+    if (processing.hdr==='on' && !result.hdrApplied) result.processingWarning='设备未完成 HDR 合成；保留原片'
+    if(processing.denoise!=='off'&&this.caps.backgroundEnhancement){
+      const published=await this.publishCapturedPhoto(result)
+      try{
+        const job=await this.native.queueEnhancement({sourcePath:result.path,mode:processing.denoise,capturedAtEpochMs:result.capturedAtEpochMs,keepAlive:settings.processingKeepAlive!==false})
+        if(!job||job.queued!==true)throw new Error('Task not queued')
+        return {...published,enhancementQueued:true,processingJobId:job.jobId}
+      }catch(error){return {...published,galleryWarning:[published.galleryWarning,'后台降噪排队失败，原片已保存'].filter(Boolean).join('；')}}
     }
     if (processing.denoise!=='off') {
       try {
-        const enhanced=await this.native.enhancePhoto({
-          sourcePath:result.path,
-          mode:processing.denoise,
-          preferNpu:processing.preferNpu,
-          saveDirectory:GALLERY_DIRECTORY,
-          preserveOriginal:true
-        })
-        if (enhanced && enhanced.written===true && enhanced.path) {
-          result={...result,path:enhanced.path,
-            denoiseApplied:enhanced.denoiseApplied===true,
-            npuUsed:processing.preferNpu && enhanced.npuUsed===true}
-        } else {
-          result.processingWarning=(result.processingWarning||'')+' 图像增强未完成，保留原片'
-        }
-      }catch(error){
-        result.processingWarning=(result.processingWarning||'')+' 图像增强失败，保留原片'
+        const enhanced=await this.native.enhancePhoto({sourcePath:result.path,mode:processing.denoise,
+          preferNpu:processing.preferNpu,saveDirectory:GALLERY_DIRECTORY,preserveOriginal:true,
+          capturedAtEpochMs:result.capturedAtEpochMs,onProcessing:settings.onProcessing})
+        if (enhanced && enhanced.written===true && safeAbsolutePath(enhanced.path)) {
+          const changed=enhanced.path!==result.path
+          result={...result,path:enhanced.path,indexed:changed?enhanced.indexed===true:result.indexed,
+            denoiseApplied:enhanced.denoiseApplied===true,npuUsed:processing.preferNpu && enhanced.npuUsed===true,
+            size:enhanced.size||result.size,npuTimeMs:enhanced.npuTimeMs,processingMs:enhanced.processingMs,tiles:enhanced.tiles}
+        } else result.processingWarning=[result.processingWarning,'图像增强未完成，保留原片'].filter(Boolean).join('；')
+      } catch(error) {
+        result.processingWarning=[result.processingWarning,'图像增强失败，保留原片'].filter(Boolean).join('；')
       }
     }
-    const published = await this.saveToGallery(result,'photo')
-    if (result.processingWarning) {
-      published.galleryWarning=[published.galleryWarning,result.processingWarning].filter(Boolean).join('；')
-    }
+    const published=await this.publishCapturedPhoto(result)
+    if(result.processingWarning)published.galleryWarning=[published.galleryWarning,result.processingWarning].filter(Boolean).join('；')
     return published
+  }
+  async publishCapturedPhoto(result){
+    if(this.caps.zeroShutterLag&&result.written===true&&withinDirectory(result.path,GALLERY_DIRECTORY)){
+      this.saveToGallery(result,'photo').then(receipt=>{this.lastPublication=receipt}).catch(()=>{})
+      return {...galleryResult(result),galleryWarning:'',publicationPending:true}
+    }
+    return this.saveToGallery(result,'photo')
   }
   async startRecording(options) {
     this.requireCapability('video')
     if (this.recording) throw new Error('正在录像')
-    await this.native.startRecording({...options, saveDirectory: GALLERY_DIRECTORY})
+    const result = await this.native.startRecording({...options, saveDirectory: GALLERY_DIRECTORY})
     this.recording = true
+    if (this.caps.audio && (!result || result.audio !== true)) {
+      try { await this.native.stopRecording() } finally { this.recording = false }
+      throw new Error('麦克风未开始收音，录像已结束')
+    }
+    return result
   }
   async stopRecording() {
     if (!this.recording) throw new Error('当前没有录像')
-    const result = await this.native.stopRecording()
-    this.recording = false
+    let result
+    try { result = await this.native.stopRecording() } finally { this.recording = false }
     return this.saveToGallery(result, 'video')
   }
   async setZoom(value) {
@@ -159,9 +190,33 @@ export class CameraBridge {
     }
     return id
   }
+  async setCaptureMode(mode) {
+    if (!['photo','video'].includes(mode)) throw new Error('未知拍摄模式')
+    if (this.recording) throw new Error('请先结束录像')
+    if (this.native && typeof this.native.setCaptureMode === 'function') await this.native.setCaptureMode(mode)
+    return mode
+  }
+  async setPhotoProfile(id) {
+    this.requireCapability('camera')
+    if (!Array.isArray(this.caps.photoProfiles) || !this.caps.photoProfiles.length) return null
+    const profile = this.caps.photoProfiles.find(p => p.id === id)
+    if (!profile) throw new CameraUnavailableError('设备不支持该照片比例：' + id)
+    if (typeof this.native.setPhotoProfile !== 'function') throw new CameraUnavailableError('缺少照片比例原生接口')
+    await this.native.setPhotoProfile(id)
+    return profile
+  }
+  async setVideoProfile(id) {
+    this.requireCapability('video')
+    if (this.recording) throw new Error('请先结束录像')
+    if (!this.caps.videoProfiles.length) return null
+    const profile = this.caps.videoProfiles.find(p=>p.id===id)
+    if (!profile || typeof this.native.setVideoProfile !== 'function') throw new CameraUnavailableError('设备不支持该录像画质')
+    await this.native.setVideoProfile(id)
+    return profile
+  }
   async saveToGallery(result, mediaType) {
     const saved = galleryResult(result)
-    if (saved.album === 'pictures') return saved
+    if (saved.indexed) return saved
     if (!this.native || typeof this.native.publishToGallery !== 'function') return saved
     try {
       const published = await this.native.publishToGallery({
@@ -202,6 +257,10 @@ export class CameraBridge {
     } else {
       this.share = null
     }
+  }
+  async closePreviewForPlayback(){
+    if(this.recording)throw new Error('请先结束录像')
+    if(this.previewOpen){await this.native.closePreview();this.previewOpen=false;this.lastFrameImage=null}
   }
   async close() {
     await this.stopShare()

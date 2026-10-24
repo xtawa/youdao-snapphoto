@@ -1,0 +1,36 @@
+{
+  "preview": {
+    "image": "/tmp/snapphoto/preview-8770842-94.jpg",
+    "sequence": 94,
+    "nightActive": false,
+    "sceneLuma": 129.835781495839,
+    "nightStrength": 0,
+    "captureFps": 27.62388565432273,
+    "previewFps": 27.04838803652434,
+    "frameAgeMs": 3.1847080010920763,
+    "rawSequence": 96,
+    "convertMs": 2.9318339992314577,
+    "encodeMs": 0.16449999995529652,
+    "recording": false,
+    "recordError": false,
+    "recordLimit": false,
+    "recordDropped": 0,
+    "recordEncodeMs": 0,
+    "recordSampleMs": 0
+  },
+  "uniquePolledFps": 26.06400527878632,
+  "photo": {
+    "path": "/userdisk/Pictures/SNAP_20261023_200916_345_1.JPG",
+    "written": true,
+    "indexed": false,
+    "size": 524870,
+    "candidateFrames": 3,
+    "selectionMs": 105.92634399980307,
+    "sharpnessScore": 0.092406860150068,
+    "processingMs": 231.98468999937177,
+    "saveMs": 133.61105499975383,
+    "capturedAt": "2026-10-23T20:09:16.345+08:00",
+    "capturedAtEpochMs": 1792757356345.0525,
+    "timeSource": "device-frame-received"
+  }
+}

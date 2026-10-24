@@ -1,0 +1,12 @@
+{
+  "soc": "RK3562",
+  "mppVersion": "7d6c3974",
+  "matchedOfficialHeaders": "7d6c39741db49a76a28e7648ef00e7dea394ec27",
+  "avcInitializationResult": -1,
+  "kernelAvailableDevices": [
+    "RKVDEC",
+    "RKJPEGD"
+  ],
+  "hardwareEncoderUsable": false,
+  "kernelOrDriverChanges": false
+}

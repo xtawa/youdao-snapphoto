@@ -1,0 +1,687 @@
+{
+  "version": "0.7.0",
+  "canonicalSource": ".",
+  "sourceTests": {
+    "total": 57,
+    "passed": 57,
+    "failed": 0,
+    "command": "node --test --test-reporter=tap tests/*.test.mjs"
+  },
+  "photoRegression": {
+    "version": "0.7.0",
+    "profiles": {
+      "wide": {
+        "size": [
+          3264,
+          979
+        ],
+        "bytes": 308035,
+        "exifTime": "2026:10:17 19:56:21.409+08:00",
+        "processingMs": 96.6154680000618,
+        "saveMs": 75.4142160001211,
+        "captureSeconds": 0.5
+      },
+      "cinema": {
+        "size": [
+          3264,
+          1362
+        ],
+        "bytes": 443682,
+        "exifTime": "2026:10:17 19:56:22.086+08:00",
+        "processingMs": 154.07293300004676,
+        "saveMs": 88.50217500003055,
+        "captureSeconds": 0.468
+      },
+      "two-one": {
+        "size": [
+          3264,
+          1632
+        ],
+        "bytes": 543011,
+        "exifTime": "2026:10:17 19:56:22.781+08:00",
+        "processingMs": 138.80534699978307,
+        "saveMs": 139.91893099993467,
+        "captureSeconds": 0.672
+      },
+      "sixteen-nine": {
+        "size": [
+          3264,
+          1836
+        ],
+        "bytes": 547324,
+        "exifTime": "2026:10:17 19:56:23.647+08:00",
+        "processingMs": 156.6247240002267,
+        "saveMs": 114.923093999736,
+        "captureSeconds": 0.687
+      },
+      "four-three": {
+        "size": [
+          2448,
+          1836
+        ],
+        "bytes": 394654,
+        "exifTime": "2026:10:17 19:56:24.547+08:00",
+        "processingMs": 122.10684600006789,
+        "saveMs": 84.3307579997927,
+        "captureSeconds": 0.547
+      },
+      "square": {
+        "size": [
+          1836,
+          1836
+        ],
+        "bytes": 290163,
+        "exifTime": "2026:10:17 19:56:25.314+08:00",
+        "processingMs": 95.7022589999251,
+        "saveMs": 69.14104900043458,
+        "captureSeconds": 0.359
+      }
+    },
+    "filters": {
+      "none": {
+        "size": [
+          3264,
+          979
+        ],
+        "bytes": 310670,
+        "exifTime": "2026:10:17 19:56:25.680+08:00",
+        "processingMs": 91.93742600036785,
+        "saveMs": 72.2155069997534
+      },
+      "mono": {
+        "size": [
+          3264,
+          979
+        ],
+        "bytes": 283851,
+        "exifTime": "2026:10:17 19:56:26.047+08:00",
+        "processingMs": 86.85484200017527,
+        "saveMs": 76.6062579997815
+      },
+      "sepia": {
+        "size": [
+          3264,
+          979
+        ],
+        "bytes": 328206,
+        "exifTime": "2026:10:17 19:56:26.481+08:00",
+        "processingMs": 291.0256119999103,
+        "saveMs": 86.03554999968037
+      },
+      "warm": {
+        "size": [
+          3264,
+          979
+        ],
+        "bytes": 329538,
+        "exifTime": "2026:10:17 19:56:27.147+08:00",
+        "processingMs": 290.0931540001184,
+        "saveMs": 84.74259199993685
+      },
+      "cool": {
+        "size": [
+          3264,
+          979
+        ],
+        "bytes": 321560,
+        "exifTime": "2026:10:17 19:56:27.747+08:00",
+        "processingMs": 287.9622380002402,
+        "saveMs": 84.7857579998672
+      },
+      "vintage": {
+        "size": [
+          3264,
+          979
+        ],
+        "bytes": 288930,
+        "exifTime": "2026:10:17 19:56:28.314+08:00",
+        "processingMs": 297.2795299999416,
+        "saveMs": 78.84946699999273
+      },
+      "vivid": {
+        "size": [
+          3264,
+          979
+        ],
+        "bytes": 358946,
+        "exifTime": "2026:10:17 19:56:28.980+08:00",
+        "processingMs": 289.2861130000092,
+        "saveMs": 87.2007590001449
+      },
+      "negative": {
+        "size": [
+          3264,
+          979
+        ],
+        "bytes": 307678,
+        "exifTime": "2026:10:17 19:56:29.647+08:00",
+        "processingMs": 262.12435900000855,
+        "saveMs": 80.9200079999864
+      }
+    },
+    "zoom2": {
+      "size": [
+        3264,
+        979
+      ],
+      "bytes": 217245,
+      "exifTime": "2026:10:17 19:56:30.314+08:00",
+      "processingMs": 156.98522400017828,
+      "saveMs": 66.47229800000787
+    },
+    "portrait": {
+      "size": [
+        216,
+        720
+      ],
+      "bytes": 17216,
+      "exifTime": "2026:10:17 19:56:30.914+08:00",
+      "processingMs": 7.919042999856174,
+      "saveMs": 11.722959000151604
+    },
+    "portraitUnaffected": {
+      "size": [
+        216,
+        720
+      ],
+      "bytes": 17187,
+      "exifTime": "2026:10:17 19:56:31.080+08:00",
+      "processingMs": 7.649249999783933,
+      "saveMs": 13.437960000243038
+    },
+    "video": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "mjpeg",
+          "width": 640,
+          "height": 192
+        },
+        {
+          "codec_name": "pcm_s16le"
+        }
+      ]
+    },
+    "share": {
+      "tested": false,
+      "reason": "User requested skipping LAN testing"
+    },
+    "reopen": true,
+    "preview": {
+      "sequence": 1,
+      "captureFps": 5.821220961222133,
+      "previewFps": 2.9106104806110666,
+      "frameAgeMs": 3.942166999913752,
+      "rawSequence": 2,
+      "convertMs": 3.7756260000169277,
+      "encodeMs": 0.16216699965298176,
+      "recording": false,
+      "recordError": false,
+      "recordLimit": false,
+      "recordDropped": 0,
+      "recordEncodeMs": 2.174957999959588,
+      "recordSampleMs": 2.1061249999329448
+    }
+  },
+  "hdValidation": {
+    "version": "0.7.0",
+    "takes": [
+      {
+        "label": "compact-landscape",
+        "size": [
+          640,
+          192
+        ],
+        "videoFrames": 120,
+        "videoFps": 29.585798816568047,
+        "durationSeconds": 4.056,
+        "audioSamples": 64088,
+        "avDurationDifferenceMs": 50.50000000000043,
+        "bytes": 1577030,
+        "fullDecodePassed": true,
+        "recordResult": {
+          "path": "/userdisk/Pictures/SNAP_20261017_195224_133_1.avi",
+          "written": true,
+          "indexed": false,
+          "size": 1577030,
+          "audio": true,
+          "audioSamples": 64088,
+          "audioDurationMs": 4005.5,
+          "durationMs": 4056.148073999677,
+          "width": 640,
+          "height": 192,
+          "droppedFrames": 0,
+          "videoFrames": 120,
+          "audioXruns": 0,
+          "audioLastError": 0,
+          "audioZeroReads": 0
+        },
+        "nativeFrame": {
+          "image": "/tmp/snapphoto/preview-3447701-133.jpg",
+          "sequence": 133,
+          "captureFps": 28.06229572818869,
+          "previewFps": 27.85287561081415,
+          "frameAgeMs": 5.50987600022927,
+          "rawSequence": 134,
+          "convertMs": 3.1954999999143183,
+          "encodeMs": 0.1464169998653233,
+          "recording": true,
+          "recordError": false,
+          "recordLimit": false,
+          "recordDropped": 0,
+          "recordEncodeMs": 2.2464169999584556,
+          "recordSampleMs": 2.144334000069648
+        },
+        "clockKHz": "1416000"
+      },
+      {
+        "label": "compact-portrait",
+        "size": [
+          216,
+          720
+        ],
+        "videoFrames": 118,
+        "videoFps": 29.507376844211052,
+        "durationSeconds": 3.999,
+        "audioSamples": 63704,
+        "avDurationDifferenceMs": 17.50000000000007,
+        "bytes": 1387224,
+        "fullDecodePassed": true,
+        "recordResult": {
+          "path": "/userdisk/Pictures/SNAP_20261017_195229_521_2.avi",
+          "written": true,
+          "indexed": false,
+          "size": 1387224,
+          "audio": true,
+          "audioSamples": 63704,
+          "audioDurationMs": 3981.5,
+          "durationMs": 3999.4130679997616,
+          "width": 216,
+          "height": 720,
+          "droppedFrames": 0,
+          "videoFrames": 118,
+          "audioXruns": 0,
+          "audioLastError": 0,
+          "audioZeroReads": 0
+        },
+        "nativeFrame": {
+          "image": "/tmp/snapphoto/preview-3447701-293.jpg",
+          "sequence": 293,
+          "captureFps": 29.17297323387034,
+          "previewFps": 28.97519036448817,
+          "frameAgeMs": 9.31204199977219,
+          "rawSequence": 295,
+          "convertMs": 4.989250000100583,
+          "encodeMs": 0.16070799995213747,
+          "recording": true,
+          "recordError": false,
+          "recordLimit": false,
+          "recordDropped": 0,
+          "recordEncodeMs": 2.4155840002931654,
+          "recordSampleMs": 4.12387500004843
+        },
+        "clockKHz": "1416000"
+      },
+      {
+        "label": "hd-landscape",
+        "size": [
+          1280,
+          720
+        ],
+        "videoFrames": 119,
+        "videoFps": 29.528535980148884,
+        "durationSeconds": 4.03,
+        "audioSamples": 63720,
+        "avDurationDifferenceMs": 47.50000000000032,
+        "bytes": 7429182,
+        "fullDecodePassed": true,
+        "recordResult": {
+          "path": "/userdisk/Pictures/SNAP_20261017_195235_658_3.avi",
+          "written": true,
+          "indexed": false,
+          "size": 7429182,
+          "audio": true,
+          "audioSamples": 63720,
+          "audioDurationMs": 3982.5,
+          "durationMs": 4029.547780000139,
+          "width": 1280,
+          "height": 720,
+          "droppedFrames": 0,
+          "videoFrames": 119,
+          "audioXruns": 0,
+          "audioLastError": 0,
+          "audioZeroReads": 0
+        },
+        "nativeFrame": {
+          "image": "/tmp/snapphoto/preview-3447701-478.jpg",
+          "sequence": 478,
+          "captureFps": 29.432416038486757,
+          "previewFps": 29.37097049352123,
+          "frameAgeMs": 10.639418000355363,
+          "rawSequence": 479,
+          "convertMs": 1.833416999783367,
+          "encodeMs": 0.18695800006389618,
+          "recording": true,
+          "recordError": false,
+          "recordLimit": false,
+          "recordDropped": 0,
+          "recordEncodeMs": 25.880169000010937,
+          "recordSampleMs": 8.580833999905735
+        },
+        "clockKHz": "1416000"
+      },
+      {
+        "label": "hd-portrait",
+        "size": [
+          720,
+          1280
+        ],
+        "videoFrames": 118,
+        "videoFps": 29.522141606204652,
+        "durationSeconds": 3.997,
+        "audioSamples": 63488,
+        "avDurationDifferenceMs": 28.999999999999915,
+        "bytes": 6045850,
+        "fullDecodePassed": true,
+        "recordResult": {
+          "path": "/userdisk/Pictures/SNAP_20261017_195242_324_4.avi",
+          "written": true,
+          "indexed": false,
+          "size": 6045850,
+          "audio": true,
+          "audioSamples": 63488,
+          "audioDurationMs": 3968,
+          "durationMs": 3997.001276999712,
+          "width": 720,
+          "height": 1280,
+          "droppedFrames": 0,
+          "videoFrames": 118,
+          "audioXruns": 0,
+          "audioLastError": 0,
+          "audioZeroReads": 0
+        },
+        "nativeFrame": {
+          "image": "/tmp/snapphoto/preview-3447701-677.jpg",
+          "sequence": 677,
+          "captureFps": 29.595589139325515,
+          "previewFps": 29.55193782791058,
+          "frameAgeMs": 18.972042999695987,
+          "rawSequence": 678,
+          "convertMs": 7.271541999652982,
+          "encodeMs": 1.650249999947846,
+          "recording": true,
+          "recordError": false,
+          "recordLimit": false,
+          "recordDropped": 0,
+          "recordEncodeMs": 26.205377999693155,
+          "recordSampleMs": 10.002418000251055
+        },
+        "clockKHz": "1416000"
+      },
+      {
+        "label": "fhd-landscape",
+        "size": [
+          1920,
+          1080
+        ],
+        "videoFrames": 97,
+        "videoFps": 23.879862136878383,
+        "durationSeconds": 4.062,
+        "audioSamples": 65744,
+        "avDurationDifferenceMs": 46.99999999999971,
+        "bytes": 12263928,
+        "fullDecodePassed": true,
+        "recordResult": {
+          "path": "/userdisk/Pictures/SNAP_20261017_195248_432_5.avi",
+          "written": true,
+          "indexed": false,
+          "size": 12263928,
+          "audio": true,
+          "audioSamples": 65744,
+          "audioDurationMs": 4109,
+          "durationMs": 4061.971200000029,
+          "width": 1920,
+          "height": 1080,
+          "droppedFrames": 0,
+          "videoFrames": 97,
+          "audioXruns": 0,
+          "audioLastError": 0,
+          "audioZeroReads": 0
+        },
+        "nativeFrame": {
+          "image": "/tmp/snapphoto/preview-3447701-861.jpg",
+          "sequence": 861,
+          "captureFps": 29.680550857998618,
+          "previewFps": 29.611766267365944,
+          "frameAgeMs": 32.468337000347674,
+          "rawSequence": 863,
+          "convertMs": 10.7210840000771,
+          "encodeMs": 1.472917000297457,
+          "recording": true,
+          "recordError": false,
+          "recordLimit": false,
+          "recordDropped": 0,
+          "recordEncodeMs": 34.561629000119865,
+          "recordSampleMs": 21.870335000101477
+        },
+        "clockKHz": "1416000"
+      },
+      {
+        "label": "fhd-portrait",
+        "size": [
+          1080,
+          1920
+        ],
+        "videoFrames": 92,
+        "videoFps": 22.64336697021905,
+        "durationSeconds": 4.063,
+        "audioSamples": 65048,
+        "avDurationDifferenceMs": 2.500000000000391,
+        "bytes": 9149630,
+        "fullDecodePassed": true,
+        "recordResult": {
+          "path": "/userdisk/Pictures/SNAP_20261017_195255_998_6.avi",
+          "written": true,
+          "indexed": false,
+          "size": 9149630,
+          "audio": true,
+          "audioSamples": 65048,
+          "audioDurationMs": 4065.5,
+          "durationMs": 4063.01653400017,
+          "width": 1080,
+          "height": 1920,
+          "droppedFrames": 0,
+          "videoFrames": 92,
+          "audioXruns": 0,
+          "audioLastError": 0,
+          "audioZeroReads": 0
+        },
+        "nativeFrame": {
+          "image": "/tmp/snapphoto/preview-3447701-1060.jpg",
+          "sequence": 1060,
+          "captureFps": 29.06279478428548,
+          "previewFps": 28.926349738349867,
+          "frameAgeMs": 39.24958800012246,
+          "rawSequence": 1065,
+          "convertMs": 6.323334000073373,
+          "encodeMs": 0.1764580002054572,
+          "recording": true,
+          "recordError": false,
+          "recordLimit": false,
+          "recordDropped": 0,
+          "recordEncodeMs": 44.04342099977657,
+          "recordSampleMs": 32.727628000080585
+        },
+        "clockKHz": "1416000"
+      }
+    ],
+    "fileLimit": {
+      "label": "limit-finalized",
+      "size": [
+        1280,
+        720
+      ],
+      "videoFrames": 16,
+      "videoFps": 25.559105431309906,
+      "durationSeconds": 0.626,
+      "audioSamples": 9296,
+      "avDurationDifferenceMs": 45.00000000000004,
+      "bytes": 1005180,
+      "fullDecodePassed": true,
+      "recordResult": {
+        "path": "/userdisk/Pictures/SNAP_20261017_195302_535_7.avi",
+        "written": true,
+        "indexed": false,
+        "size": 1005180,
+        "audio": true,
+        "audioSamples": 9296,
+        "audioDurationMs": 581,
+        "durationMs": 626.0710209999233,
+        "width": 1280,
+        "height": 720,
+        "droppedFrames": 0,
+        "videoFrames": 16,
+        "audioXruns": 0,
+        "audioLastError": 0,
+        "audioZeroReads": 0,
+        "stopReason": "file-limit"
+      }
+    },
+    "background": {
+      "label": "background",
+      "size": [
+        1280,
+        720
+      ],
+      "videoFrames": 59,
+      "videoFps": 29.47052947052947,
+      "durationSeconds": 2.002,
+      "audioSamples": 31504,
+      "avDurationDifferenceMs": 32.999999999999694,
+      "bytes": 3686894,
+      "fullDecodePassed": true,
+      "recordResult": {
+        "path": "/userdisk/Pictures/SNAP_20261017_195303_933_8.avi",
+        "written": true,
+        "audio": true,
+        "audioXruns": 0
+      }
+    },
+    "reopen": true,
+    "microphoneReleased": true,
+    "microphoneRouteRestored": true
+  },
+  "realApp720p": {
+    "version": "0.7.0",
+    "profile": "hd",
+    "realUIBackgroundSaved": true,
+    "path": "/userdisk/Pictures/SNAP_20261017_195450_369_1.avi",
+    "videoSize": [
+      1280,
+      720
+    ],
+    "videoFrames": 903,
+    "videoFps": 29.961179866618004,
+    "durationSeconds": 30.139,
+    "audioSamples": 482480,
+    "audioDurationSeconds": 30.155,
+    "fileBytes": 56235702,
+    "decodePassed": true,
+    "microphoneAfterClose": "closed",
+    "stateBefore": "VmRSS:\t  462956 kB\r\r\nRssAnon:\t  196724 kB\r\r\n55555\r\r\n",
+    "stateAfter": "VmRSS:\t  467172 kB\r\r\nRssAnon:\t  200940 kB\r\r\n48333\r\r\n"
+  },
+  "realApp1080p": {
+    "version": "0.7.0",
+    "profile": "fhd",
+    "throughRealAppUI": true,
+    "path": "/userdisk/Pictures/SNAP_20261017_194920_685_1.avi",
+    "videoSize": [
+      1920,
+      1080
+    ],
+    "videoFrames": 369,
+    "videoFps": 22.228915662650603,
+    "durationSeconds": 16.6,
+    "audioSamples": 266472,
+    "audioDurationSeconds": 16.6545,
+    "fileBytes": 46123386,
+    "decodePassed": true,
+    "microphoneAfterStop": "closed",
+    "temperatureMilliC": "54375"
+  },
+  "hardwareEncoder": {
+    "soc": "RK3562",
+    "mppVersion": "7d6c3974",
+    "matchedOfficialHeaders": "7d6c39741db49a76a28e7648ef00e7dea394ec27",
+    "avcInitializationResult": -1,
+    "kernelAvailableDevices": [
+      "RKVDEC",
+      "RKJPEGD"
+    ],
+    "hardwareEncoderUsable": false,
+    "kernelOrDriverChanges": false
+  },
+  "videoFilters": [
+    {
+      "effect": "mono",
+      "fullDecodePassed": true,
+      "audioSamples": 31440,
+      "width": 1280,
+      "height": 720,
+      "actualFps": 29.36920190975955
+    },
+    {
+      "effect": "warm",
+      "fullDecodePassed": true,
+      "audioSamples": 32352,
+      "width": 1280,
+      "height": 720,
+      "actualFps": 15.465049683643755
+    }
+  ],
+  "installed": {
+    "version": "0.7.0",
+    "bytecodeMatchesPackage": true,
+    "nativeCodeDataSectionsMatchPackage": [
+      ".gnu.version",
+      ".gnu.version_r",
+      ".gnu.hash",
+      ".hash",
+      ".rela.dyn",
+      ".rela.plt",
+      ".rodata",
+      ".eh_frame_hdr",
+      ".eh_frame",
+      ".text",
+      ".plt",
+      ".data.rel.ro",
+      ".got",
+      ".got.plt",
+      ".relro_padding",
+      ".data",
+      ".bss"
+    ],
+    "sourceNativeSha256": "95d552e0b94156981d662b5326715eefa2b8a1ec50ef06e487b345da6cb31512",
+    "installedNativeSha256": "c72ddc657b64dcddf776731f2121931308b2bd8ab87fe93f739d4b7489c54f60",
+    "installerChanges": "ELF SONAME/RUNPATH and symbol/string metadata rewritten by firmware"
+  },
+  "preferences": {
+    "existingValuesPreserved": true,
+    "defaultVideoProfile": "hd"
+  },
+  "lanDownload": {
+    "tested": false,
+    "reason": "Skipped at user request"
+  },
+  "limits": [
+    "MJPEG AVI; H264 hardware encoder not available in current kernel configuration",
+    "Actual fps depends on scene, filters, temperature and load; fhd targets 24fps",
+    "Large files; 64MB start-space requirement, 32MB stop threshold and 1.75GiB file limit",
+    "Portrait 1080x1920 slightly upscales the 1836-pixel source crop height",
+    "Kernel, device tree, clocks and persistent USB unlock configuration not changed"
+  ],
+  "publicationRedactions": [
+    "Host checkout path replaced with repository root"
+  ]
+}

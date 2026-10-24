@@ -1,0 +1,7 @@
+# Keep converted model weights and the device bytecode compiler byte-exact.
+*.rknn binary
+tools/jsfmc binary
+*.sh text eol=lf
+
+# Keep public SDK headers in their upstream formatting.
+native/vendor/** -whitespace

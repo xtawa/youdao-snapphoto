@@ -1,0 +1,719 @@
+{
+  "version": "0.6.0",
+  "canonicalSource": ".",
+  "sourceTests": {
+    "total": 52,
+    "passed": 52,
+    "failed": 0,
+    "command": "node --test --test-reporter=tap tests/*.test.mjs"
+  },
+  "nativeValidation": {
+    "version": "0.6.0",
+    "profiles": {
+      "wide": {
+        "size": [
+          3264,
+          979
+        ],
+        "bytes": 444649,
+        "exifTime": "2026:10:17 19:18:45.557+08:00",
+        "processingMs": 118.17780299996957,
+        "saveMs": 77.49700800003484,
+        "captureSeconds": 0.531
+      },
+      "cinema": {
+        "size": [
+          3264,
+          1362
+        ],
+        "bytes": 438996,
+        "exifTime": "2026:10:17 19:18:46.291+08:00",
+        "processingMs": 144.09472299995832,
+        "saveMs": 86.69705000007525,
+        "captureSeconds": 0.5
+      },
+      "two-one": {
+        "size": [
+          3264,
+          1632
+        ],
+        "bytes": 541805,
+        "exifTime": "2026:10:17 19:18:47.018+08:00",
+        "processingMs": 135.59438899997622,
+        "saveMs": 135.12626300007105,
+        "captureSeconds": 0.5
+      },
+      "sixteen-nine": {
+        "size": [
+          3264,
+          1836
+        ],
+        "bytes": 540141,
+        "exifTime": "2026:10:17 19:18:47.718+08:00",
+        "processingMs": 157.51226500002667,
+        "saveMs": 126.96951299998909,
+        "captureSeconds": 0.641
+      },
+      "four-three": {
+        "size": [
+          2448,
+          1836
+        ],
+        "bytes": 390320,
+        "exifTime": "2026:10:17 19:18:48.551+08:00",
+        "processingMs": 121.26742899999954,
+        "saveMs": 83.9965089999605,
+        "captureSeconds": 0.359
+      },
+      "square": {
+        "size": [
+          1836,
+          1836
+        ],
+        "bytes": 287854,
+        "exifTime": "2026:10:17 19:18:49.151+08:00",
+        "processingMs": 92.78617599979043,
+        "saveMs": 71.2130490001291,
+        "captureSeconds": 0.328
+      }
+    },
+    "filters": {
+      "none": {
+        "size": [
+          3264,
+          979
+        ],
+        "bytes": 294802,
+        "exifTime": "2026:10:17 19:18:49.484+08:00",
+        "processingMs": 89.82663399982266,
+        "saveMs": 72.4497150001116
+      },
+      "mono": {
+        "size": [
+          3264,
+          979
+        ],
+        "bytes": 267227,
+        "exifTime": "2026:10:17 19:18:49.817+08:00",
+        "processingMs": 75.96167399990372,
+        "saveMs": 65.4228820002172
+      },
+      "sepia": {
+        "size": [
+          3264,
+          979
+        ],
+        "bytes": 305687,
+        "exifTime": "2026:10:17 19:18:50.151+08:00",
+        "processingMs": 299.98444699984975,
+        "saveMs": 91.1575090000406
+      },
+      "warm": {
+        "size": [
+          3264,
+          979
+        ],
+        "bytes": 305563,
+        "exifTime": "2026:10:17 19:18:50.751+08:00",
+        "processingMs": 292.77415399998426,
+        "saveMs": 82.5428420000244
+      },
+      "cool": {
+        "size": [
+          3264,
+          979
+        ],
+        "bytes": 301439,
+        "exifTime": "2026:10:17 19:18:51.351+08:00",
+        "processingMs": 288.716778999893,
+        "saveMs": 82.98267500009388
+      },
+      "vintage": {
+        "size": [
+          3264,
+          979
+        ],
+        "bytes": 274537,
+        "exifTime": "2026:10:17 19:18:51.951+08:00",
+        "processingMs": 295.21161300013773,
+        "saveMs": 76.93788299988955
+      },
+      "vivid": {
+        "size": [
+          3264,
+          979
+        ],
+        "bytes": 341777,
+        "exifTime": "2026:10:17 19:18:52.484+08:00",
+        "processingMs": 296.08690500003286,
+        "saveMs": 91.947342999978
+      },
+      "negative": {
+        "size": [
+          3264,
+          979
+        ],
+        "bytes": 286627,
+        "exifTime": "2026:10:17 19:18:53.151+08:00",
+        "processingMs": 286.647404000163,
+        "saveMs": 82.6116749998182
+      }
+    },
+    "zoom2": {
+      "size": [
+        3264,
+        979
+      ],
+      "bytes": 210346,
+      "exifTime": "2026:10:17 19:18:53.684+08:00",
+      "processingMs": 156.286974000046,
+      "saveMs": 65.79650699999183
+    },
+    "portrait": {
+      "size": [
+        216,
+        720
+      ],
+      "bytes": 15453,
+      "exifTime": "2026:10:17 19:18:54.117+08:00",
+      "processingMs": 7.5118760000914335,
+      "saveMs": 10.976875999942422
+    },
+    "portraitUnaffected": {
+      "size": [
+        216,
+        720
+      ],
+      "bytes": 15579,
+      "exifTime": "2026:10:17 19:18:54.284+08:00",
+      "processingMs": 7.505458999890834,
+      "saveMs": 12.040292999939993
+    },
+    "video": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "mjpeg",
+          "width": 640,
+          "height": 192
+        },
+        {
+          "codec_name": "pcm_s16le"
+        }
+      ]
+    },
+    "share": {
+      "tested": false,
+      "reason": "User requested skipping LAN testing"
+    },
+    "reopen": true,
+    "preview": {
+      "sequence": 1,
+      "captureFps": 5.850344655943093,
+      "previewFps": 2.9251723279715467,
+      "frameAgeMs": 4.36829200014472,
+      "rawSequence": 2,
+      "convertMs": 4.216041999869049,
+      "encodeMs": 0.14874999993480742,
+      "recording": false,
+      "recordError": false
+    }
+  },
+  "performance": {
+    "conditions": "Same pen, awake display, no clock/governor changes",
+    "versions": {
+      "0.5.0": {
+        "firstFrameSeconds": 0.4680000000007567,
+        "wide": {
+          "uniquePolledFps": 18.899204244056996,
+          "native": {
+            "sequence": 62,
+            "captureFps": 27.43771068080673,
+            "previewFps": 18.097167206838108,
+            "convertMs": 8.71208399999887,
+            "encodeMs": 5.2120839999988675
+          },
+          "clockKHz": "1416000",
+          "brightness": "90"
+        },
+        "portrait": {
+          "uniquePolledFps": 20.333333333333332,
+          "native": {
+            "sequence": 128,
+            "captureFps": 28.373616283837027,
+            "previewFps": 19.014777027501694,
+            "convertMs": 9.03437600005418,
+            "encodeMs": 7.240624999860302
+          },
+          "clockKHz": "1416000",
+          "brightness": "90"
+        },
+        "video": {
+          "uniquePolledFps": 20.448548812670012,
+          "native": {
+            "sequence": 195,
+            "captureFps": 28.70705245099627,
+            "previewFps": 19.369807110230976,
+            "convertMs": 5.743208999978378,
+            "encodeMs": 5.892541999928653
+          },
+          "clockKHz": "1416000",
+          "brightness": "90"
+        },
+        "photo": {
+          "written": true,
+          "indexed": false,
+          "size": 263680,
+          "processingMs": 121.36105399997905,
+          "saveMs": 97.66255200002342,
+          "capturedAt": "2026-10-17T19:19:39.079+08:00",
+          "capturedAtEpochMs": 1792235979079.777,
+          "timeSource": "device-frame-received",
+          "totalSeconds": 0.3430000000007567
+        }
+      },
+      "0.6.0": {
+        "firstFrameSeconds": 0.4530000000013388,
+        "wide": {
+          "uniquePolledFps": 26.666666666666668,
+          "native": {
+            "sequence": 92,
+            "captureFps": 27.3614325475897,
+            "previewFps": 27.067223595465077,
+            "frameAgeMs": 4.07779200002551,
+            "rawSequence": 93,
+            "convertMs": 3.911833999911323,
+            "encodeMs": 0.15749999997206032,
+            "recording": false,
+            "recordError": false
+          },
+          "clockKHz": "1416000",
+          "brightness": "90"
+        },
+        "portrait": {
+          "uniquePolledFps": 26.865671641796233,
+          "native": {
+            "sequence": 190,
+            "captureFps": 28.753904417426764,
+            "previewFps": 28.454384579745234,
+            "frameAgeMs": 6.27579200011678,
+            "rawSequence": 192,
+            "convertMs": 6.11712500010617,
+            "encodeMs": 0.1490420000627637,
+            "recording": false,
+            "recordError": false
+          },
+          "clockKHz": "1416000",
+          "brightness": "90"
+        },
+        "video": {
+          "uniquePolledFps": 27.0,
+          "native": {
+            "sequence": 287,
+            "captureFps": 29.164897731522384,
+            "previewFps": 28.96306452922811,
+            "frameAgeMs": 4.257750999880955,
+            "rawSequence": 289,
+            "convertMs": 4.0929590000305325,
+            "encodeMs": 0.15283300005830824,
+            "recording": false,
+            "recordError": false
+          },
+          "clockKHz": "1416000",
+          "brightness": "90"
+        },
+        "photo": {
+          "written": true,
+          "indexed": false,
+          "size": 263682,
+          "processingMs": 110.054301999975,
+          "saveMs": 75.03242499986663,
+          "capturedAt": "2026-10-17T19:19:50.201+08:00",
+          "capturedAtEpochMs": 1792235990201.57,
+          "timeSource": "device-frame-received",
+          "totalSeconds": 0.31300000000192085
+        },
+        "continuousFocus": {
+          "settled": true,
+          "position": 20,
+          "score": 0.29474710248838465,
+          "luminance": 87.05924479166667,
+          "durationMs": 221.37823099992238,
+          "method": "Observe stock RKAIQ continuous AF; no lens writes",
+          "samples": [
+            {
+              "position": 20,
+              "score": 0.2979512553696513
+            },
+            {
+              "position": 20,
+              "score": 0.31841552032374926
+            },
+            {
+              "position": 20,
+              "score": 0.31184803406239764
+            },
+            {
+              "position": 20,
+              "score": 0.3061256772300438
+            },
+            {
+              "position": 20,
+              "score": 0.30648530274188057
+            },
+            {
+              "position": 20,
+              "score": 0.2932062300619253
+            },
+            {
+              "position": 20,
+              "score": 0.29474710248838465
+            }
+          ]
+        },
+        "cancelFocusCloseSeconds": 0.06199999999807915,
+        "reopenAfterCancellation": true
+      }
+    }
+  },
+  "recording": {
+    "version": "0.6.0",
+    "takes": [
+      {
+        "label": "repeat-0",
+        "size": 526670,
+        "videoSize": [
+          640,
+          192
+        ],
+        "videoFrames": 60,
+        "videoFps": 29.970029970029973,
+        "audioSamples": 31248,
+        "durationSeconds": 1.953,
+        "avDurationDifferenceMs": 48.99999999999971,
+        "audioPeak": 5140,
+        "audioRms": 610.4369963795601,
+        "fullDecodePassed": true
+      },
+      {
+        "label": "repeat-1",
+        "size": 529926,
+        "videoSize": [
+          216,
+          720
+        ],
+        "videoFrames": 60,
+        "videoFps": 29.940119760479043,
+        "audioSamples": 32008,
+        "durationSeconds": 2.0005,
+        "avDurationDifferenceMs": 3.4999999999998366,
+        "audioPeak": 3838,
+        "audioRms": 545.9777878392092,
+        "fullDecodePassed": true
+      },
+      {
+        "label": "repeat-2",
+        "size": 606824,
+        "videoSize": [
+          640,
+          192
+        ],
+        "videoFrames": 61,
+        "videoFps": 30.439121756487026,
+        "audioSamples": 31424,
+        "durationSeconds": 1.964,
+        "avDurationDifferenceMs": 40.000000000000036,
+        "audioPeak": 2780,
+        "audioRms": 354.0369774331777,
+        "fullDecodePassed": true
+      }
+    ],
+    "closeFinalizeSeconds": 0.0930000000007567,
+    "backgroundTake": {
+      "label": "background-finalized",
+      "size": 596862,
+      "videoSize": [
+        640,
+        192
+      ],
+      "videoFrames": 60,
+      "videoFps": 29.970029970029973,
+      "audioSamples": 31400,
+      "durationSeconds": 1.9625,
+      "avDurationDifferenceMs": 39.49999999999987,
+      "audioPeak": 4098,
+      "audioRms": 283.67099360256236,
+      "fullDecodePassed": true
+    },
+    "micAfterClose": "closed",
+    "busyMicrophoneRejected": true,
+    "recoveredTake": {
+      "label": "after-busy",
+      "size": 283654,
+      "videoSize": [
+        640,
+        192
+      ],
+      "videoFrames": 30,
+      "videoFps": 29.85074626865672,
+      "audioSamples": 15320,
+      "durationSeconds": 0.9575,
+      "avDurationDifferenceMs": 47.49999999999987,
+      "audioPeak": 2770,
+      "audioRms": 242.99613509481642,
+      "fullDecodePassed": true
+    },
+    "cameraReopened": true,
+    "micAfterAll": "closed",
+    "microphoneRouteRestored": true
+  },
+  "userVoiceRecording": {
+    "version": "0.6.0",
+    "userRecorded": true,
+    "path": "/userdisk/Pictures/SNAP_20261017_192518_955_1.avi",
+    "ffprobe": {
+      "streams": [
+        {
+          "index": 0,
+          "codec_name": "mjpeg",
+          "codec_long_name": "Motion JPEG",
+          "profile": "Baseline",
+          "codec_type": "video",
+          "codec_tag_string": "MJPG",
+          "codec_tag": "0x47504a4d",
+          "width": 640,
+          "height": 192,
+          "coded_width": 640,
+          "coded_height": 192,
+          "has_b_frames": 0,
+          "sample_aspect_ratio": "1:1",
+          "display_aspect_ratio": "10:3",
+          "pix_fmt": "yuvj420p",
+          "level": -99,
+          "color_range": "pc",
+          "color_space": "bt470bg",
+          "chroma_location": "center",
+          "r_frame_rate": "58750/1957",
+          "avg_frame_rate": "58750/1957",
+          "time_base": "1957/58750",
+          "start_pts": 0,
+          "start_time": "0.000000",
+          "duration_ts": 235,
+          "duration": "7.828000",
+          "bit_rate": "1931262",
+          "bits_per_raw_sample": "8",
+          "nb_frames": "235",
+          "disposition": {
+            "default": 0,
+            "dub": 0,
+            "original": 0,
+            "comment": 0,
+            "lyrics": 0,
+            "karaoke": 0,
+            "forced": 0,
+            "hearing_impaired": 0,
+            "visual_impaired": 0,
+            "clean_effects": 0,
+            "attached_pic": 0,
+            "timed_thumbnails": 0,
+            "non_diegetic": 0,
+            "captions": 0,
+            "descriptions": 0,
+            "metadata": 0,
+            "dependent": 0,
+            "still_image": 0,
+            "multilayer": 0
+          }
+        },
+        {
+          "index": 1,
+          "codec_name": "pcm_s16le",
+          "codec_long_name": "PCM signed 16-bit little-endian",
+          "codec_type": "audio",
+          "codec_tag_string": "[1][0][0][0]",
+          "codec_tag": "0x0001",
+          "sample_fmt": "s16",
+          "sample_rate": "16000",
+          "channels": 1,
+          "bits_per_sample": 16,
+          "initial_padding": 0,
+          "r_frame_rate": "0/0",
+          "avg_frame_rate": "0/0",
+          "time_base": "1/16000",
+          "start_pts": 0,
+          "start_time": "0.000000",
+          "bit_rate": "256000",
+          "nb_frames": "125248",
+          "disposition": {
+            "default": 0,
+            "dub": 0,
+            "original": 0,
+            "comment": 0,
+            "lyrics": 0,
+            "karaoke": 0,
+            "forced": 0,
+            "hearing_impaired": 0,
+            "visual_impaired": 0,
+            "clean_effects": 0,
+            "attached_pic": 0,
+            "timed_thumbnails": 0,
+            "non_diegetic": 0,
+            "captions": 0,
+            "descriptions": 0,
+            "metadata": 0,
+            "dependent": 0,
+            "still_image": 0,
+            "multilayer": 0
+          }
+        }
+      ],
+      "format": {
+        "filename": "evidence\\private\\0.6.0\\user-final-voice.avi",
+        "nb_streams": 2,
+        "nb_programs": 0,
+        "nb_stream_groups": 0,
+        "format_name": "avi",
+        "format_long_name": "AVI (Audio Video Interleaved)",
+        "start_time": "0.000000",
+        "duration": "7.828000",
+        "size": "2144170",
+        "bit_rate": "2191282",
+        "probe_score": 100
+      }
+    },
+    "videoFps": 30.020439448134898,
+    "audioSignal": {
+      "samples": 125248,
+      "peak": 1576,
+      "rms": 133.9951311234593,
+      "peakDbFS": -26.35787443612363,
+      "rmsDbFS": -47.76721833855958
+    },
+    "audioDurationSeconds": 7.828,
+    "decode": "",
+    "microphoneAfterStop": "closed",
+    "avDurationDifferenceMs": 0.0,
+    "captureStage": "Verified stereo input with explicit PCM start, before final app-only 4x output gain"
+  },
+  "installed": {
+    "version": "0.6.0",
+    "bytecodeMatchesPackage": true,
+    "nativeCodeDataSectionsMatchPackage": [
+      ".gnu.version",
+      ".gnu.version_r",
+      ".gnu.hash",
+      ".hash",
+      ".rela.dyn",
+      ".rela.plt",
+      ".rodata",
+      ".eh_frame_hdr",
+      ".eh_frame",
+      ".text",
+      ".plt",
+      ".data.rel.ro",
+      ".got",
+      ".got.plt",
+      ".relro_padding",
+      ".data",
+      ".bss"
+    ],
+    "sourceNativeSha256": "0082c234afa8c8f717a6faa442da9fda86dd5abe15d8fdbc83bab4211f9e65df",
+    "installedNativeSha256": "c22368152dfdb9ddef4bb5bc2d22814d82417a6cf83a4fdf29ed6d14afff000e",
+    "installerChanges": "ELF SONAME/RUNPATH and symbol/string metadata rewritten by firmware"
+  },
+  "ui": {
+    "launched": true,
+    "previewUpdateLabelObserved": 26,
+    "continuousFocusStatusShown": true,
+    "realPhotoWithExif": {
+      "path": "/userdisk/Pictures/SNAP_20261017_193228_793_1.jpg",
+      "size": [
+        3264,
+        1362
+      ],
+      "exifOriginal": "2026:10:17 19:32:28",
+      "createdThroughUI": true
+    },
+    "screenGuardAcquiredInLog": true,
+    "idleScreenMonitor": [
+      {
+        "elapsedSeconds": 0,
+        "brightness": 90,
+        "clockKHz": 1416000,
+        "processRssKiB": 433056,
+        "processAnonKiB": 167436
+      },
+      {
+        "elapsedSeconds": 10,
+        "brightness": 90,
+        "clockKHz": 1416000,
+        "processRssKiB": 433096,
+        "processAnonKiB": 167476
+      },
+      {
+        "elapsedSeconds": 20,
+        "brightness": 90,
+        "clockKHz": 1416000,
+        "processRssKiB": 433080,
+        "processAnonKiB": 167460
+      },
+      {
+        "elapsedSeconds": 30,
+        "brightness": 90,
+        "clockKHz": 1416000,
+        "processRssKiB": 433080,
+        "processAnonKiB": 167460
+      },
+      {
+        "elapsedSeconds": 40,
+        "brightness": 90,
+        "clockKHz": 1416000,
+        "processRssKiB": 433084,
+        "processAnonKiB": 167464
+      },
+      {
+        "elapsedSeconds": 50,
+        "brightness": 90,
+        "clockKHz": 1416000,
+        "processRssKiB": 433084,
+        "processAnonKiB": 167464
+      },
+      {
+        "elapsedSeconds": 60,
+        "brightness": 90,
+        "clockKHz": 1416000,
+        "processRssKiB": 433084,
+        "processAnonKiB": 167464
+      }
+    ],
+    "screenTimeoutNotWritten": true,
+    "previewPresentedFpsNotMeasured": true,
+    "previousPreviewUpdateLabelObserved": 28,
+    "recordingFinalizedOnRealAppHide": {
+      "fullStreams": 2,
+      "videoFrames": 96,
+      "audioSamples": 51064,
+      "microphoneReleased": true
+    }
+  },
+  "preserved": {
+    "preferencesUnchanged": true,
+    "scanGuardSourceUnchanged": true,
+    "roundedIconUnchanged": true,
+    "originalMediaKept": true
+  },
+  "lanDownload": {
+    "tested": false,
+    "reason": "Skipped at user request"
+  },
+  "limits": [
+    "Video remains MJPEG AVI 640x192 landscape or 216x720 portrait",
+    "Stock RKAIQ continuous AF is observed; no tap-to-focus or optical-sharpness improvement claim",
+    "Preview updates are not proof of each frame being presented on the display",
+    "AVI video uses observed wall-clock timing; short final audio block may end earlier",
+    "Audio capture has app-only 4x gain and limiter; no mixer configuration changes"
+  ],
+  "publicationRedactions": [
+    "Host checkout path replaced with repository root"
+  ]
+}

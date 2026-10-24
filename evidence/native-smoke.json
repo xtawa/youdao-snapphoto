@@ -1,0 +1,75 @@
+{
+  "capabilities": {
+    "camera": true,
+    "preview": true,
+    "photo": true,
+    "video": true,
+    "gallery": true,
+    "zoom": true,
+    "focus": false,
+    "share": true,
+    "minZoom": 1,
+    "maxZoom": 3,
+    "filters": [
+      "none",
+      "mono",
+      "sepia"
+    ],
+    "hdr": false,
+    "npu": false
+  },
+  "preview": {
+    "image": "/tmp/snapphoto/preview-11326218-2.jpg",
+    "sequence": 2,
+    "captureFps": 7.651022441700862,
+    "previewFps": 5.100666459973753,
+    "convertMs": 4.906709000468254,
+    "encodeMs": 2.168250000104308
+  },
+  "photo": {
+    "path": "/userdisk/Pictures/SNAP_20261017_135030_585_2.jpg",
+    "written": true,
+    "indexed": false,
+    "size": 38952
+  },
+  "video": {
+    "path": "/userdisk/Pictures/SNAP_20261017_135030_606_3.avi",
+    "written": true,
+    "indexed": false,
+    "size": 202058
+  },
+  "steadyPreview": {
+    "image": "/tmp/snapphoto/preview-11326218-72.jpg",
+    "sequence": 72,
+    "captureFps": 27.892667861513424,
+    "previewFps": 18.42451042531061,
+    "convertMs": 4.6261250004172325,
+    "encodeMs": 2.3047509994357824
+  },
+  "share": {
+    "html": true,
+    "downloads_sha256_match": true,
+    "unauthorized_status": 403
+  },
+  "reopen": true,
+  "jpeg_decode": {
+    "width": 1280,
+    "height": 384
+  },
+  "video_probe": {
+    "programs": [],
+    "streams": [
+      {
+        "codec_name": "mjpeg",
+        "width": 640,
+        "height": 192,
+        "r_frame_rate": "30000/1501",
+        "nb_frames": "60"
+      }
+    ],
+    "format": {
+      "duration": "3.002000"
+    }
+  },
+  "video_full_decode": true
+}

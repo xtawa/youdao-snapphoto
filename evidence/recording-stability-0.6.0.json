@@ -1,0 +1,91 @@
+{
+  "version": "0.6.0",
+  "takes": [
+    {
+      "label": "repeat-0",
+      "size": 526670,
+      "videoSize": [
+        640,
+        192
+      ],
+      "videoFrames": 60,
+      "videoFps": 29.970029970029973,
+      "audioSamples": 31248,
+      "durationSeconds": 1.953,
+      "avDurationDifferenceMs": 48.99999999999971,
+      "audioPeak": 5140,
+      "audioRms": 610.4369963795601,
+      "fullDecodePassed": true
+    },
+    {
+      "label": "repeat-1",
+      "size": 529926,
+      "videoSize": [
+        216,
+        720
+      ],
+      "videoFrames": 60,
+      "videoFps": 29.940119760479043,
+      "audioSamples": 32008,
+      "durationSeconds": 2.0005,
+      "avDurationDifferenceMs": 3.4999999999998366,
+      "audioPeak": 3838,
+      "audioRms": 545.9777878392092,
+      "fullDecodePassed": true
+    },
+    {
+      "label": "repeat-2",
+      "size": 606824,
+      "videoSize": [
+        640,
+        192
+      ],
+      "videoFrames": 61,
+      "videoFps": 30.439121756487026,
+      "audioSamples": 31424,
+      "durationSeconds": 1.964,
+      "avDurationDifferenceMs": 40.000000000000036,
+      "audioPeak": 2780,
+      "audioRms": 354.0369774331777,
+      "fullDecodePassed": true
+    }
+  ],
+  "closeFinalizeSeconds": 0.0930000000007567,
+  "backgroundTake": {
+    "label": "background-finalized",
+    "size": 596862,
+    "videoSize": [
+      640,
+      192
+    ],
+    "videoFrames": 60,
+    "videoFps": 29.970029970029973,
+    "audioSamples": 31400,
+    "durationSeconds": 1.9625,
+    "avDurationDifferenceMs": 39.49999999999987,
+    "audioPeak": 4098,
+    "audioRms": 283.67099360256236,
+    "fullDecodePassed": true
+  },
+  "micAfterClose": "closed",
+  "busyMicrophoneRejected": true,
+  "recoveredTake": {
+    "label": "after-busy",
+    "size": 283654,
+    "videoSize": [
+      640,
+      192
+    ],
+    "videoFrames": 30,
+    "videoFps": 29.85074626865672,
+    "audioSamples": 15320,
+    "durationSeconds": 0.9575,
+    "avDurationDifferenceMs": 47.49999999999987,
+    "audioPeak": 2770,
+    "audioRms": 242.99613509481642,
+    "fullDecodePassed": true
+  },
+  "cameraReopened": true,
+  "micAfterAll": "closed",
+  "microphoneRouteRestored": true
+}

@@ -1,0 +1,19 @@
+{
+  "focused": false,
+  "position": 36,
+  "initialScore": 0.823303400860127,
+  "bestScore": 0.823303400860127,
+  "durationMs": 265.15156899997965,
+  "method": "V4L2 DW9714 contrast search",
+  "samples": [
+    {
+      "position": 0,
+      "score": 0.36147892228837564
+    },
+    {
+      "position": 8,
+      "score": 0.38135074776474487
+    }
+  ],
+  "reason": "Focus cancelled or frames unavailable; original focus restored"
+}

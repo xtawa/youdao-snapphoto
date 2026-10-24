@@ -1,0 +1,157 @@
+{
+  "conditions": "Same pen, awake display, no clock/governor changes",
+  "versions": {
+    "0.5.0": {
+      "firstFrameSeconds": 0.4680000000007567,
+      "wide": {
+        "uniquePolledFps": 18.899204244056996,
+        "native": {
+          "sequence": 62,
+          "captureFps": 27.43771068080673,
+          "previewFps": 18.097167206838108,
+          "convertMs": 8.71208399999887,
+          "encodeMs": 5.2120839999988675
+        },
+        "clockKHz": "1416000",
+        "brightness": "90"
+      },
+      "portrait": {
+        "uniquePolledFps": 20.333333333333332,
+        "native": {
+          "sequence": 128,
+          "captureFps": 28.373616283837027,
+          "previewFps": 19.014777027501694,
+          "convertMs": 9.03437600005418,
+          "encodeMs": 7.240624999860302
+        },
+        "clockKHz": "1416000",
+        "brightness": "90"
+      },
+      "video": {
+        "uniquePolledFps": 20.448548812670012,
+        "native": {
+          "sequence": 195,
+          "captureFps": 28.70705245099627,
+          "previewFps": 19.369807110230976,
+          "convertMs": 5.743208999978378,
+          "encodeMs": 5.892541999928653
+        },
+        "clockKHz": "1416000",
+        "brightness": "90"
+      },
+      "photo": {
+        "written": true,
+        "indexed": false,
+        "size": 263680,
+        "processingMs": 121.36105399997905,
+        "saveMs": 97.66255200002342,
+        "capturedAt": "2026-10-17T19:19:39.079+08:00",
+        "capturedAtEpochMs": 1792235979079.777,
+        "timeSource": "device-frame-received",
+        "totalSeconds": 0.3430000000007567
+      }
+    },
+    "0.6.0": {
+      "firstFrameSeconds": 0.4530000000013388,
+      "wide": {
+        "uniquePolledFps": 26.666666666666668,
+        "native": {
+          "sequence": 92,
+          "captureFps": 27.3614325475897,
+          "previewFps": 27.067223595465077,
+          "frameAgeMs": 4.07779200002551,
+          "rawSequence": 93,
+          "convertMs": 3.911833999911323,
+          "encodeMs": 0.15749999997206032,
+          "recording": false,
+          "recordError": false
+        },
+        "clockKHz": "1416000",
+        "brightness": "90"
+      },
+      "portrait": {
+        "uniquePolledFps": 26.865671641796233,
+        "native": {
+          "sequence": 190,
+          "captureFps": 28.753904417426764,
+          "previewFps": 28.454384579745234,
+          "frameAgeMs": 6.27579200011678,
+          "rawSequence": 192,
+          "convertMs": 6.11712500010617,
+          "encodeMs": 0.1490420000627637,
+          "recording": false,
+          "recordError": false
+        },
+        "clockKHz": "1416000",
+        "brightness": "90"
+      },
+      "video": {
+        "uniquePolledFps": 27.0,
+        "native": {
+          "sequence": 287,
+          "captureFps": 29.164897731522384,
+          "previewFps": 28.96306452922811,
+          "frameAgeMs": 4.257750999880955,
+          "rawSequence": 289,
+          "convertMs": 4.0929590000305325,
+          "encodeMs": 0.15283300005830824,
+          "recording": false,
+          "recordError": false
+        },
+        "clockKHz": "1416000",
+        "brightness": "90"
+      },
+      "photo": {
+        "written": true,
+        "indexed": false,
+        "size": 263682,
+        "processingMs": 110.054301999975,
+        "saveMs": 75.03242499986663,
+        "capturedAt": "2026-10-17T19:19:50.201+08:00",
+        "capturedAtEpochMs": 1792235990201.57,
+        "timeSource": "device-frame-received",
+        "totalSeconds": 0.31300000000192085
+      },
+      "continuousFocus": {
+        "settled": true,
+        "position": 20,
+        "score": 0.29474710248838465,
+        "luminance": 87.05924479166667,
+        "durationMs": 221.37823099992238,
+        "method": "Observe stock RKAIQ continuous AF; no lens writes",
+        "samples": [
+          {
+            "position": 20,
+            "score": 0.2979512553696513
+          },
+          {
+            "position": 20,
+            "score": 0.31841552032374926
+          },
+          {
+            "position": 20,
+            "score": 0.31184803406239764
+          },
+          {
+            "position": 20,
+            "score": 0.3061256772300438
+          },
+          {
+            "position": 20,
+            "score": 0.30648530274188057
+          },
+          {
+            "position": 20,
+            "score": 0.2932062300619253
+          },
+          {
+            "position": 20,
+            "score": 0.29474710248838465
+          }
+        ]
+      },
+      "cancelFocusCloseSeconds": 0.06199999999807915,
+      "reopenAfterCancellation": true
+    }
+  }
+}

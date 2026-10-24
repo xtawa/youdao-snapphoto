@@ -1,0 +1,30 @@
+{
+  "version": "0.9.3",
+  "sameFirmwareHost": true,
+  "cycles": [
+    {
+      "number": 1,
+      "launchHook": true,
+      "appShow": true,
+      "freshPreviewFrames": true,
+      "galleryOpened": true,
+      "moduleImportErrors": false
+    },
+    {
+      "number": 2,
+      "launchHook": true,
+      "appShow": true,
+      "freshPreviewFrames": true,
+      "galleryOpened": true,
+      "moduleImportErrors": false
+    },
+    {
+      "number": 3,
+      "launchHook": true,
+      "appShow": true,
+      "freshPreviewFrames": true,
+      "galleryOpened": true,
+      "moduleImportErrors": false
+    }
+  ]
+}

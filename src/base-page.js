@@ -1,5 +1,6 @@
 export class BasePage extends $falcon.Page {
   onShow() {
+    console.warn('[snapphoto] page show root='+!!this.$root)
     super.onShow()
     if (this.$root && this.$root.onShow) this.$root.onShow()
   }

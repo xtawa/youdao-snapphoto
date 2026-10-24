@@ -1,0 +1,49 @@
+{
+  "device": "Youdao X7 Pro",
+  "firmware": "PenOS 4.34.0",
+  "desktop": {
+    "appid": "8080222437664451",
+    "version": "2.34.0",
+    "module": "indexPage-b6434364.js.bin",
+    "module_sha256": "80a7926500b4dd19a3ea8c4d48485b242aba2215e238d10dec25eff324d330a4",
+    "static_parse_functions": 516,
+    "static_parse_to_eof": true
+  },
+  "stock_option_label": "关闭应用白名单卸载",
+  "marker": "/userdata/.disable_app_whitelist_clean",
+  "before_present": false,
+  "after_present": true,
+  "marker_mount": "/userdata ext4 rw",
+  "cleaner_guard": {
+    "function_file_offset": "0x207d6",
+    "check_pc": 8,
+    "early_return_pc": 39,
+    "skip_log": "disabled by test flag, skip cleanUnofficialApps",
+    "config_key": "appWhitelist"
+  },
+  "deletion_policy": {
+    "requires_remote_code": 0,
+    "requires_config_enabled": true,
+    "empty_allowed_apps_skips": true,
+    "protected_flag_bits": [
+      1,
+      2
+    ],
+    "unlisted_other_apps": "removePackage(appid, callback)",
+    "supportUnInstall_consulted": false
+  },
+  "runtime_log_prior_observed": {
+    "cleaner_runs": true,
+    "remote_whitelist_fetch_failed": true,
+    "actual_system_removal_not_observed": true
+  },
+  "validation": {
+    "marker_readback": true,
+    "kernel_mount_checked": true,
+    "reboot_performed": true,
+    "runtime_skip_log_after_enable_observed": true,
+    "runtime_skip_log": "disabled by test flag, skip cleanUnofficialApps"
+  },
+  "scope": "Disables only stock desktop whitelist cleanup, preserves manual app removal; no guarantee against factory reset or future firmware changes",
+  "rollback": "adb -d shell rm -f /userdata/.disable_app_whitelist_clean"
+}

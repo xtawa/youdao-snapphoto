@@ -1,0 +1,20 @@
+{
+  "version": "0.7.0",
+  "profile": "hd",
+  "realUIBackgroundSaved": true,
+  "path": "/userdisk/Pictures/SNAP_20261017_195450_369_1.avi",
+  "videoSize": [
+    1280,
+    720
+  ],
+  "videoFrames": 903,
+  "videoFps": 29.961179866618004,
+  "durationSeconds": 30.139,
+  "audioSamples": 482480,
+  "audioDurationSeconds": 30.155,
+  "fileBytes": 56235702,
+  "decodePassed": true,
+  "microphoneAfterClose": "closed",
+  "stateBefore": "VmRSS:\t  462956 kB\r\r\nRssAnon:\t  196724 kB\r\r\n55555\r\r\n",
+  "stateAfter": "VmRSS:\t  467172 kB\r\r\nRssAnon:\t  200940 kB\r\r\n48333\r\r\n"
+}

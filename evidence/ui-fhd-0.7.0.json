@@ -1,0 +1,19 @@
+{
+  "version": "0.7.0",
+  "profile": "fhd",
+  "throughRealAppUI": true,
+  "path": "/userdisk/Pictures/SNAP_20261017_194920_685_1.avi",
+  "videoSize": [
+    1920,
+    1080
+  ],
+  "videoFrames": 369,
+  "videoFps": 22.228915662650603,
+  "durationSeconds": 16.6,
+  "audioSamples": 266472,
+  "audioDurationSeconds": 16.6545,
+  "fileBytes": 46123386,
+  "decodePassed": true,
+  "microphoneAfterStop": "closed",
+  "temperatureMilliC": "54375"
+}

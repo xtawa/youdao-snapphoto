@@ -1,0 +1,17 @@
+{
+  "appid": "8001953602710246",
+  "b": true,
+  "category": "",
+  "flag": 16384,
+  "icon": "app_icon.png",
+  "installPath": "/userdisk/secondary/miniapp/data/mini_app/pkg/8001953602710246/b/",
+  "name": "SnapPhoto",
+  "packageDir": "/userdisk/secondary/miniapp/data/mini_app/pkg/8001953602710246/",
+  "props": {
+    "addDesktop": {
+      "y02_1_platform": true
+    },
+    "supportUnInstall": true
+  },
+  "version": "0.9.0"
+}

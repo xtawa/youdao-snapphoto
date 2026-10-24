@@ -1,4 +1,4 @@
-name: Build X7 Pro SnapPhoto AMR
+name: Test SnapPhoto and build frontend preview
 on:
   push:
     branches:
@@ -26,7 +26,9 @@ jobs:
           /tmp/snap-hdr-test
           g++ -std=c++17 -O2 -Wall -Wextra -Werror native/rknn/rknn_enhancer.cpp native/rknn/rknn_backend_test.cpp -o /tmp/snap-rknn-stub-test
           /tmp/snap-rknn-stub-test
-      - name: Compile AMR
+      # The real X7 Pro package also needs native ARM libraries and bytecode
+      # compiled with the pen's patched QuickJS. See tools/build-x7pro.py.
+      - name: Compile frontend preview (not a device installation package)
         run: |
           set -o pipefail
           npm run build:prod 2>&1 | tee build-output.log
@@ -46,7 +48,7 @@ jobs:
           cat SHA256SUMS.txt
       - uses: actions/upload-artifact@v4
         with:
-          name: SnapPhoto-X7Pro-AMR-UNVERIFIED
+          name: SnapPhoto-Frontend-Only-NOT-INSTALLABLE
           path: |
             *.amr
             SHA256SUMS.txt

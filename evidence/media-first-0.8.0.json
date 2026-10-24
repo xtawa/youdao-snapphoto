@@ -1,0 +1,69 @@
+{
+  "open": {},
+  "frame": {
+    "image": "/tmp/snapphoto/preview-5466737-1.jpg",
+    "sequence": 1,
+    "nightActive": false,
+    "sceneLuma": 11.291311134235173,
+    "nightStrength": 0,
+    "captureFps": 2.087735674133113,
+    "previewFps": 1.0438678370665564,
+    "frameAgeMs": 359.5349110001698,
+    "rawSequence": 2,
+    "convertMs": 332.3063669996336,
+    "encodeMs": 26.90450199972838,
+    "recording": false,
+    "recordError": false,
+    "recordLimit": false,
+    "recordDropped": 0,
+    "recordEncodeMs": 0,
+    "recordSampleMs": 0
+  },
+  "nightFrame": {
+    "image": "/tmp/snapphoto/preview-5466737-14.jpg",
+    "sequence": 14,
+    "nightActive": true,
+    "sceneLuma": 10.421166571273467,
+    "nightStrength": 0.3,
+    "captureFps": 3.664568119484759,
+    "previewFps": 3.420263578185775,
+    "frameAgeMs": 240.4961080001667,
+    "rawSequence": 15,
+    "convertMs": 208.11760399956256,
+    "encodeMs": 19.73300200048834,
+    "recording": false,
+    "recordError": false,
+    "recordLimit": false,
+    "recordDropped": 0,
+    "recordEncodeMs": 0,
+    "recordSampleMs": 0
+  },
+  "photo": {
+    "path": "/userdisk/Pictures/SNAP_20261021_223152_828_1.jpg",
+    "written": true,
+    "indexed": false,
+    "size": 289930,
+    "processingMs": 3075.583016999997,
+    "saveMs": 1873.872479999438,
+    "capturedAt": "2026-10-21T22:31:52.828+08:00",
+    "capturedAtEpochMs": 1792593112828.2065,
+    "timeSource": "device-frame-received"
+  },
+  "thumbStart": {
+    "pending": true
+  },
+  "thumb": {
+    "path": "/tmp/snapphoto/thumb-0c0cc2d9d02a1b4f.jpg"
+  },
+  "videoThumbStart": {
+    "pending": true
+  },
+  "videoThumb": {
+    "path": "/tmp/snapphoto/thumb-e8f3aa6633540a91.jpg"
+  },
+  "play": {},
+  "playFrame": {
+    "playing": true,
+    "image": "/tmp/snapphoto/play-1-00000014.jpg"
+  }
+}

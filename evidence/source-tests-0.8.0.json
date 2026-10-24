@@ -1,0 +1,7 @@
+{
+  "total": 67,
+  "passed": 67,
+  "failed": 0,
+  "exitCode": 0,
+  "nativeProcessingTests": "passed on device; scalar and NEON rotations, odd dimensions, shadow LUT and hysteresis"
+}

@@ -1,0 +1,43 @@
+{
+  "version": "0.5.0",
+  "firstFrameSeconds": 4.094000000004598,
+  "wide": {
+    "uniquePreviewFps": 0.570385580652309,
+    "native": {
+      "sequence": 6,
+      "captureFps": 0.49998158107139556,
+      "previewFps": 0.4285532202634274,
+      "convertMs": 143.75706500001252,
+      "encodeMs": 73.16294599999674
+    },
+    "clockKHz": "408000"
+  },
+  "portrait": {
+    "uniquePreviewFps": 0.5396071659829744,
+    "native": {
+      "sequence": 14,
+      "captureFps": 0.494428653142597,
+      "previewFps": 0.4614647899018031,
+      "convertMs": 149.2127919999184,
+      "encodeMs": 72.9697649999289
+    },
+    "clockKHz": "408000"
+  },
+  "video": {
+    "uniquePreviewFps": 0.5396071659829744,
+    "native": {
+      "sequence": 22,
+      "captureFps": 0.48868163477706067,
+      "previewFps": 0.4674337700353986,
+      "convertMs": 171.06164200010244,
+      "encodeMs": 85.88563399994746
+    },
+    "clockKHz": "408000"
+  },
+  "photo": {
+    "processingMs": 3150.40369200008,
+    "saveMs": 4199.020421999972,
+    "size": 378249,
+    "totalSeconds": 9.171999999998661
+  }
+}

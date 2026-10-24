@@ -1,0 +1,233 @@
+{
+  "sourceSize": [
+    3264,
+    2448
+  ],
+  "condition": "Display awake; original governor unchanged",
+  "previewFocus": {
+    "settled": false,
+    "position": 64,
+    "score": 6.643958948198703,
+    "luminance": 0.892578125,
+    "durationMs": 1426.739267999772,
+    "cached": false,
+    "method": "Observe stock AF motor, sharpness stability and motion; no lens writes",
+    "samples": [
+      {
+        "position": 64,
+        "score": 6.562590724040645
+      },
+      {
+        "position": 64,
+        "score": 6.139054390949523
+      },
+      {
+        "position": 64,
+        "score": 5.739006254684332
+      },
+      {
+        "position": 64,
+        "score": 6.396035061920004
+      },
+      {
+        "position": 64,
+        "score": 6.235031158000562
+      },
+      {
+        "position": 64,
+        "score": 6.408957678503358
+      },
+      {
+        "position": 64,
+        "score": 6.074333396300828
+      },
+      {
+        "position": 64,
+        "score": 6.481198595819656
+      },
+      {
+        "position": 64,
+        "score": 7.3061218319179675
+      },
+      {
+        "position": 64,
+        "score": 7.421380229363396
+      },
+      {
+        "position": 64,
+        "score": 7.201224135843104
+      },
+      {
+        "position": 64,
+        "score": 7.516696413997904
+      },
+      {
+        "position": 64,
+        "score": 6.879970228313927
+      },
+      {
+        "position": 64,
+        "score": 7.03605238326186
+      },
+      {
+        "position": 64,
+        "score": 7.042251092938477
+      },
+      {
+        "position": 64,
+        "score": 7.37944296625739
+      },
+      {
+        "position": 64,
+        "score": 7.6572745569936265
+      },
+      {
+        "position": 64,
+        "score": 8.054178840189056
+      },
+      {
+        "position": 64,
+        "score": 7.18203369383776
+      },
+      {
+        "position": 64,
+        "score": 6.9966440736246875
+      },
+      {
+        "position": 64,
+        "score": 6.805824508224325
+      },
+      {
+        "position": 64,
+        "score": 7.43883074632792
+      },
+      {
+        "position": 64,
+        "score": 6.87452425162493
+      },
+      {
+        "position": 64,
+        "score": 6.99676566719066
+      },
+      {
+        "position": 64,
+        "score": 6.87351473963956
+      },
+      {
+        "position": 64,
+        "score": 7.14365149986567
+      },
+      {
+        "position": 64,
+        "score": 7.341581870355614
+      },
+      {
+        "position": 64,
+        "score": 6.88805420526626
+      },
+      {
+        "position": 64,
+        "score": 6.868470513676774
+      },
+      {
+        "position": 64,
+        "score": 7.4314330535765
+      },
+      {
+        "position": 64,
+        "score": 7.737516480068223
+      },
+      {
+        "position": 64,
+        "score": 7.239794630081642
+      },
+      {
+        "position": 64,
+        "score": 7.529952281082495
+      },
+      {
+        "position": 64,
+        "score": 7.32716196603826
+      },
+      {
+        "position": 64,
+        "score": 7.50232569505965
+      },
+      {
+        "position": 64,
+        "score": 7.7747487829681985
+      },
+      {
+        "position": 64,
+        "score": 7.710283711114355
+      },
+      {
+        "position": 64,
+        "score": 7.549258595454798
+      },
+      {
+        "position": 64,
+        "score": 7.48185267095712
+      },
+      {
+        "position": 64,
+        "score": 6.818083172856128
+      },
+      {
+        "position": 64,
+        "score": 6.790701309041492
+      },
+      {
+        "position": 64,
+        "score": 7.326085589828168
+      },
+      {
+        "position": 64,
+        "score": 6.643958948198703
+      }
+    ]
+  },
+  "receipt": {
+    "path": "/userdisk/Pictures/SNAP_AI_20261024_171856_000_1.JPG",
+    "written": true,
+    "indexed": false,
+    "size": 2470149,
+    "denoiseApplied": true,
+    "npuUsed": true,
+    "sourcePath": "/userdisk/Pictures/SNAP_NPU_FULL_VALIDATION.jpg",
+    "npuBackend": "rknn-ffdnet-int8",
+    "runtime": "1.5.1b18 (3aa716819@2023-07-03T19:18:45)",
+    "driver": "0.9.1",
+    "tiles": 192,
+    "noiseSigma": 12,
+    "sceneLuma": 114.72747260668973,
+    "width": 3264,
+    "height": 2448,
+    "npuTimeMs": 14564.552,
+    "processingMs": 20225.566656999756
+  },
+  "peakRSSKiB": 114756,
+  "progressSamples": 45,
+  "fullJpegDecode": true,
+  "previewWhileEnhancing": 29.5989034920684,
+  "freshPhoto": {
+    "error": "Focus or scene is not stable; hold still and retry"
+  },
+  "video": {
+    "path": "/userdisk/Pictures/SNAP_20261024_172403_066_2.avi",
+    "written": true,
+    "indexed": false,
+    "size": 1379690,
+    "audio": true,
+    "audioSamples": 31352,
+    "audioDurationMs": 1959.5,
+    "durationMs": 2004.8783679995686,
+    "width": 1280,
+    "height": 720,
+    "droppedFrames": 0,
+    "videoFrames": 58,
+    "audioXruns": 0,
+    "audioLastError": 0,
+    "audioZeroReads": 0
+  }
+}

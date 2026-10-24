@@ -1,0 +1,126 @@
+{
+  "version": "0.9.1",
+  "fixture": "synthetic gradient, text, edges and sigma-12 noise",
+  "checks": {
+    "cancelOnClose": true,
+    "originalUnchanged": true,
+    "preferencesUnchanged": true
+  },
+  "capabilities": {
+    "camera": true,
+    "preview": true,
+    "photo": true,
+    "video": true,
+    "audio": true,
+    "videoProfiles": [
+      {
+        "id": "compact",
+        "width": 640,
+        "height": 192,
+        "portraitWidth": 216,
+        "portraitHeight": 720,
+        "targetFps": 30
+      },
+      {
+        "id": "hd",
+        "width": 1280,
+        "height": 720,
+        "portraitWidth": 720,
+        "portraitHeight": 1280,
+        "targetFps": 30
+      },
+      {
+        "id": "fhd",
+        "width": 1920,
+        "height": 1080,
+        "portraitWidth": 1080,
+        "portraitHeight": 1920,
+        "targetFps": 24
+      }
+    ],
+    "gallery": true,
+    "zoom": true,
+    "focus": false,
+    "continuousFocus": true,
+    "share": true,
+    "minZoom": 1,
+    "maxZoom": 3,
+    "filters": [
+      "none",
+      "mono",
+      "sepia",
+      "warm",
+      "cool",
+      "vintage",
+      "vivid",
+      "negative"
+    ],
+    "photoProfiles": [
+      {
+        "id": "wide",
+        "width": 3264,
+        "height": 979
+      },
+      {
+        "id": "cinema",
+        "width": 3264,
+        "height": 1362
+      },
+      {
+        "id": "two-one",
+        "width": 3264,
+        "height": 1632
+      },
+      {
+        "id": "sixteen-nine",
+        "width": 3264,
+        "height": 1836
+      },
+      {
+        "id": "four-three",
+        "width": 3264,
+        "height": 2448
+      },
+      {
+        "id": "square",
+        "width": 2448,
+        "height": 2448
+      }
+    ],
+    "hdr": false,
+    "npu": true,
+    "npuReady": true,
+    "enhancement": true,
+    "npuBackend": "rknn-ffdnet-int8"
+  },
+  "quality": {
+    "receipt": {
+      "path": "/userdisk/Pictures/SNAP_AI_20261024_171352_000_1.JPG",
+      "written": true,
+      "indexed": false,
+      "size": 65790,
+      "denoiseApplied": true,
+      "npuUsed": true,
+      "sourcePath": "/userdisk/Pictures/SNAP_NPU_VALIDATION_SYNTHETIC.jpg",
+      "npuBackend": "rknn-ffdnet-int8",
+      "runtime": "1.5.1b18 (3aa716819@2023-07-03T19:18:45)",
+      "driver": "0.9.1",
+      "tiles": 6,
+      "noiseSigma": 12,
+      "sceneLuma": 116.46279264214047,
+      "width": 624,
+      "height": 416,
+      "npuTimeMs": 214.88,
+      "processingMs": 387.3817890002392
+    },
+    "progressSamples": 5,
+    "noisyPsnr": 26.43215498007961,
+    "enhancedPsnr": 36.48290241271216,
+    "verticalSeamMAE": [
+      13.452777777777778,
+      2.998148148148148,
+      13.214814814814815,
+      3.0555555555555554
+    ]
+  }
+}

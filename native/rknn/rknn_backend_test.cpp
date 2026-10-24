@@ -1,4 +1,7 @@
 #include "rknn_enhancer.hpp"
+#ifdef NDEBUG
+#undef NDEBUG
+#endif
 #include <cassert>
 #include <vector>
 #include <string>

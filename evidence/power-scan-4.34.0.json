@@ -1,0 +1,43 @@
+{
+  "device": "X7 Pro / PenOS 4.34.0",
+  "board": "RK3562_Y02-1_V0",
+  "kernel": "5.10.160 #24 SMP Fri May 29 18:06:40 CST 2026",
+  "kernel_sha256": "c24c240a35c22a2608177d55e457051522e14f20719b60ccbc39bd2dbf555fac",
+  "snap_scan_guard_user_verified": true,
+  "pressure_tests": [
+    {
+      "method": "kernel cs_press sleep command then exit diagnostic mode",
+      "sleep_acknowledged": true,
+      "user_result": "scanning still triggers",
+      "restored": true
+    },
+    {
+      "method": "hold diagnostic mode and kernel cs_press sleep command",
+      "sleep_acknowledged": true,
+      "raw_head_presses_observed": 3,
+      "user_result": "scan light and scanning still trigger",
+      "restored": true
+    }
+  ],
+  "linux_head_wake_test": {
+    "node": "/sys/devices/platform/led_control/power/wakeup",
+    "before": "enabled",
+    "test_value": "disabled",
+    "power_key_pmic_wake_remains": "enabled",
+    "physical_test": "failed: user confirmed head scanning still cold-boots the unplugged device",
+    "kernel_boot_id_changed": true,
+    "post_test_head_wakeup": "enabled",
+    "post_test_pmic_wakeup": "enabled",
+    "post_test_pressure_factory_mode": "0"
+  },
+  "boot_image_modified": false,
+  "pressure_firmware_modified": false,
+  "pressure_calibration_modified": false,
+  "shutdown_hooks_installed": false,
+  "outcome": {
+    "foreground_scan_routing": "implemented and user verified",
+    "cold_poweroff_scan_boot": "not solved; tested software switches ineffective",
+    "device_restored": true,
+    "further_dependency": "board-level head power-on signal or controller firmware documentation; no verified independent software switch identified"
+  }
+}

@@ -1,13 +1,16 @@
 {
   "name": "youdao-snapphoto",
   "appid": "8001953602710246",
-  "version": "0.1.0",
+  "version": "0.9.3",
   "description": "SnapPhoto - a camera MiniApp for Youdao Dictionary Pen",
   "author": "xtawa",
   "license": "MIT",
   "type": "module",
   "icon": "app_icon.png",
-  "quickjs": {"version": "20200705", "bigNum": false},
+  "quickjs": {
+    "version": "20200705",
+    "bigNum": false
+  },
   "single-js-bundle": false,
   "scripts": {
     "start": "aiot-cli preview",

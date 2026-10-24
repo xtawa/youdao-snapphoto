@@ -1,0 +1,25 @@
+node_modules/
+.falcon*/
+build/
+dist/
+*.amr
+native/cache/
+native/*.so
+native/snapphoto-probe
+evidence/private/
+
+# Local verification media, logs, and Python caches are never published.
+__pycache__/
+*.py[cod]
+*.log
+*.tap
+evidence/**/*.png
+evidence/**/*.jpg
+evidence/**/*.jpeg
+evidence/**/*.ppm
+evidence/**/*.mp4
+evidence/**/*.avi
+evidence/**/*.wav
+native/inject-gesture
+native/processing-test
+native/sensor-probe

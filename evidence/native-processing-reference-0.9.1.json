@@ -1,0 +1,30 @@
+[
+  {
+    "backend": "hdr",
+    "target": "x86_64-windows-gnu",
+    "assertionsEnabled": true,
+    "output": "HDR CPU pixel fusion tests passed",
+    "passed": true
+  },
+  {
+    "backend": "rknn",
+    "target": "x86_64-windows-gnu",
+    "assertionsEnabled": true,
+    "output": "RKNN SDK-unavailable guard passed",
+    "passed": true
+  },
+  {
+    "backend": "hdr",
+    "target": "aarch64-linux-gnu.2.29",
+    "assertionsEnabled": true,
+    "output": "HDR CPU pixel fusion tests passed",
+    "passed": true
+  },
+  {
+    "backend": "rknn",
+    "target": "aarch64-linux-gnu.2.29",
+    "assertionsEnabled": true,
+    "output": "RKNN SDK-unavailable guard passed",
+    "passed": true
+  }
+]

@@ -1,0 +1,59 @@
+{
+  "version": "0.9.0",
+  "realAppLaunched": true,
+  "nativeAlgorithms": {
+    "passed": true,
+    "assertionsEnabledUnderO2": true,
+    "hostAndDevicePassed": true,
+    "deviceOutput": "quality/speed noise variance: luma=0.1790 chroma=0.0737\n\nplayback: complete snapshots, input deletion, partial frames, unique URIs and 32-frame bound passed\n\npixel rotation, night hysteresis, noise, edge and plane guards passed"
+  },
+  "gallery": {
+    "itemsIncludingOwnedUiClip": 164,
+    "itemsAfterOwnedClipDeletion": 163,
+    "cameraReleased": true,
+    "scrollTest": true,
+    "cachedThumbnailCount": 45,
+    "highestCachedMediaIndex": 59
+  },
+  "playback": {
+    "sampledFrames": [
+      {
+        "sample": 0,
+        "centerMeanLuma": 107.2443156199678
+      },
+      {
+        "sample": 1,
+        "centerMeanLuma": 107.56883735909823
+      },
+      {
+        "sample": 2,
+        "centerMeanLuma": 107.5814879227053
+      },
+      {
+        "sample": 3,
+        "centerMeanLuma": 107.54589371980677
+      },
+      {
+        "sample": 4,
+        "centerMeanLuma": 107.54867632850241
+      }
+    ],
+    "sampledFramesNotBlack": true,
+    "limit": "Sparse display samples do not prove every frame was presented without flicker"
+  },
+  "preferencesBytesPreserved": true,
+  "ownedUiClipDeleted": {
+    "deleted": [
+      "/userdisk/Pictures/SNAP_UI_VERIFY_20261023_2037.avi"
+    ],
+    "failed": []
+  },
+  "userDependentTests": {
+    "performed": false,
+    "skipped": [
+      "Physical orientation movements",
+      "Optical focus chart",
+      "Controlled real low-light scene"
+    ]
+  }
+}

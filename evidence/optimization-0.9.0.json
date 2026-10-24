@@ -1,0 +1,751 @@
+{
+  "version": "0.9.0",
+  "condition": "Same device/scene; awake; no clock/governor/mixer changes",
+  "runs": {
+    "baseline": {
+      "binarySha256": "9fad3ecca75e084c7f8ae8c641f0f516d7bdd0460c921acb9b580ae2eba91e3c",
+      "preview": {
+        "photo": {
+          "uniquePolledFps": 26.076649545634663,
+          "frame": {
+            "sequence": 94,
+            "nightActive": false,
+            "sceneLuma": 124.28624277301967,
+            "nightStrength": 0,
+            "captureFps": 27.581807383030622,
+            "previewFps": 27.2914725684724,
+            "frameAgeMs": 4.75679200142622,
+            "rawSequence": 95,
+            "convertMs": 4.334458999335766,
+            "encodeMs": 0.15691599994897842,
+            "recording": false,
+            "recordError": false,
+            "recordLimit": false,
+            "recordDropped": 0,
+            "recordEncodeMs": 0,
+            "recordSampleMs": 0
+          },
+          "clockKHz": "1416000"
+        },
+        "portrait": {
+          "uniquePolledFps": 26.23211446741253,
+          "frame": {
+            "sequence": 188,
+            "nightActive": false,
+            "sceneLuma": 124.26226494430614,
+            "nightStrength": 0,
+            "captureFps": 28.74929995131554,
+            "previewFps": 28.59718725316043,
+            "frameAgeMs": 5.969542000442743,
+            "rawSequence": 189,
+            "convertMs": 5.509874999523163,
+            "encodeMs": 0.18929100036621094,
+            "recording": false,
+            "recordError": false,
+            "recordLimit": false,
+            "recordDropped": 0,
+            "recordEncodeMs": 0,
+            "recordSampleMs": 0
+          },
+          "clockKHz": "1416000"
+        },
+        "hd-video": {
+          "uniquePolledFps": 26.066350710898902,
+          "frame": {
+            "sequence": 282,
+            "nightActive": false,
+            "sceneLuma": 124.26984529349951,
+            "nightStrength": 0,
+            "captureFps": 29.146278542724964,
+            "previewFps": 29.043288159181767,
+            "frameAgeMs": 3.0858330000191927,
+            "rawSequence": 283,
+            "convertMs": 2.683625001460314,
+            "encodeMs": 0.1522499993443489,
+            "recording": false,
+            "recordError": false,
+            "recordLimit": false,
+            "recordDropped": 0,
+            "recordEncodeMs": 0,
+            "recordSampleMs": 0
+          },
+          "clockKHz": "1416000"
+        }
+      },
+      "photos": [
+        {
+          "focus": {
+            "settled": true,
+            "position": 8,
+            "score": 0.0820222121412281,
+            "luminance": 137.03125,
+            "durationMs": 245.28148300014436,
+            "method": "Observe stock RKAIQ continuous AF; no lens writes",
+            "samples": [
+              {
+                "position": 8,
+                "score": 0.0822049706552071
+              },
+              {
+                "position": 8,
+                "score": 0.0794649025020256
+              },
+              {
+                "position": 8,
+                "score": 0.08198169172582824
+              },
+              {
+                "position": 8,
+                "score": 0.0829891678232797
+              },
+              {
+                "position": 8,
+                "score": 0.08462899952353486
+              },
+              {
+                "position": 8,
+                "score": 0.08156013218234294
+              },
+              {
+                "position": 8,
+                "score": 0.08285419080600823
+              },
+              {
+                "position": 8,
+                "score": 0.0820222121412281
+              }
+            ]
+          },
+          "photo": {
+            "path": "/userdisk/Pictures/SNAP_20261023_202731_996_1.JPG",
+            "written": true,
+            "indexed": false,
+            "size": 446467,
+            "processingMs": 268.4646100010723,
+            "saveMs": 125.21105399914086,
+            "capturedAt": "2026-10-23T20:27:31.996+08:00",
+            "capturedAtEpochMs": 1792758451996.6665,
+            "timeSource": "device-frame-received"
+          },
+          "totalMs": 811.9999999998981,
+          "conditionsBefore": {
+            "brightness": 67,
+            "cpuKHz": 1416000
+          },
+          "conditionsAfter": {
+            "brightness": 67,
+            "cpuKHz": 1416000
+          }
+        },
+        {
+          "focus": {
+            "settled": true,
+            "position": 8,
+            "score": 0.0811402294063713,
+            "luminance": 137.10026041666666,
+            "durationMs": 244.59694100171328,
+            "method": "Observe stock RKAIQ continuous AF; no lens writes",
+            "samples": [
+              {
+                "position": 8,
+                "score": 0.0790363732762421
+              },
+              {
+                "position": 8,
+                "score": 0.0833067608647545
+              },
+              {
+                "position": 8,
+                "score": 0.08142802943928296
+              },
+              {
+                "position": 8,
+                "score": 0.08143387576783104
+              },
+              {
+                "position": 8,
+                "score": 0.0781864177520231
+              },
+              {
+                "position": 8,
+                "score": 0.08059230550421903
+              },
+              {
+                "position": 8,
+                "score": 0.08074476000777853
+              },
+              {
+                "position": 8,
+                "score": 0.0811402294063713
+              }
+            ]
+          },
+          "photo": {
+            "path": "/userdisk/Pictures/SNAP_20261023_202733_427_2.JPG",
+            "written": true,
+            "indexed": false,
+            "size": 446434,
+            "processingMs": 279.89940300025046,
+            "saveMs": 117.787553999573,
+            "capturedAt": "2026-10-23T20:27:33.427+08:00",
+            "capturedAtEpochMs": 1792758453427.102,
+            "timeSource": "device-frame-received"
+          },
+          "totalMs": 813.0000000001019,
+          "conditionsBefore": {
+            "brightness": 67,
+            "cpuKHz": 1416000
+          },
+          "conditionsAfter": {
+            "brightness": 67,
+            "cpuKHz": 1416000
+          }
+        }
+      ],
+      "firstFrameMs": 469.00000000005093,
+      "focusCacheCheck": [
+        {
+          "settled": true,
+          "position": 8,
+          "score": 0.08514826180914957,
+          "luminance": 137.13671875,
+          "durationMs": 247.2808589991182,
+          "method": "Observe stock RKAIQ continuous AF; no lens writes",
+          "samples": [
+            {
+              "position": 8,
+              "score": 0.0841471647316911
+            },
+            {
+              "position": 8,
+              "score": 0.0794305019417475
+            },
+            {
+              "position": 8,
+              "score": 0.08157038970126178
+            },
+            {
+              "position": 8,
+              "score": 0.08101619778175508
+            },
+            {
+              "position": 8,
+              "score": 0.08079402573336257
+            },
+            {
+              "position": 8,
+              "score": 0.0803239169283058
+            },
+            {
+              "position": 8,
+              "score": 0.08409290360546123
+            },
+            {
+              "position": 8,
+              "score": 0.08514826180914957
+            }
+          ]
+        },
+        {
+          "settled": true,
+          "position": 8,
+          "score": 0.09157359209641022,
+          "luminance": 137.13932291666666,
+          "durationMs": 231.7831480000168,
+          "method": "Observe stock RKAIQ continuous AF; no lens writes",
+          "samples": [
+            {
+              "position": 8,
+              "score": 0.0826373962723888
+            },
+            {
+              "position": 8,
+              "score": 0.0826292421135422
+            },
+            {
+              "position": 8,
+              "score": 0.08377934248019404
+            },
+            {
+              "position": 8,
+              "score": 0.0820149009173368
+            },
+            {
+              "position": 8,
+              "score": 0.08568520797037
+            },
+            {
+              "position": 8,
+              "score": 0.0836881335473556
+            },
+            {
+              "position": 8,
+              "score": 0.09157359209641022
+            }
+          ]
+        }
+      ],
+      "videoConditions": {
+        "brightness": 67,
+        "cpuKHz": 1416000
+      },
+      "video": {
+        "receipt": {
+          "path": "/userdisk/Pictures/SNAP_20261023_202734_965_3.avi",
+          "written": true,
+          "indexed": false,
+          "size": 3577550,
+          "audio": true,
+          "audioSamples": 48040,
+          "audioDurationMs": 3002.5,
+          "durationMs": 3003.6093019992113,
+          "width": 1280,
+          "height": 720,
+          "droppedFrames": 0,
+          "videoFrames": 88,
+          "audioXruns": 0,
+          "audioLastError": 0,
+          "audioZeroReads": 0
+        },
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "mjpeg",
+            "codec_long_name": "Motion JPEG",
+            "profile": "Baseline",
+            "codec_type": "video",
+            "codec_tag_string": "MJPG",
+            "codec_tag": "0x47504a4d",
+            "width": 1280,
+            "height": 720,
+            "coded_width": 1280,
+            "coded_height": 720,
+            "has_b_frames": 0,
+            "sample_aspect_ratio": "1:1",
+            "display_aspect_ratio": "16:9",
+            "pix_fmt": "yuvj420p",
+            "level": -99,
+            "color_range": "pc",
+            "color_space": "bt470bg",
+            "chroma_location": "center",
+            "r_frame_rate": "22000/751",
+            "avg_frame_rate": "22000/751",
+            "time_base": "751/22000",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "duration_ts": 88,
+            "duration": "3.004000",
+            "bit_rate": "9365206",
+            "bits_per_raw_sample": "8",
+            "nb_frames": "88",
+            "disposition": {
+              "default": 0,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            }
+          },
+          {
+            "index": 1,
+            "codec_name": "pcm_s16le",
+            "codec_long_name": "PCM signed 16-bit little-endian",
+            "codec_type": "audio",
+            "codec_tag_string": "[1][0][0][0]",
+            "codec_tag": "0x0001",
+            "sample_fmt": "s16",
+            "sample_rate": "16000",
+            "channels": 1,
+            "bits_per_sample": 16,
+            "initial_padding": 0,
+            "r_frame_rate": "0/0",
+            "avg_frame_rate": "0/0",
+            "time_base": "1/16000",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "bit_rate": "256000",
+            "nb_frames": "48040",
+            "disposition": {
+              "default": 0,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            }
+          }
+        ],
+        "fullDecode": true
+      },
+      "reopen": true,
+      "cleanup": {
+        "deleted": [
+          "/userdisk/Pictures/SNAP_20261023_202731_996_1.JPG",
+          "/userdisk/Pictures/SNAP_20261023_202733_427_2.JPG",
+          "/userdisk/Pictures/SNAP_20261023_202734_965_3.avi"
+        ],
+        "failed": []
+      }
+    },
+    "optimized": {
+      "binarySha256": "6f6ead6b920b5eba8e7212de2676ecaf85674a3beefc3781d0d362ffda3d4388",
+      "preview": {
+        "photo": {
+          "uniquePolledFps": 26.076649545634663,
+          "frame": {
+            "sequence": 94,
+            "nightActive": false,
+            "sceneLuma": 132.21191722325293,
+            "nightStrength": 0,
+            "sourceWidth": 3264,
+            "sourceHeight": 2448,
+            "sourceStride": 3264,
+            "captureFps": 27.430735414452982,
+            "previewFps": 27.14199083114295,
+            "frameAgeMs": 3.140666998922825,
+            "rawSequence": 95,
+            "convertMs": 2.9189999997615814,
+            "encodeMs": 0.1557500008493662,
+            "recording": false,
+            "recordError": false,
+            "recordLimit": false,
+            "recordDropped": 0,
+            "recordEncodeMs": 0,
+            "recordSampleMs": 0
+          },
+          "clockKHz": "1416000"
+        },
+        "portrait": {
+          "uniquePolledFps": 26.0,
+          "frame": {
+            "sequence": 189,
+            "nightActive": false,
+            "sceneLuma": 132.1986177690714,
+            "nightStrength": 0,
+            "sourceWidth": 3264,
+            "sourceHeight": 2448,
+            "sourceStride": 3264,
+            "captureFps": 28.743731764966114,
+            "previewFps": 28.592448966203133,
+            "frameAgeMs": 4.3895840011537075,
+            "rawSequence": 190,
+            "convertMs": 4.132625000551343,
+            "encodeMs": 0.19133299961686134,
+            "recording": false,
+            "recordError": false,
+            "recordLimit": false,
+            "recordDropped": 0,
+            "recordEncodeMs": 0,
+            "recordSampleMs": 0
+          },
+          "clockKHz": "1416000"
+        },
+        "hd-video": {
+          "uniquePolledFps": 25.844930417491664,
+          "frame": {
+            "sequence": 283,
+            "nightActive": false,
+            "sceneLuma": 132.17372395003213,
+            "nightStrength": 0,
+            "sourceWidth": 3264,
+            "sourceHeight": 2448,
+            "sourceStride": 3264,
+            "captureFps": 29.1601964208056,
+            "previewFps": 29.057519672845014,
+            "frameAgeMs": 2.0641249995678663,
+            "rawSequence": 284,
+            "convertMs": 1.8211669996380806,
+            "encodeMs": 0.16595800034701824,
+            "recording": false,
+            "recordError": false,
+            "recordLimit": false,
+            "recordDropped": 0,
+            "recordEncodeMs": 0,
+            "recordSampleMs": 0
+          },
+          "clockKHz": "1416000"
+        }
+      },
+      "photos": [
+        {
+          "focus": {
+            "settled": true,
+            "position": 8,
+            "score": 0.08441695574594994,
+            "luminance": 137.154296875,
+            "durationMs": 158.4120579995215,
+            "cached": false,
+            "method": "Observe stock AF motor, sharpness stability and motion; no lens writes",
+            "samples": [
+              {
+                "position": 8,
+                "score": 0.0824186965862164
+              },
+              {
+                "position": 8,
+                "score": 0.07718443658335274
+              },
+              {
+                "position": 8,
+                "score": 0.0823135864924146
+              },
+              {
+                "position": 8,
+                "score": 0.0844124124367962
+              },
+              {
+                "position": 8,
+                "score": 0.08441695574594994
+              }
+            ]
+          },
+          "photo": {
+            "path": "/userdisk/Pictures/SNAP_20261023_202750_803_1.JPG",
+            "written": true,
+            "indexed": false,
+            "size": 442473,
+            "candidateFrames": 1,
+            "selectionMs": 68.89954799972475,
+            "sharpnessScore": 0.08235469746992265,
+            "processingMs": 128.59934599883854,
+            "saveMs": 137.36276400089264,
+            "capturedAt": "2026-10-23T20:27:50.803+08:00",
+            "capturedAtEpochMs": 1792758470803.8806,
+            "timeSource": "device-frame-received"
+          },
+          "totalMs": 625.0,
+          "conditionsBefore": {
+            "brightness": 67,
+            "cpuKHz": 1416000
+          },
+          "conditionsAfter": {
+            "brightness": 67,
+            "cpuKHz": 1416000
+          }
+        },
+        {
+          "focus": {
+            "settled": true,
+            "cached": true,
+            "durationMs": 0,
+            "position": 8,
+            "score": 0.0870974466505725,
+            "method": "Recent unchanged AF position and stable scene; no lens writes"
+          },
+          "photo": {
+            "path": "/userdisk/Pictures/SNAP_20261023_202751_869_2.JPG",
+            "written": true,
+            "indexed": false,
+            "size": 441928,
+            "candidateFrames": 1,
+            "selectionMs": 58.690047999843955,
+            "sharpnessScore": 0.08353487447049175,
+            "processingMs": 106.99559399858117,
+            "saveMs": 124.14763700030744,
+            "capturedAt": "2026-10-23T20:27:51.869+08:00",
+            "capturedAtEpochMs": 1792758471869.0728,
+            "timeSource": "device-frame-received"
+          },
+          "totalMs": 327.9999999995198,
+          "conditionsBefore": {
+            "brightness": 67,
+            "cpuKHz": 1416000
+          },
+          "conditionsAfter": {
+            "brightness": 67,
+            "cpuKHz": 1416000
+          }
+        }
+      ],
+      "firstFrameMs": 467.9999999998472,
+      "fastBurst": {
+        "path": "/userdisk/Pictures/SNAP_20261023_202752_541_3.JPG",
+        "written": true,
+        "indexed": false,
+        "size": 444401,
+        "candidateFrames": 1,
+        "selectionMs": 18.629917999729514,
+        "sharpnessScore": 0.0834158809420135,
+        "processingMs": 96.10621799901128,
+        "saveMs": 119.18755299970508,
+        "capturedAt": "2026-10-23T20:27:52.541+08:00",
+        "capturedAtEpochMs": 1792758472541.3252,
+        "timeSource": "device-frame-received"
+      },
+      "focusCacheCheck": [
+        {
+          "settled": true,
+          "cached": true,
+          "durationMs": 0,
+          "position": 8,
+          "score": 0.08212893224469205,
+          "method": "Recent unchanged AF position and stable scene; no lens writes"
+        },
+        {
+          "settled": true,
+          "cached": true,
+          "durationMs": 0,
+          "position": 8,
+          "score": 0.08212893224469205,
+          "method": "Recent unchanged AF position and stable scene; no lens writes"
+        }
+      ],
+      "videoConditions": {
+        "brightness": 67,
+        "cpuKHz": 1416000
+      },
+      "video": {
+        "receipt": {
+          "path": "/userdisk/Pictures/SNAP_20261023_202752_887_4.avi",
+          "written": true,
+          "indexed": false,
+          "size": 3601764,
+          "audio": true,
+          "audioSamples": 47680,
+          "audioDurationMs": 2980,
+          "durationMs": 3003.3077179994434,
+          "width": 1280,
+          "height": 720,
+          "droppedFrames": 0,
+          "videoFrames": 89,
+          "audioXruns": 0,
+          "audioLastError": 0,
+          "audioZeroReads": 0
+        },
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "mjpeg",
+            "codec_long_name": "Motion JPEG",
+            "profile": "Baseline",
+            "codec_type": "video",
+            "codec_tag_string": "MJPG",
+            "codec_tag": "0x47504a4d",
+            "width": 1280,
+            "height": 720,
+            "coded_width": 1280,
+            "coded_height": 720,
+            "has_b_frames": 0,
+            "sample_aspect_ratio": "1:1",
+            "display_aspect_ratio": "16:9",
+            "pix_fmt": "yuvj420p",
+            "level": -99,
+            "color_range": "pc",
+            "color_space": "bt470bg",
+            "chroma_location": "center",
+            "r_frame_rate": "89000/3003",
+            "avg_frame_rate": "89000/3003",
+            "time_base": "3003/89000",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "duration_ts": 89,
+            "duration": "3.003000",
+            "bit_rate": "9434081",
+            "bits_per_raw_sample": "8",
+            "nb_frames": "89",
+            "disposition": {
+              "default": 0,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            }
+          },
+          {
+            "index": 1,
+            "codec_name": "pcm_s16le",
+            "codec_long_name": "PCM signed 16-bit little-endian",
+            "codec_type": "audio",
+            "codec_tag_string": "[1][0][0][0]",
+            "codec_tag": "0x0001",
+            "sample_fmt": "s16",
+            "sample_rate": "16000",
+            "channels": 1,
+            "bits_per_sample": 16,
+            "initial_padding": 0,
+            "r_frame_rate": "0/0",
+            "avg_frame_rate": "0/0",
+            "time_base": "1/16000",
+            "start_pts": 0,
+            "start_time": "0.000000",
+            "bit_rate": "256000",
+            "nb_frames": "47680",
+            "disposition": {
+              "default": 0,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            }
+          }
+        ],
+        "fullDecode": true
+      },
+      "reopen": true,
+      "cleanup": {
+        "deleted": [
+          "/userdisk/Pictures/SNAP_20261023_202750_803_1.JPG",
+          "/userdisk/Pictures/SNAP_20261023_202751_869_2.JPG",
+          "/userdisk/Pictures/SNAP_20261023_202752_541_3.JPG",
+          "/userdisk/Pictures/SNAP_20261023_202752_887_4.avi"
+        ],
+        "failed": []
+      }
+    }
+  }
+}

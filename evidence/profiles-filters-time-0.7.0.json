@@ -1,0 +1,216 @@
+{
+  "version": "0.7.0",
+  "profiles": {
+    "wide": {
+      "size": [
+        3264,
+        979
+      ],
+      "bytes": 308035,
+      "exifTime": "2026:10:17 19:56:21.409+08:00",
+      "processingMs": 96.6154680000618,
+      "saveMs": 75.4142160001211,
+      "captureSeconds": 0.5
+    },
+    "cinema": {
+      "size": [
+        3264,
+        1362
+      ],
+      "bytes": 443682,
+      "exifTime": "2026:10:17 19:56:22.086+08:00",
+      "processingMs": 154.07293300004676,
+      "saveMs": 88.50217500003055,
+      "captureSeconds": 0.468
+    },
+    "two-one": {
+      "size": [
+        3264,
+        1632
+      ],
+      "bytes": 543011,
+      "exifTime": "2026:10:17 19:56:22.781+08:00",
+      "processingMs": 138.80534699978307,
+      "saveMs": 139.91893099993467,
+      "captureSeconds": 0.672
+    },
+    "sixteen-nine": {
+      "size": [
+        3264,
+        1836
+      ],
+      "bytes": 547324,
+      "exifTime": "2026:10:17 19:56:23.647+08:00",
+      "processingMs": 156.6247240002267,
+      "saveMs": 114.923093999736,
+      "captureSeconds": 0.687
+    },
+    "four-three": {
+      "size": [
+        2448,
+        1836
+      ],
+      "bytes": 394654,
+      "exifTime": "2026:10:17 19:56:24.547+08:00",
+      "processingMs": 122.10684600006789,
+      "saveMs": 84.3307579997927,
+      "captureSeconds": 0.547
+    },
+    "square": {
+      "size": [
+        1836,
+        1836
+      ],
+      "bytes": 290163,
+      "exifTime": "2026:10:17 19:56:25.314+08:00",
+      "processingMs": 95.7022589999251,
+      "saveMs": 69.14104900043458,
+      "captureSeconds": 0.359
+    }
+  },
+  "filters": {
+    "none": {
+      "size": [
+        3264,
+        979
+      ],
+      "bytes": 310670,
+      "exifTime": "2026:10:17 19:56:25.680+08:00",
+      "processingMs": 91.93742600036785,
+      "saveMs": 72.2155069997534
+    },
+    "mono": {
+      "size": [
+        3264,
+        979
+      ],
+      "bytes": 283851,
+      "exifTime": "2026:10:17 19:56:26.047+08:00",
+      "processingMs": 86.85484200017527,
+      "saveMs": 76.6062579997815
+    },
+    "sepia": {
+      "size": [
+        3264,
+        979
+      ],
+      "bytes": 328206,
+      "exifTime": "2026:10:17 19:56:26.481+08:00",
+      "processingMs": 291.0256119999103,
+      "saveMs": 86.03554999968037
+    },
+    "warm": {
+      "size": [
+        3264,
+        979
+      ],
+      "bytes": 329538,
+      "exifTime": "2026:10:17 19:56:27.147+08:00",
+      "processingMs": 290.0931540001184,
+      "saveMs": 84.74259199993685
+    },
+    "cool": {
+      "size": [
+        3264,
+        979
+      ],
+      "bytes": 321560,
+      "exifTime": "2026:10:17 19:56:27.747+08:00",
+      "processingMs": 287.9622380002402,
+      "saveMs": 84.7857579998672
+    },
+    "vintage": {
+      "size": [
+        3264,
+        979
+      ],
+      "bytes": 288930,
+      "exifTime": "2026:10:17 19:56:28.314+08:00",
+      "processingMs": 297.2795299999416,
+      "saveMs": 78.84946699999273
+    },
+    "vivid": {
+      "size": [
+        3264,
+        979
+      ],
+      "bytes": 358946,
+      "exifTime": "2026:10:17 19:56:28.980+08:00",
+      "processingMs": 289.2861130000092,
+      "saveMs": 87.2007590001449
+    },
+    "negative": {
+      "size": [
+        3264,
+        979
+      ],
+      "bytes": 307678,
+      "exifTime": "2026:10:17 19:56:29.647+08:00",
+      "processingMs": 262.12435900000855,
+      "saveMs": 80.9200079999864
+    }
+  },
+  "zoom2": {
+    "size": [
+      3264,
+      979
+    ],
+    "bytes": 217245,
+    "exifTime": "2026:10:17 19:56:30.314+08:00",
+    "processingMs": 156.98522400017828,
+    "saveMs": 66.47229800000787
+  },
+  "portrait": {
+    "size": [
+      216,
+      720
+    ],
+    "bytes": 17216,
+    "exifTime": "2026:10:17 19:56:30.914+08:00",
+    "processingMs": 7.919042999856174,
+    "saveMs": 11.722959000151604
+  },
+  "portraitUnaffected": {
+    "size": [
+      216,
+      720
+    ],
+    "bytes": 17187,
+    "exifTime": "2026:10:17 19:56:31.080+08:00",
+    "processingMs": 7.649249999783933,
+    "saveMs": 13.437960000243038
+  },
+  "video": {
+    "programs": [],
+    "streams": [
+      {
+        "codec_name": "mjpeg",
+        "width": 640,
+        "height": 192
+      },
+      {
+        "codec_name": "pcm_s16le"
+      }
+    ]
+  },
+  "share": {
+    "tested": false,
+    "reason": "User requested skipping LAN testing"
+  },
+  "reopen": true,
+  "preview": {
+    "sequence": 1,
+    "captureFps": 5.821220961222133,
+    "previewFps": 2.9106104806110666,
+    "frameAgeMs": 3.942166999913752,
+    "rawSequence": 2,
+    "convertMs": 3.7756260000169277,
+    "encodeMs": 0.16216699965298176,
+    "recording": false,
+    "recordError": false,
+    "recordLimit": false,
+    "recordDropped": 0,
+    "recordEncodeMs": 2.174957999959588,
+    "recordSampleMs": 2.1061249999329448
+  }
+}

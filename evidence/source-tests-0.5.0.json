@@ -1,0 +1,5 @@
+{
+  "passed": 45,
+  "failed": 0,
+  "command": "node --test --test-reporter=dot tests/*.test.mjs"
+}

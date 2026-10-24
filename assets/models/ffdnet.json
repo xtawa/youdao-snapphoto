@@ -1,0 +1,32 @@
+{
+  "model": "FFDNet color",
+  "weightsUrl": "https://github.com/cszn/KAIR/releases/download/v1.0/ffdnet_color.pth",
+  "weightsSha256": "286f04f7e3a20254c067ba95efb5d3339f4fc8a09a365a93cd469184d4cdb279",
+  "license": "MIT / Kai Zhang",
+  "tile": 256,
+  "packedInput": [
+    1,
+    13,
+    128,
+    128
+  ],
+  "output": [
+    1,
+    12,
+    128,
+    128
+  ],
+  "toolkit": "1.5.0",
+  "target": "rk3562",
+  "variant": "int8",
+  "sha256": "38d0ee052c6aabd619aa969a6c27610a499846869beb58c996d20edb3f7fc622",
+  "bytes": 956463,
+  "deviceInferenceVerified": true,
+  "verifiedFirmware": "PenOS 4.34.0",
+  "runtime": "1.5.1b18",
+  "driver": "0.9.1",
+  "source": "https://github.com/cszn/KAIR",
+  "conversionRun": "https://github.com/xtawa/youdao-snapphoto/actions/runs/40080751852",
+  "halo": 24,
+  "core": 208
+}

@@ -1,0 +1,263 @@
+{
+  "version": "0.9.0",
+  "profiles": {
+    "wide": {
+      "sourcePath": "/userdisk/Pictures/SNAP_20261023_203310_151_1.JPG",
+      "size": [
+        3264,
+        979
+      ],
+      "bytes": 215896,
+      "exifTime": "2026:10:23 20:33:10.151+08:00",
+      "processingMs": 65.33159000054,
+      "saveMs": 70.3998819999397,
+      "captureSeconds": 0.468
+    },
+    "cinema": {
+      "sourcePath": "/userdisk/Pictures/SNAP_20261023_203310_822_2.JPG",
+      "size": [
+        3264,
+        1362
+      ],
+      "bytes": 307826,
+      "exifTime": "2026:10:23 20:33:10.822+08:00",
+      "processingMs": 88.5733420010656,
+      "saveMs": 90.1871339995414,
+      "captureSeconds": 0.5
+    },
+    "two-one": {
+      "sourcePath": "/userdisk/Pictures/SNAP_20261023_203311_496_3.JPG",
+      "size": [
+        3264,
+        1632
+      ],
+      "bytes": 385774,
+      "exifTime": "2026:10:23 20:33:11.496+08:00",
+      "processingMs": 72.41675700061023,
+      "saveMs": 137.05068099871278,
+      "captureSeconds": 0.5
+    },
+    "sixteen-nine": {
+      "sourcePath": "/userdisk/Pictures/SNAP_20261023_203312_196_4.JPG",
+      "size": [
+        3264,
+        1836
+      ],
+      "bytes": 445628,
+      "exifTime": "2026:10:23 20:33:12.196+08:00",
+      "processingMs": 78.2815910000354,
+      "saveMs": 124.00151200033724,
+      "captureSeconds": 0.5
+    },
+    "four-three": {
+      "sourcePath": "/userdisk/Pictures/SNAP_20261023_203312_929_5.JPG",
+      "size": [
+        3264,
+        2448
+      ],
+      "bytes": 605353,
+      "exifTime": "2026:10:23 20:33:12.929+08:00",
+      "processingMs": 125.66488800011575,
+      "saveMs": 211.7182289995253,
+      "captureSeconds": 0.672
+    },
+    "square": {
+      "sourcePath": "/userdisk/Pictures/SNAP_20261023_203313_829_6.JPG",
+      "size": [
+        2448,
+        2448
+      ],
+      "bytes": 423017,
+      "exifTime": "2026:10:23 20:33:13.829+08:00",
+      "processingMs": 105.72859399951994,
+      "saveMs": 162.1442240010947,
+      "captureSeconds": 0.594
+    }
+  },
+  "filters": {
+    "none": {
+      "sourcePath": "/userdisk/Pictures/SNAP_20261023_203314_430_7.JPG",
+      "size": [
+        3264,
+        979
+      ],
+      "bytes": 208043,
+      "exifTime": "2026:10:23 20:33:14.430+08:00",
+      "processingMs": 61.27888099849224,
+      "saveMs": 65.44009000062943
+    },
+    "mono": {
+      "sourcePath": "/userdisk/Pictures/SNAP_20261023_203314_829_8.JPG",
+      "size": [
+        3264,
+        979
+      ],
+      "bytes": 191407,
+      "exifTime": "2026:10:23 20:33:14.829+08:00",
+      "processingMs": 60.48613099940121,
+      "saveMs": 65.14317299984396
+    },
+    "sepia": {
+      "sourcePath": "/userdisk/Pictures/SNAP_20261023_203315_229_9.JPG",
+      "size": [
+        3264,
+        979
+      ],
+      "bytes": 233344,
+      "exifTime": "2026:10:23 20:33:15.229+08:00",
+      "processingMs": 289.744320999831,
+      "saveMs": 80.65254900045693
+    },
+    "warm": {
+      "sourcePath": "/userdisk/Pictures/SNAP_20261023_203315_896_10.JPG",
+      "size": [
+        3264,
+        979
+      ],
+      "bytes": 247453,
+      "exifTime": "2026:10:23 20:33:15.896+08:00",
+      "processingMs": 294.1773629989475,
+      "saveMs": 95.3680090010166
+    },
+    "cool": {
+      "sourcePath": "/userdisk/Pictures/SNAP_20261023_203316_529_11.JPG",
+      "size": [
+        3264,
+        979
+      ],
+      "bytes": 216346,
+      "exifTime": "2026:10:23 20:33:16.529+08:00",
+      "processingMs": 266.7621509991586,
+      "saveMs": 80.14009200036526
+    },
+    "vintage": {
+      "sourcePath": "/userdisk/Pictures/SNAP_20261023_203317_163_12.JPG",
+      "size": [
+        3264,
+        979
+      ],
+      "bytes": 214793,
+      "exifTime": "2026:10:23 20:33:17.163+08:00",
+      "processingMs": 275.11519400030375,
+      "saveMs": 92.57850899919868
+    },
+    "vivid": {
+      "sourcePath": "/userdisk/Pictures/SNAP_20261023_203317_829_13.JPG",
+      "size": [
+        3264,
+        979
+      ],
+      "bytes": 268957,
+      "exifTime": "2026:10:23 20:33:17.829+08:00",
+      "processingMs": 266.4789439998567,
+      "saveMs": 84.604632999748
+    },
+    "negative": {
+      "sourcePath": "/userdisk/Pictures/SNAP_20261023_203318_496_14.JPG",
+      "size": [
+        3264,
+        979
+      ],
+      "bytes": 206372,
+      "exifTime": "2026:10:23 20:33:18.496+08:00",
+      "processingMs": 264.8146930001676,
+      "saveMs": 78.53854999877512
+    }
+  },
+  "zoom2": {
+    "sourcePath": "/userdisk/Pictures/SNAP_20261023_203319_129_15.JPG",
+    "size": [
+      3264,
+      979
+    ],
+    "bytes": 150518,
+    "exifTime": "2026:10:23 20:33:19.129+08:00",
+    "processingMs": 140.27243100106716,
+    "saveMs": 64.28917299956083
+  },
+  "portrait": {
+    "sourcePath": "/userdisk/Pictures/SNAP_20261023_203319_562_16.JPG",
+    "size": [
+      979,
+      3264
+    ],
+    "bytes": 211907,
+    "exifTime": "2026:10:23 20:33:19.562+08:00",
+    "processingMs": 40.90187899954617,
+    "saveMs": 95.42751000076532
+  },
+  "portraitSquare": {
+    "sourcePath": "/userdisk/Pictures/SNAP_20261023_203319_990_17.JPG",
+    "size": [
+      2448,
+      2448
+    ],
+    "bytes": 427738,
+    "exifTime": "2026:10:23 20:33:19.990+08:00",
+    "processingMs": 97.76200900040567,
+    "saveMs": 252.74377599917352
+  },
+  "video": {
+    "programs": [],
+    "streams": [
+      {
+        "codec_name": "mjpeg",
+        "width": 640,
+        "height": 192
+      },
+      {
+        "codec_name": "pcm_s16le"
+      }
+    ]
+  },
+  "share": {
+    "tested": false,
+    "reason": "User requested skipping LAN testing"
+  },
+  "reopen": true,
+  "preview": {
+    "sequence": 1,
+    "nightActive": false,
+    "sceneLuma": 131.97180210624245,
+    "nightStrength": 0,
+    "sourceWidth": 3264,
+    "sourceHeight": 2448,
+    "sourceStride": 3264,
+    "captureFps": 5.821992000747337,
+    "previewFps": 2.9109960003736686,
+    "frameAgeMs": 3.2287510000169277,
+    "rawSequence": 2,
+    "convertMs": 2.953125,
+    "encodeMs": 0.18870799988508224,
+    "recording": false,
+    "recordError": false,
+    "recordLimit": false,
+    "recordDropped": 0,
+    "recordEncodeMs": 1.932583998888731,
+    "recordSampleMs": 1.29674999974668
+  },
+  "cleanup": {
+    "deleted": [
+      "/userdisk/Pictures/SNAP_20261023_203310_151_1.JPG",
+      "/userdisk/Pictures/SNAP_20261023_203310_822_2.JPG",
+      "/userdisk/Pictures/SNAP_20261023_203311_496_3.JPG",
+      "/userdisk/Pictures/SNAP_20261023_203312_196_4.JPG",
+      "/userdisk/Pictures/SNAP_20261023_203312_929_5.JPG",
+      "/userdisk/Pictures/SNAP_20261023_203313_829_6.JPG",
+      "/userdisk/Pictures/SNAP_20261023_203314_430_7.JPG",
+      "/userdisk/Pictures/SNAP_20261023_203314_829_8.JPG",
+      "/userdisk/Pictures/SNAP_20261023_203315_229_9.JPG",
+      "/userdisk/Pictures/SNAP_20261023_203315_896_10.JPG",
+      "/userdisk/Pictures/SNAP_20261023_203316_529_11.JPG",
+      "/userdisk/Pictures/SNAP_20261023_203317_163_12.JPG",
+      "/userdisk/Pictures/SNAP_20261023_203317_829_13.JPG",
+      "/userdisk/Pictures/SNAP_20261023_203318_496_14.JPG",
+      "/userdisk/Pictures/SNAP_20261023_203319_129_15.JPG",
+      "/userdisk/Pictures/SNAP_20261023_203319_562_16.JPG",
+      "/userdisk/Pictures/SNAP_20261023_203319_990_17.JPG",
+      "/userdisk/Pictures/SNAP_20261023_203320_880_18.avi",
+      "/userdisk/Pictures/SNAP_20261023_203323_696_19.JPG"
+    ],
+    "failed": []
+  }
+}

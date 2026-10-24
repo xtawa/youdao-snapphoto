@@ -1,0 +1,75 @@
+{
+  "launched": true,
+  "previewUpdateLabelObserved": 26,
+  "continuousFocusStatusShown": true,
+  "realPhotoWithExif": {
+    "path": "/userdisk/Pictures/SNAP_20261017_193228_793_1.jpg",
+    "size": [
+      3264,
+      1362
+    ],
+    "exifOriginal": "2026:10:17 19:32:28",
+    "createdThroughUI": true
+  },
+  "screenGuardAcquiredInLog": true,
+  "idleScreenMonitor": [
+    {
+      "elapsedSeconds": 0,
+      "brightness": 90,
+      "clockKHz": 1416000,
+      "processRssKiB": 433056,
+      "processAnonKiB": 167436
+    },
+    {
+      "elapsedSeconds": 10,
+      "brightness": 90,
+      "clockKHz": 1416000,
+      "processRssKiB": 433096,
+      "processAnonKiB": 167476
+    },
+    {
+      "elapsedSeconds": 20,
+      "brightness": 90,
+      "clockKHz": 1416000,
+      "processRssKiB": 433080,
+      "processAnonKiB": 167460
+    },
+    {
+      "elapsedSeconds": 30,
+      "brightness": 90,
+      "clockKHz": 1416000,
+      "processRssKiB": 433080,
+      "processAnonKiB": 167460
+    },
+    {
+      "elapsedSeconds": 40,
+      "brightness": 90,
+      "clockKHz": 1416000,
+      "processRssKiB": 433084,
+      "processAnonKiB": 167464
+    },
+    {
+      "elapsedSeconds": 50,
+      "brightness": 90,
+      "clockKHz": 1416000,
+      "processRssKiB": 433084,
+      "processAnonKiB": 167464
+    },
+    {
+      "elapsedSeconds": 60,
+      "brightness": 90,
+      "clockKHz": 1416000,
+      "processRssKiB": 433084,
+      "processAnonKiB": 167464
+    }
+  ],
+  "screenTimeoutNotWritten": true,
+  "previewPresentedFpsNotMeasured": true,
+  "previousPreviewUpdateLabelObserved": 28,
+  "recordingFinalizedOnRealAppHide": {
+    "fullStreams": 2,
+    "videoFrames": 96,
+    "audioSamples": 51064,
+    "microphoneReleased": true
+  }
+}
