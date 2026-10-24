@@ -25,6 +25,7 @@ jobs:
       - name: Export and convert licensed FFDNet weights
         run: python tools/convert-ffdnet.py
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: ffdnet-rk3562-models
           path: |

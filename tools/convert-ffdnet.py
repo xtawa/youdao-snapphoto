@@ -55,7 +55,7 @@ for index in range(24):
     noisy=np.clip(rgb.astype(float)+rng.normal(0,sigma,rgb.shape),0,255).astype(np.uint8)
     packed=pack(noisy,sigma)
     calibration=(packed[0].numpy().transpose(1,2,0)*255).round().clip(0,255).astype(np.uint8)
-    calibration_path=OUT/f'calibration-{index:02}.npy';np.save(calibration_path,calibration);dataset.append(str(calibration_path))
+    calibration_path=OUT/f'calibration-{index:02}.npy';np.save(calibration_path,calibration);dataset.append(str(calibration_path.resolve()))
     if index<3:
         with torch.no_grad():prediction=torch.nn.functional.pixel_shuffle(model(packed),2)[0].numpy().transpose(1,2,0)
         prediction=np.clip(prediction*255,0,255).round().astype(np.uint8)
@@ -79,6 +79,7 @@ for quantized in [False,True]:
         assert rknn.build(do_quantization=quantized,dataset=str(OUT/'dataset.txt') if quantized else None)==0
         path=OUT/f'ffdnet-color-rk3562-{name}.rknn';assert rknn.export_rknn(str(path))==0
         report['variants'].append({'name':name,'file':path.name,'bytes':path.stat().st_size,'sha256':hashlib.sha256(path.read_bytes()).hexdigest()})
+        (OUT/'conversion.json').write_text(json.dumps(report,indent=2))
     finally:rknn.release()
 (OUT/'conversion.json').write_text(json.dumps(report,indent=2))
 print(json.dumps(report,indent=2))
