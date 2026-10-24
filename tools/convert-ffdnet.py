@@ -68,7 +68,7 @@ for index in range(24):
         fixtures.append({'id':index,'sigma':sigma,'width':TILE,'height':TILE,'noisyPsnr':before,'referencePsnr':after})
 (OUT/'dataset.txt').write_text('\n'.join(dataset)+'\n')
 report={'model':'FFDNet color','weightsUrl':WEIGHT_URL,'weightsSha256':WEIGHT_SHA,'license':'MIT / Kai Zhang',
-        'tile':TILE,'packedInput':[1,13,SIDE,SIDE],'output':[1,12,SIDE,SIDE],'toolkit':'1.5.2','target':'rk3562',
+        'tile':TILE,'packedInput':[1,13,SIDE,SIDE],'output':[1,12,SIDE,SIDE],'toolkit':'1.5.0','target':'rk3562',
         'fixtures':fixtures,'variants':[],'deviceInferenceVerified':False}
 for quantized in [False,True]:
     name='int8' if quantized else 'fp16';rknn=RKNN(verbose=True)

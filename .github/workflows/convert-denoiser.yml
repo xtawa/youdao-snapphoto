@@ -19,9 +19,9 @@ jobs:
         run: |
           python -m pip install --no-cache-dir 'pip<25' 'setuptools<71' wheel
           python -m pip install --no-cache-dir torch==1.10.1+cpu torchvision==0.11.2+cpu --extra-index-url https://download.pytorch.org/whl/cpu
-          curl --fail --location --retry 3 'https://raw.githubusercontent.com/airockchip/rknn-toolkit2/v1.5.2/packages/rknn_toolkit2-1.5.2%2Bb642f30c-cp38-cp38-linux_x86_64.whl' -o /tmp/rknn_toolkit2-1.5.2+b642f30c-cp38-cp38-linux_x86_64.whl
-          test "$(git hash-object /tmp/rknn_toolkit2-1.5.2+b642f30c-cp38-cp38-linux_x86_64.whl)" = 7f75f10a5cc7ccca849727ee07fda000f0f7f1e4
-          python -m pip install --no-cache-dir /tmp/rknn_toolkit2-1.5.2+b642f30c-cp38-cp38-linux_x86_64.whl
+          curl --fail --location --retry 3 'https://raw.githubusercontent.com/airockchip/rknn-toolkit2/v1.5.0/packages/rknn_toolkit2-1.5.0%2B1fa95b5c-cp38-cp38-linux_x86_64.whl' -o /tmp/rknn_toolkit2-1.5.0+1fa95b5c-cp38-cp38-linux_x86_64.whl
+          test "$(git hash-object /tmp/rknn_toolkit2-1.5.0+1fa95b5c-cp38-cp38-linux_x86_64.whl)" = e8283c0bde47da7c25f400bf892daaf0c8a0335c
+          python -m pip install --no-cache-dir /tmp/rknn_toolkit2-1.5.0+1fa95b5c-cp38-cp38-linux_x86_64.whl
       - name: Export and convert licensed FFDNet weights
         run: python tools/convert-ffdnet.py
       - uses: actions/upload-artifact@v4
