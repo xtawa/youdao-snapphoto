@@ -54,7 +54,7 @@ for index in range(24):
     sigma=[6,12,18,25][index%4]
     noisy=np.clip(rgb.astype(float)+rng.normal(0,sigma,rgb.shape),0,255).astype(np.uint8)
     packed=pack(noisy,sigma)
-    calibration=(packed[0].numpy().transpose(1,2,0)*255).round().clip(0,255).astype(np.uint8)
+    calibration=(packed.numpy()*255).round().clip(0,255).astype(np.uint8)
     calibration_path=OUT/f'calibration-{index:02}.npy';np.save(calibration_path,calibration);dataset.append(str(calibration_path.resolve()))
     if index<3:
         with torch.no_grad():prediction=torch.nn.functional.pixel_shuffle(model(packed),2)[0].numpy().transpose(1,2,0)
