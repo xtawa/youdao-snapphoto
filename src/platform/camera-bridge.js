@@ -1,4 +1,5 @@
 import {GALLERY_DIRECTORY,galleryResult,validateGalleryPublication} from './gallery-policy.js'
+import {chooseCaptureProcessing,normalizeProcessingCapabilities} from './processing-policy.js'
 /**
  * SnapPhoto native adapter contract.
  *
@@ -41,7 +42,14 @@ export class CameraBridge {
     if (!caps || caps.camera !== true) {
       throw new CameraUnavailableError('未检测到可用摄像头或摄像头权限不足')
     }
+    const processing = normalizeProcessingCapabilities(caps)
+    const hdrReady = processing.hdr && typeof this.native.captureHDR === 'function'
+    const enhancementReady = processing.enhancement && typeof this.native.enhancePhoto === 'function'
     this.caps = {
+      ...processing,
+      hdr: hdrReady,
+      enhancement: enhancementReady,
+      npuReady: enhancementReady && processing.npuReady,
       camera: true,
       photo: caps.photo === true,
       video: caps.video === true,
@@ -73,8 +81,50 @@ export class CameraBridge {
   async capturePhoto(options) {
     this.requireCapability('photo')
     if (this.recording) throw new Error('录像期间不能拍照')
-    const result = await this.native.capturePhoto({...options, saveDirectory: GALLERY_DIRECTORY})
-    return this.saveToGallery(result, 'photo')
+    const settings = options || {}
+    const processing = chooseCaptureProcessing(settings, this.caps)
+    let photo
+    if (processing.hdr !== 'off') {
+      photo = await this.native.captureHDR({
+        ...settings, hdrMode:processing.hdr,
+        exposuresEV:processing.exposuresEV,
+        saveDirectory:GALLERY_DIRECTORY
+      })
+    } else {
+      photo = await this.native.capturePhoto({...settings,saveDirectory:GALLERY_DIRECTORY})
+    }
+    // HDR generation and exposure alignment MUST be performed by native code.
+    // A single-frame contrast filter must never report hdrApplied:true.
+    if (!photo || !photo.path) throw new Error('原生相机未返回照片')
+    let result = {...photo,hdrApplied:photo.hdrApplied===true,hdrBackend:photo.hdrBackend||'none'}
+    if (processing.hdr==='on' && !result.hdrApplied) {
+      result.processingWarning='设备未完成 HDR 合成；保留原片'
+    }
+    if (processing.denoise!=='off') {
+      try {
+        const enhanced=await this.native.enhancePhoto({
+          sourcePath:result.path,
+          mode:processing.denoise,
+          preferNpu:processing.preferNpu,
+          saveDirectory:GALLERY_DIRECTORY,
+          preserveOriginal:true
+        })
+        if (enhanced && enhanced.written===true && enhanced.path) {
+          result={...result,path:enhanced.path,
+            denoiseApplied:enhanced.denoiseApplied===true,
+            npuUsed:processing.preferNpu && enhanced.npuUsed===true}
+        } else {
+          result.processingWarning=(result.processingWarning||'')+' 图像增强未完成，保留原片'
+        }
+      }catch(error){
+        result.processingWarning=(result.processingWarning||'')+' 图像增强失败，保留原片'
+      }
+    }
+    const published = await this.saveToGallery(result,'photo')
+    if (result.processingWarning) {
+      published.galleryWarning=[published.galleryWarning,result.processingWarning].filter(Boolean).join('；')
+    }
+    return published
   }
   async startRecording(options) {
     this.requireCapability('video')

@@ -1,4 +1,5 @@
 import {createCameraBridge} from '../../platform/camera-bridge.js'
+import {HDR_MODES,DENOISE_MODES,processingLabel} from '../../platform/processing-policy.js'
 import {FILTERS,duration,formatBytes} from '../../utils/format.js'
 import {makeQrImage} from '../../utils/qr.js'
 import {CaptureSession,TIMER_CHOICES,BURST_CHOICES} from '../../utils/capture-session.js'
@@ -14,7 +15,9 @@ export default {
     timerChoices:TIMER_CHOICES,burstChoices:BURST_CHOICES,
     captureSession:new CaptureSession(),countdown:0,shotsCompleted:0,
     timerDelay:0,burstCount:1,showGrid:false,layoutMode:'auto',detectedOrientation:'landscape',
-    mediaTypeFilter:'all',connecting:false,sessionId:0,lastGalleryWarning:''
+    mediaTypeFilter:'all',connecting:false,sessionId:0,lastGalleryWarning:'',
+    hdrMode:'off',denoiseMode:'off',hdrModes:HDR_MODES,denoiseModes:DENOISE_MODES,
+    lastProcessing:'',captureNotes:''
   }},
   computed:{
     elapsed(){return duration(this.seconds)},
@@ -25,6 +28,11 @@ export default {
       return this.media.filter(f=>f.type===this.mediaTypeFilter)
     },
     chosenFiles(){return this.selected.length?this.selected:this.media.map(m=>m.path)},
+    hdrAvailable(){return Boolean(this.caps && this.caps.hdr)},
+    enhanceAvailable(){return Boolean(this.caps && this.caps.enhancement)},
+    npuReady(){return Boolean(this.caps && this.caps.npuReady)},
+    hdrLabel(){return this.hdrMode==='off'?'关':(this.hdrMode==='auto'?'自动':'开')},
+    denoiseLabel(){return this.denoiseMode==='off'?'关':(this.denoiseMode==='auto'?'自动':'画质优先')},
     layoutLabel(){return this.layoutMode==='auto'?'自动':(this.layoutMode==='portrait'?'竖屏':'横屏')}
   },
   methods:{
@@ -48,15 +56,35 @@ export default {
       const p=await loadPreferences()
       this.timerDelay=p.timerDelay;this.burstCount=p.burstCount
       this.showGrid=p.showGrid;this.layoutMode=p.layoutMode
+      this.hdrMode=p.hdrMode;this.denoiseMode=p.denoiseMode
       this.updateOrientation()
     },
     persist(){
       savePreferences({timerDelay:this.timerDelay,burstCount:this.burstCount,
-        showGrid:this.showGrid,layoutMode:this.layoutMode}).catch(()=>{})
+        showGrid:this.showGrid,layoutMode:this.layoutMode,
+        hdrMode:this.hdrMode,denoiseMode:this.denoiseMode}).catch(()=>{})
     },
     setTimer(n){if(this.busy)return;this.timerDelay=n;this.persist()},
     setBurst(n){if(this.busy)return;this.burstCount=n;this.persist()},
     toggleGrid(){this.showGrid=!this.showGrid;this.persist()},
+    setHDR(mode){
+      if(this.busy||this.recording)return this.message('拍摄过程中不可切换 HDR')
+      if(mode!=='off'&&!this.hdrAvailable)return this.message('X7 Pro 暂未开放可验证的 HDR 摄像头接口')
+      this.hdrMode=mode;this.persist()
+    },
+    cycleHDR(){
+      const next=this.hdrModes[(this.hdrModes.indexOf(this.hdrMode)+1)%this.hdrModes.length]
+      this.setHDR(next)
+    },
+    setDenoise(mode){
+      if(this.busy||this.recording)return this.message('拍摄过程中不可切换增强')
+      if(mode!=='off'&&!this.enhanceAvailable)return this.message('图像增强原生接口尚未就绪')
+      this.denoiseMode=mode;this.persist()
+    },
+    cycleDenoise(){
+      const next=this.denoiseModes[(this.denoiseModes.indexOf(this.denoiseMode)+1)%this.denoiseModes.length]
+      this.setDenoise(next)
+    },
     cycleLayout(){
       const modes=['auto','portrait','landscape']
       this.layoutMode=modes[(modes.indexOf(this.layoutMode)+1)%modes.length]
@@ -73,6 +101,8 @@ export default {
         this.caps=await this.bridge.connect()
         if(id!==this.sessionId)return
         this.connected=true;this.zoom=this.caps.minZoom;this.status='相机已连接'
+        if(this.hdrMode!=='off'&&!this.caps.hdr){this.hdrMode='off';this.persist()}
+        if(this.denoiseMode!=='off'&&!this.caps.enhancement){this.denoiseMode='off';this.persist()}
         if(this.caps.preview){await this.bridge.openPreview();this.poll()}
         else this.status='缺少取景接口'
         if(this.caps.gallery)await this.refreshGallery()
@@ -110,14 +140,15 @@ export default {
           const result=await this.captureSession.run({
             delay:this.timerDelay,count:this.burstCount,
             onTick:n=>{this.countdown=n},
-            capture:()=>this.bridge.capturePhoto({filter:this.filter,zoom:this.zoom}),
+            capture:()=>this.bridge.capturePhoto({filter:this.filter,zoom:this.zoom,hdrMode:this.hdrMode,denoiseMode:this.denoiseMode}),
             onShot:(result,now,total)=>{
               this.shotsCompleted=now
               if(result.galleryWarning)this.lastGalleryWarning=result.galleryWarning
+              this.lastProcessing=processingLabel(result)
               this.status=(result.album==='pictures'?'已保存到相册':'文件已保存，未导入相册')+' '+now+'/'+total+' · '+this.fileName(result.path)
             }
           })
-          if(result.completed>0){await this.refreshGallery();this.message(this.lastGalleryWarning || ('已保存到 /userdisk/Pictures，共 '+result.completed+' 张'))}
+          if(result.completed>0){await this.refreshGallery();this.message(this.lastGalleryWarning || ('已保存 '+result.completed+' 张 · '+this.lastProcessing))}
           else if(!result.cancelled)this.message('未拍摄照片')
         }else if(this.recording){
           const result=await this.bridge.stopRecording()
